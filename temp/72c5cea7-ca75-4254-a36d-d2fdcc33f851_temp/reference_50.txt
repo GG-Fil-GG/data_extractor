@@ -1,0 +1,52 @@
+Reference Type:  Journal Article
+Record Number: 306
+Author: Bjerrum, A. S., Skjold, T. and Schmid, J. M.
+Year: 2021
+Title: Oral corticosteroid sparing effects of anti-IL5/ anti-IL5 receptor treatment after 2 years of treatment
+Journal: Respir Med
+Volume: 176
+Pages: 106260
+Epub Date: 20201127
+Date: Jan
+Short Title: Oral corticosteroid sparing effects of anti-IL5/ anti-IL5 receptor treatment after 2 years of treatment
+ISSN: 0954-6111
+DOI: 10.1016/j.rmed.2020.106260
+Accession Number: 33264712
+Keywords: Administration, Oral
+Adolescent
+Adult
+Asthma/*drug therapy
+Clinical Trials as Topic
+Eosinophilia/*drug therapy
+Female
+Glucocorticoids/*administration & dosage/*pharmacology
+Humans
+Interleukin-5/*antagonists & inhibitors
+Male
+Middle Aged
+Prednisolone/*administration & dosage/*pharmacology
+Receptors, Interleukin-5/*antagonists & inhibitors
+Retrospective Studies
+Severity of Illness Index
+Time Factors
+Treatment Outcome
+Young Adult
+Biologicals
+Oral corticosteroids
+Real-life study
+Severe asthma
+Abstract: INTRODUCTION: Clinical trials have shown oral corticosteroid (OCS) sparing effects of anti-IL5/anti-IL5-receptor treatments. The generalisability of these clinical trials may be limited, due to the rigid inclusion and exclusion criteria, and the short tapering duration. Real-world evidence is needed to bridge the gap between the clinical trials and the clinical practice. With this study we present real-life data on the OCS sparing effects of anti-IL5/anti-IL5-receptor treatments after 12 and 24 months of treatment. METHODS: Severe, eosinophilic asthma patients treated with mepolizumab, reslizumab or benralizumab for 24 months were included in this observational study. Data on OCS-dose, FEV1, ACT/ACQ score and blood eosinophils were obtained from the patients records before anti-IL5/anti-IL5-receptor treatment, and after 12 and 24 months of treatment. RESULTS: At baseline 75% of patients were on daily OCS. This number was reduced to 50% after one year of treatment, p < 0.001, and 28% after two years of treatment, p < 0.001. Within the group on daily OCS the median daily dose was reduced from 10 mg of Prednisolone at baseline (IQR 5-20) to 3.75 mg Prednisolone (IQR 0-10) after 12 months, and 0 mg Prednisolone (IQR 0-7.5) after 24 months, p < 0.001. CONCLUSIONS: The findings in this study add to the generalisability of the clinical studies, showing significant OCS sparing effects of anti-IL5/anti-IL5-receptor treatment in a real-life setting. Furthermore, these findings add to the understanding of the long-term effects of anti-IL5/anti-IL5-receptor treatment, showing an even further and persistent OCS reduction after two years of treatment.
+Notes: 1532-3064
+Bjerrum, Anne Sofie
+Skjold, Tina
+Schmid, Johannes Martin
+Journal Article
+Observational Study
+Research Support, Non-U.S. Gov't
+England
+2020/12/03
+Respir Med. 2021 Jan;176:106260. doi: 10.1016/j.rmed.2020.106260. Epub 2020 Nov 27.
+Author Address: Department of Respiratory Diseases and Allergy, Aarhus University Hospital, Denmark. Electronic address: annbjerr@rm.dk.
+Department of Respiratory Diseases and Allergy, Aarhus University Hospital, Denmark.
+Database Provider: NLM
+Language: eng

@@ -1,0 +1,75 @@
+Reference Type:  Journal Article
+Record Number: 80
+Author: Busse, W. W., Maspero, J. F., Rabe, K. F., Papi, A., Wenzel, S. E., Ford, L. B., Pavord, I. D., Zhang, B., Staudinger, H., Pirozzi, G., Amin, N., Akinlade, B., Eckert, L., Chao, J., Graham, N. M. H. and Teper, A.
+Year: 2018
+Title: Liberty Asthma QUEST: Phase 3 Randomized, Double-Blind, Placebo-Controlled, Parallel-Group Study to Evaluate Dupilumab Efficacy/Safety in Patients with Uncontrolled, Moderate-to-Severe Asthma
+Journal: Adv Ther
+Volume: 35
+Issue: 5
+Pages: 737-748
+Epub Date: 20180503
+Date: May
+Short Title: Liberty Asthma QUEST: Phase 3 Randomized, Double-Blind, Placebo-Controlled, Parallel-Group Study to Evaluate Dupilumab Efficacy/Safety in Patients with Uncontrolled, Moderate-to-Severe Asthma
+ISSN: 0741-238X (Print)
+0741-238x
+DOI: 10.1007/s12325-018-0702-4
+PMCID: PMC5960488
+Accession Number: 29725983
+Keywords: Adolescent
+Adult
+Anti-Asthmatic Agents/administration & dosage/adverse effects/classification
+*Antibodies, Monoclonal/administration & dosage/adverse effects
+Antibodies, Monoclonal, Humanized
+*Asthma/diagnosis/drug therapy/psychology
+Double-Blind Method
+Drug Therapy, Combination/methods
+Female
+Humans
+Injections, Subcutaneous
+Interleukin-4 Receptor alpha Subunit/*antagonists & inhibitors
+Male
+Middle Aged
+*Quality of Life
+Respiratory Function Tests/methods
+Severity of Illness Index
+Treatment Outcome
+*Asthma
+*Dupilumab
+*Randomized controlled trial
+*Respiratory
+Abstract: INTRODUCTION: Dupilumab, a fully human anti-IL-4Rα monoclonal antibody, inhibits signaling of both interleukin (IL)-4 and IL-13, which are key drivers of type 2-mediated inflammation. Dupilumab is approved in the EU, USA, and other countries for the treatment of adults with inadequately controlled moderate-to-severe atopic dermatitis. Following positive phase 2 results in asthma, the phase 3 Liberty Asthma QUEST trial was initiated to provide further evidence for dupilumab efficacy and safety in patients with uncontrolled, moderate-to-severe asthma. METHODS: Liberty Asthma QUEST is a phase 3, multinational, multicenter, randomized, double-blind, placebo-controlled, parallel-group trial (NCT02414854) in patients with persistent asthma who are receiving continuous treatment with inhaled corticosteroids (ICS) plus one or two other asthma controller medicines. A total of 1902 patients (aged ≥ 12 years) were randomized in a 2:2:1:1 ratio to receive 52 weeks of add-on therapy with subcutaneously administered dupilumab 200 or 300 mg every 2 weeks or matched placebo. The study consisted of a 4 ± 1-week screening period, 52-week randomized treatment period, and 12-week post-treatment follow-up period. All patients continued to receive their prescribed ICS plus up to two additional controller medications. The primary efficacy endpoints were annualized rate of severe exacerbation events during the 52-week treatment period and absolute change from baseline in pre-bronchodilator FEV(1) at week 12. CONCLUSION: Uncontrolled asthma patients with persistent symptoms represent a population of significant unmet need, for whom new treatments are required. Patients with severe asthma are at high risk of asthma exacerbations, and face an accelerated decline in lung function and impaired quality of life. QUEST examines the efficacy of dupilumab in this at-risk patient population; it is the largest placebo-controlled study in uncontrolled, moderate-to-severe asthma with a biologic agent to date, and the only phase 3 study of a biologic therapy of asthma that enrolled patients irrespective of baseline type 2 inflammatory biomarker levels. FUNDING: Sanofi and Regeneron Pharmaceuticals, Inc. CLINICAL TRIALS. GOV IDENTIFIER: NCT02414854.
+Notes: 1865-8652
+Busse, William W
+Maspero, Jorge F
+Rabe, Klaus F
+Papi, Alberto
+Wenzel, Sally E
+Ford, Linda B
+Pavord, Ian D
+Zhang, Bingzhi
+Staudinger, Heribert
+Pirozzi, Gianluca
+Amin, Nikhil
+Akinlade, Bolanle
+Eckert, Laurent
+Chao, Jingdong
+Graham, Neil M H
+Teper, Ariel
+Clinical Trial, Phase III
+Journal Article
+Randomized Controlled Trial
+United States
+2018/05/05
+Adv Ther. 2018 May;35(5):737-748. doi: 10.1007/s12325-018-0702-4. Epub 2018 May 3.
+Author Address: Allergy, Pulmonary and Critical Care Medicine, University of Wisconsin, Madison, WI, USA. wwb@medicine.wisc.edu.
+Fundación CIDEA, Buenos Aires, Argentina.
+Christian Albrechts University, Kiel, Germany.
+University Hospital Santa Anna, Ferrara, Italy.
+University of Pittsburgh, Pittsburgh, PA, USA.
+Asthma and Allergy Center, Bellevue, NE, USA.
+Respiratory Medicine Unit and Oxford Respiratory NIHR BRC, Nuffield Department of Medicine, University of Oxford, Oxford, UK.
+Sanofi, Bridgewater, NJ, USA.
+Regeneron Pharmaceuticals, Inc., Tarrytown, NY, USA.
+Sanofi, Chilly-Mazarin, France.
+Database Provider: NLM
+Language: eng

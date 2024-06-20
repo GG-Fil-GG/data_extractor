@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Extraction Interface</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Add your CSS here */
+    </style>
+</head>
+<body>
+    <h1>Data Extraction Interface</h1>
+
+    <!-- Documents Section -->
+    <div id="documents-section">
+        <h2>Documents</h2>
+        <input type="file" id="documents" name="documents" multiple>
+        <div id="documents-list"></div>
+    </div>
+
+    <!-- Queries Section -->
+    <div id="queries-section">
+        <h2>Queries</h2>
+        <button id="add-query">Add Query</button>
+        <div id="queries-list"></div>
+    </div>
+
+    <!-- Export Options Section -->
+    <div id="export-section">
+        <h2>Export Options</h2>
+        <label for="export_format">Export Format:</label>
+        <select id="export_format">
+            <option value="">Select format</option>
+            <option value="csv">CSV</option>
+            <option value="docx">DOCX</option>
+        </select>
+        <label for="orientation">Orientation:</label>
+        <select id="orientation">
+            <option value="">Select orientation</option>
+            <option value="doc_row">Documents in rows</option>
+            <option value="query_row">Queries in rows</option>
+        </select>
+    </div>
+
+    <!-- Begin Extraction Button -->
+    <button id="begin-extraction" disabled>Begin Extraction</button>
+
+    <!-- Progress and Results Section -->
+    <div id="progress-section" style="display: none;">
+        <h2>Extraction Progress</h2>
+        <div id="progress-messages"></div>
+        <a id="download-link" style="display: none;">Download Results</a>
+    </div>
+
+    <script>
+        let documents = [];
+        let queries = [];
+        let export_format = '';
+        let orientation = '';
+
+        $(document).ready(function() {
+            // Handle file selection
+            $('#documents').on('change', function() {
+                let files = this.files;
+                for (let i = 0; i < files.length; i++) {
+                    let file = files[i];
+                    let fileEntry = {
+                        file: file,
+                        alias: file.name,
+                        ext: file.name.split('.').pop()
+                    };
+                    documents.push(fileEntry);
+                }
+                renderDocumentList();
+                validateInputs();
+            });
+
+            // Handle alias change
+            $(document).on('input', '.document-alias', function() {
+                let index = $(this).data('index');
+                documents[index].alias = $(this).val();
+                validateInputs();
+            });
+
+            // Handle remove document
+            $(document).on('click', '.remove-document', function() {
+                let index = $(this).data('index');
+                documents.splice(index, 1);
+                renderDocumentList();
+                validateInputs();
+            });
+
+            // Render document list
+            function renderDocumentList() {
+                let documentsList = $('#documents-list');
+                documentsList.empty();
+                for (let i = 0; i < documents.length; i++) {
+                    let document = documents[i];
+                    documentsList.append(`
+                        <div data-index="${i}">
+                            <input type="text" value="${document.alias}" data-index="${i}" class="document-alias">
+                            <button class="remove-document" data-index="${i}">Remove</button>
+                        </div>
+                    `);
+                }
+            }
+
+            // Handle query addition
+            $('#add-query').on('click', function() {
+                let queryCount = queries.length;
+                queries.push({
+                    alias: `Query ${queryCount + 1}`,
+                    text: '',
+                    format: 'free-form'
+                });
+                renderQueryList();
+                validateInputs();
+            });
+
+            // Handle query text change
+            $(document).on('input', '.query-text', function() {
+                let index = $(this).data('index');
+                queries[index].text = $(this).val();
+                validateInputs();
+            });
+
+            // Handle query alias change
+            $(document).on('input', '.query-alias', function() {
+                let index = $(this).data('index');
+                queries[index].alias = $(this).val();
+                validateInputs();
+            });
+
+            // Handle query format change
+            $(document).on('change', '.query-format', function() {
+                let index = $(this).data('index');
+                queries[index].format = $(this).val();
+                validateInputs();
+            });
+
+            // Handle remove query
+            $(document).on('click', '.remove-query', function() {
+                let index = $(this).data('index');
+                queries.splice(index, 1);
+                renderQueryList();
+                validateInputs();
+            });
+
+            // Render query list
+            function renderQueryList() {
+                let queriesList = $('#queries-list');
+                queriesList.empty();
+                for (let i = 0; i < queries.length; i++) {
+                    let query = queries[i];
+                    queriesList.append(`
+                        <div class="query-item" data-index="${i}">
+                            <input type="text" class="query-text" value="${query.text}" data-index="${i}">
+                            <input type="text" class="query-alias" value="${query.alias}" data-index="${i}">
+                            <select class="query-format" data-index="${i}">
+                                <option value="free-form" ${query.format === 'free-form' ? 'selected' : ''}>free-form</option>
+                                <option value="integer" ${query.format === 'integer' ? 'selected' : ''}>integer</option>
+                                <option value="floating-point number" ${query.format === 'floating-point number' ? 'selected' : ''}>floating-point number</option>
+                                <option value="comma-separated list" ${query.format === 'comma-separated list' ? 'selected' : ''}>comma-separated list</option>
+                                <option value="yes/no" ${query.format === 'yes/no' ? 'selected' : ''}>yes/no</option>
+                                <option value="median (95% CI)" ${query.format === 'median (95% CI)' ? 'selected' : ''}>median (95% CI)</option>
+                                <option value="mean (SD)" ${query.format === 'mean (SD)' ? 'selected' : ''}>mean (SD)</option>
+                                <option value="mean (SE)" ${query.format === 'mean (SE)' ? 'selected' : ''}>mean (SE)</option>
+                                <option value="range" ${query.format === 'range' ? 'selected' : ''}>range</option>
+                                <option value="date (DD-MM-YYYY)" ${query.format === 'date (DD-MM-YYYY)' ? 'selected' : ''}>date (DD-MM-YYYY)</option>
+                            </select>
+                            <button class="remove-query" data-index="${i}">Remove</button>
+                        </div>
+                    `);
+                }
+            }
+
+            // Validate inputs to enable the Begin Extraction button
+            function validateInputs() {
+                let valid = documents.length > 0 && queries.length > 0 && export_format && orientation;
+                $('#begin-extraction').prop('disabled', !valid);
+            }
+
+            // Handle export format and orientation change
+            $('#export_format').on('change', function() {
+                export_format = $(this).val();
+                validateInputs();
+            });
+
+            $('#orientation').on('change', function() {
+                orientation = $(this).val();
+                validateInputs();
+            });
+
+            // Begin extraction
+            $('#begin-extraction').on('click', function() {
+                // Disable input fields
+                $('#documents-section input, #queries-section input, #export-section select').prop('disabled', true);
+                $('#begin-extraction').prop('disabled', true);
+
+                let formData = new FormData();
+                documents.forEach((doc, index) => {
+                    formData.append('files', doc.file);
+                    formData.append(`doc_alias_${index}`, doc.alias);
+                    formData.append(`doc_ext_${index}`, doc.ext);
+                });
+
+                queries.forEach((query, index) => {
+                    if (query.text && query.alias && query.format) { // Add validation here
+                        formData.append(`query_text_${index}`, query.text);
+                        formData.append(`query_alias_${index}`, query.alias);
+                        formData.append(`query_format_${index}`, query.format);
+                    }
+                });
+
+                formData.append('export_format', export_format);
+                formData.append('orientation', orientation);
+
+                $.ajax({
+                    url: '/begin_extraction',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(jobData) {
+                        $('#progress-section').show();
+                        $('#progress-messages').text('Extraction complete!');
+                        $('#download-link').attr('href', `/download_results/${jobData['Job ID']}`).text('Download Results').show();
+                    },
+                    error: function(xhr, status, error) {
+                        $('#progress-section').show();
+                        $('#progress-messages').text('Extraction failed. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

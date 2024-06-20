@@ -1,0 +1,68 @@
+Reference Type:  Journal Article
+Record Number: 28
+Author: Bachert, C., Han, J. K., Desrosiers, M. Y., Gevaert, P., Heffler, E., Hopkins, C., Tversky, J. R., Barker, P., Cohen, D., Emson, C., Martin, U. J., Shih, V. H., Necander, S., Kreindler, J. L., Jison, M. and Werkström, V.
+Year: 2022
+Title: Efficacy and safety of benralizumab in chronic rhinosinusitis with nasal polyps: A randomized, placebo-controlled trial
+Journal: J Allergy Clin Immunol
+Volume: 149
+Issue: 4
+Pages: 1309-1317.e12
+Epub Date: 20210929
+Date: Apr
+Short Title: Efficacy and safety of benralizumab in chronic rhinosinusitis with nasal polyps: A randomized, placebo-controlled trial
+ISSN: 0091-6749
+DOI: 10.1016/j.jaci.2021.08.030
+Accession Number: 34599979
+Keywords: Antibodies, Monoclonal, Humanized/adverse effects
+Chronic Disease
+Humans
+*Nasal Obstruction/chemically induced/drug therapy
+*Nasal Polyps/chemically induced/complications/drug therapy
+*Rhinitis/chemically induced/complications/drug therapy
+*Sinusitis/chemically induced/complications/drug therapy
+Eosinophils
+IL-5 receptor
+biologic
+eosinophilia
+intranasal corticosteroids
+nasal blockage
+nasal polyposis
+sinonasal polyposis
+systemic corticosteroids
+type 2 inflammation
+Abstract: BACKGROUND: Eosinophilic inflammation has been implicated in the pathogenesis, severity, and treatment responsiveness of chronic rhinosinusitis with nasal polyps (CRSwNP). OBJECTIVE: We sought to assess the efficacy and safety of benralizumab-mediated eosinophil depletion for treating CRSwNP. METHODS: The phase 3 OSTRO study enrolled patients with severe CRSwNP who were symptomatic despite treatment with intranasal corticosteroids and who had a history of systemic corticosteroid (SCS) use and/or surgery for nasal polyps (NP). Patients were randomized 1:1 to treatment with benralizumab 30 mg or placebo every 4 weeks for the first 3 doses and every 8 weeks thereafter. Coprimary end points were change from baseline to week 40 in NP score (NPS) and patient-reported mean nasal blockage score reported once every 2 weeks. RESULTS: The study population comprised 413 randomized patients (207 in the benralizumab group and 206 in the placebo group). Benralizumab significantly improved NPS and nasal blockage score compared to placebo at week 40 (P ≤ .005). Improvements in Sinonasal Outcome Test 22 score at week 40, time to first NP surgery and/or SCS use for NP, and time to first NP surgery were not statistically significant between treatment groups. Nominal significance was obtained for improvement in difficulty in sense of smell score at week 40 (P = .003). Subgroup analyses suggested influences of comorbid asthma, number of NP surgeries, sex, body mass index, and baseline blood eosinophil count on treatment effects. Benralizumab was safe and well tolerated. CONCLUSION: Benralizumab, when added to standard-of-care therapy, reduced NPS, decreased nasal blockage, and reduced difficulty with sense of smell compared to placebo in patients with CRSwNP. TRIAL REGISTRATION: ClinicalTrials.gov NCT03401229.
+Notes: 1097-6825
+Bachert, Claus
+Han, Joseph K
+Desrosiers, Martin Y
+Gevaert, Philippe
+Heffler, Enrico
+Hopkins, Claire
+Tversky, Jody R
+Barker, Peter
+Cohen, David
+Emson, Claire
+Martin, Ubaldo J
+Shih, Vivian H
+Necander, Sofia
+Kreindler, James L
+Jison, Maria
+Werkström, Viktoria
+Journal Article
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+United States
+2021/10/03
+J Allergy Clin Immunol. 2022 Apr;149(4):1309-1317.e12. doi: 10.1016/j.jaci.2021.08.030. Epub 2021 Sep 29.
+Author Address: Upper Airways Research Laboratory, Ghent University, Ghent, Belgium. Electronic address: Claus.Bachert@UGent.be.
+Eastern Virginia Medical School, Norfolk, Va.
+Centre de recherche du Centre hospitalier de l'Université de Montréal (CRCHUM), Montréal, Québec, Canada.
+Upper Airways Research Laboratory, Ghent University, Ghent, Belgium.
+Humanitas Clinical and Research Center, IRCCS, Rozzano, Italy; Humanitas University, Pieve Emanuele, Italy.
+Guy's and St Thomas' NHS Trust, London, United Kingdom.
+Johns Hopkins University, Baltimore, Md.
+AstraZeneca, Gaithersburg, Md.
+Translational Science and Experimental Medicine, Research and Early Development, Respiratory and Immunology, BioPharmaceuticals R&D, AstraZeneca, Gaithersburg, Md.
+AstraZeneca, Gothenburg, Sweden.
+Database Provider: NLM
+Language: eng

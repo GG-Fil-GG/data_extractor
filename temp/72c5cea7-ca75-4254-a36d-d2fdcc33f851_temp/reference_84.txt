@@ -1,0 +1,54 @@
+Reference Type:  Journal Article
+Record Number: 290
+Author: Casale, T. B., Burnette, A., Bourdin, A., Howarth, P., Hahn, B., Stach-Klysh, A. and Khurana, S.
+Year: 2022
+Title: Oral corticosteroid-sparing effects of mepolizumab in severe eosinophilic asthma: evidence from randomized controlled trials and real-world studies
+Journal: Ther Adv Respir Dis
+Volume: 16
+Pages: 17534666221107313
+Date: Jan-Dec
+Short Title: Oral corticosteroid-sparing effects of mepolizumab in severe eosinophilic asthma: evidence from randomized controlled trials and real-world studies
+ISSN: 1753-4658 (Print)
+1753-4658
+DOI: 10.1177/17534666221107313
+Legal Note: Conflict of interest statement: The authors declared the following potential conflicts of interest with respect to the research, authorship, and/or publication of this article: TBC has received/is pending research grants from Novartis, Genentech, Sanofi, and Regeneron; has received honoraria for speakers bureau from Genentech and Sanofi and has received consulting and advisory board fees from GSK, Novartis, Genentech, Sanofi, Regeneron, and AstraZeneca. AuB has received consulting and speaking fees from GSK independent of this activity, and consultant and speaking fees from AstraZeneca, Sanofi Genzyme, and Regeneron. ArB reports receiving personal fees, research grants, and non-financial support from GSK; personal fees and non-financial support from AstraZeneca and Novartis; research grants from MSD; research grant and personal fees from Actelion; and personal fees and non-financial support from Chiesi. PH and AS-K are employees of GSK and own stocks/shares. BH is a former employee of GSK and owns stocks/shares. SK has received research support from GSK and Sanofi; is a co-editor for a textbook for Springer, and is a Regent-at-Large for CHEST.
+PMCID: PMC9386863
+Accession Number: 35972211
+Keywords: Adrenal Cortex Hormones
+*Anti-Asthmatic Agents/adverse effects
+Antibodies, Monoclonal, Humanized
+*Asthma/diagnosis/drug therapy
+Humans
+*Pulmonary Eosinophilia/diagnosis/drug therapy
+Quality of Life
+Randomized Controlled Trials as Topic
+biologics
+eosinophilic asthma
+mepolizumab
+oral corticosteroid-sparing
+oral corticosteroids
+tapering
+Abstract: Oral corticosteroids (OCS) have long been a mainstay of treatment for asthma exacerbations and chronic severe asthma. However, it is increasingly recognized that both long-term and short-term OCS use are directly associated with a wide range of serious adverse effects, and as such OCS-sparing treatment alternatives are now widely recommended for patients with severe asthma. While several international guidelines recommend these treatments, guidance on OCS tapering, and which patients are most likely to tolerate OCS reduction and/or discontinuation, is still lacking. Several biologics have demonstrated efficacy in patients with OCS-dependent asthma. One OCS-sparing treatment is the anti-interleukin-5 monoclonal antibody mepolizumab, which is approved for the treatment of severe eosinophilic asthma. In addition to improved exacerbation rates, asthma control, quality of life, and lung function among patients with severe eosinophilic asthma, mepolizumab also has an OCS-sparing effect, which has been demonstrated in randomized controlled trials and real-world studies. Both physicians and patients express concerns about the adverse effects of OCS, and additional data from the randomized, controlled SIRIUS trial (NCT01691508) highlight the high level of concern among patients regarding OCS-related burden. In this article, we discuss current guidance on OCS-sparing strategies for patients with severe asthma, provide a summary of the available evidence of the OCS-sparing effect of mepolizumab, and highlight patient and physician perspectives on the use of OCS and OCS-sparing treatments in severe asthma.
+Notes: 1753-4666
+Casale, Thomas B
+Burnette, Autumn
+Bourdin, Arnaud
+Howarth, Peter
+Hahn, Beth
+Stach-Klysh, Alexandra
+Orcid: 0000-0003-3465-7943
+Khurana, Sandhya
+Journal Article
+Research Support, Non-U.S. Gov't
+England
+2022/08/17
+Ther Adv Respir Dis. 2022 Jan-Dec;16:17534666221107313. doi: 10.1177/17534666221107313.
+Author Address: Division of Allergy and Immunology, University of South Florida, Tampa, FL, USA.
+Division of Allergy and Immunology, Howard University Hospital, Washington, DC, USA.
+Department of Respiratory Diseases, PhyMedExp, INSERM, CNRS, CHU de Montpellier, Université de Montpellier, Montpellier, France.
+Respiratory Medical Franchise, GSK, Brentford, UK.
+US Medical Affairs, GlaxoSmithKline, Research Triangle Park, NC, USA.
+US Medical Affairs, GlaxoSmithKline, 5 Moore Drive, Research Triangle Park, NC 27709-3398, USA.
+Mary Parkes Center for Asthma, Division of Pulmonary and Critical Care Medicine, University of Rochester School of Medicine and Dentistry, Rochester, NY, USA.
+Database Provider: NLM
+Language: eng

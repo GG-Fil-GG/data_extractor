@@ -1,0 +1,53 @@
+Reference Type:  Journal Article
+Record Number: 353
+Author: Bateman, E. D., Khan, A. H., Xu, Y., Guyot, P., Chao, J., Kamat, S., Rowe, P., Burnett, H., Msihid, J., Weinreich, D. and Pavord, I. D.
+Year: 2022
+Title: Pairwise indirect treatment comparison of dupilumab versus other biologics in patients with uncontrolled persistent asthma
+Journal: Respir Med
+Volume: 191
+Pages: 105991
+Epub Date: 20200429
+Date: Jan
+Short Title: Pairwise indirect treatment comparison of dupilumab versus other biologics in patients with uncontrolled persistent asthma
+ISSN: 0954-6111
+DOI: 10.1016/j.rmed.2020.105991
+Accession Number: 35090688
+Keywords: *Anti-Asthmatic Agents
+Antibodies, Monoclonal, Humanized
+*Asthma
+*Biological Products/therapeutic use
+Child
+Humans
+Omalizumab/therapeutic use
+Asthma
+Biologics
+Dupilumab
+Exacerbations
+Fev(1)
+Lung function
+Abstract: BACKGROUND: Currently, five biologic treatment options are available for use in patients with uncontrolled persistent asthma: three interleukin (IL)-5 antagonists, which either bind to the anti-IL-5 ligand (mepolizumab, reslizumab) or to the IL-5 receptor (benralizumab); one anti-immunoglobulin E (anti-IgE) therapy (omalizumab); and one anti-IL-4/IL-13 therapy (dupilumab). To date, no comparative data from head-to-head clinical trials are available for these biologics. OBJECTIVE: An indirect treatment comparison (ITC) of dupilumab versus each of the anti-IL-5 and anti-IgE therapies using the endpoints of annualized severe asthma exacerbation rates and change in pre-bronchodilator forced expiratory volume in 1 s (FEV(1)). METHODS: Embase®, MEDLINE®, and Cochrane Central Register of Controlled Trials (CENTRAL) were searched for studies published between January 1, 1980 and March 25, 2019. Eligible articles included randomized controlled trials (RCTs) in patients aged ≥ 12 years with persistent/uncontrolled asthma using at least medium-to-high dose inhaled corticosteroid plus long-acting β(2)-agonist with add-on biologic therapy. Bucher ITCs were performed to compare subgroups of dupilumab patients with the anti-IL-5s and anti-IgE trial populations. RESULTS: Fourteen RCTs were included in the analyses. The matched dupilumab subgroups were associated with greater reductions in annualized severe exacerbation rates compared with benralizumab, mepolizumab, reslizumab, and omalizumab (54%, 28%, 38%, and 26% greater reduction, respectively). A greater improvement in FEV(1) was also observed for dupilumab at week 12 and/or week 24/52 than for the other biologics (0.06-0.14 L). CONCLUSION: In this ITC, dupilumab was associated with lower severe asthma exacerbation rates and greater improvements in lung function than anti-IL-5s and omalizumab.
+Notes: 1532-3064
+Bateman, Eric D
+Khan, Asif H
+Xu, Yingxin
+Guyot, Patricia
+Chao, Jingdong
+Kamat, Siddhesh
+Rowe, Paul
+Burnett, Heather
+Msihid, Jerome
+Weinreich, David
+Pavord, Ian D
+Journal Article
+Research Support, Non-U.S. Gov't
+England
+2022/01/30
+Respir Med. 2022 Jan;191:105991. doi: 10.1016/j.rmed.2020.105991. Epub 2020 Apr 29.
+Author Address: Division of Pulmonology, Department of Medicine, University of Cape Town, Cape Town, South Africa. Electronic address: eric.bateman@uct.ac.za.
+Sanofi, Chilly-Mazarin, France.
+Regeneron Pharmaceuticals, Inc., Tarrytown, NY, USA.
+Sanofi, Bridgewater, NJ, USA.
+Evidera, St-Laurent, Quebec, Canada.
+Oxford Respiratory NIHR BRC, Nuffield Department of Medicine, University of Oxford, Oxford, UK.
+Database Provider: NLM
+Language: eng

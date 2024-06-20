@@ -1,0 +1,44 @@
+Reference Type:  Journal Article
+Record Number: 88
+Author: Abonia, J. P. and Putnam, P. E.
+Year: 2011
+Title: Mepolizumab in eosinophilic disorders
+Journal: Expert Rev Clin Immunol
+Volume: 7
+Issue: 4
+Pages: 411-7
+Date: Jul
+Short Title: Mepolizumab in eosinophilic disorders
+ISSN: 1744-666X (Print)
+1744-666x
+DOI: 10.1586/eci.11.27
+Legal Note: Financial & competing interests disclosure The authors have no other relevant affiliations or financial involvement with any organization or entity with a financial interest in or financial conflict with the subject matter or materials discussed in the manuscript apart from those disclosed. No writing assistance was utilized in the production of this manuscript.
+PMCID: PMC3201786
+NIHMSID: NIHMS316949
+Accession Number: 21790283
+Keywords: Animals
+Antibodies, Monoclonal/pharmacology/*therapeutic use
+Antibodies, Monoclonal, Humanized
+Asthma/*drug therapy/immunology
+Churg-Strauss Syndrome/*drug therapy/immunology
+Clinical Trials as Topic
+Drug Evaluation, Preclinical
+Eosinophilia
+Eosinophils/*drug effects/immunology
+Humans
+Hypereosinophilic Syndrome/*drug therapy/immunology
+Interleukin-5/immunology/metabolism
+Abstract: Mepolizumab (Bosatria(®), GlaxoSmithKline) is a biologic agent developed to treat asthma. It represents a humanized monoclonal antibody of IgG1 κ type, which targets human IL-5 and thus prevents its interaction with the α-chain of the IL-5 receptor. To date, it has not been approved for use in any eosinophil-related disorder; however, several studies have suggested some therapeutic benefit across a spectrum of eosinophil-related disorders. This article evaluates the currently available preclinical and clinical studies, and the impact of mepolizumab against a variety of eosinophilic disorders.
+Notes: 1744-8409
+Abonia, J Pablo
+Putnam, Philip E
+R01 DK076893/DK/NIDDK NIH HHS/United States
+R01 DK076893-03S1/DK/NIDDK NIH HHS/United States
+Journal Article
+Review
+England
+2011/07/28
+Expert Rev Clin Immunol. 2011 Jul;7(4):411-7. doi: 10.1586/eci.11.27.
+Author Address: Division of Allergy and Immunology, Cincinnati Children's Hospital Medical Center, University of Cincinnati College of Medicine, 3333 Burnet Avenue, ML2010, Cincinnati, OH 45229-3039, USA.
+Database Provider: NLM
+Language: eng

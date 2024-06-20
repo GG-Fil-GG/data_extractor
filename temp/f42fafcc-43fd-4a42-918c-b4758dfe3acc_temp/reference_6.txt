@@ -1,0 +1,61 @@
+Reference Type:  Journal Article
+Record Number: 22
+Author: Akenroye, A., Lassiter, G., Jackson, J. W., Keet, C., Segal, J., Alexander, G. C. and Hong, H.
+Year: 2022
+Title: Comparative efficacy of mepolizumab, benralizumab, and dupilumab in eosinophilic asthma: A Bayesian network meta-analysis
+Journal: J Allergy Clin Immunol
+Volume: 150
+Issue: 5
+Pages: 1097-1105.e12
+Epub Date: 20220627
+Date: Nov
+Short Title: Comparative efficacy of mepolizumab, benralizumab, and dupilumab in eosinophilic asthma: A Bayesian network meta-analysis
+ISSN: 0091-6749 (Print)
+0091-6749
+DOI: 10.1016/j.jaci.2022.05.024
+Legal Note: Disclosures: Dr. Alexander is past Chair and a current member of FDA’s Peripheral and Central Nervous System Advisory Committee; is a co-founding Principal and equity holder in Monument Analytics, a health care consultancy whose clients include the life sciences industry as well as plaintiffs in opioid litigation; and is a past member of OptumRx’s National P&T Committee. All other authors have no conflicts of interest to disclose.
+PMCID: PMC9643621
+NIHMSID: NIHMS1821100
+Accession Number: 35772597
+Keywords: Humans
+Network Meta-Analysis
+Bayes Theorem
+*Asthma/drug therapy/chemically induced
+*Pulmonary Eosinophilia/drug therapy
+Eosinophils
+*Anti-Asthmatic Agents/adverse effects
+Asthma
+Bayesian
+benralizumab
+comparative effectiveness
+dupilumab
+eosinophilic
+mepolizumab
+monoclonal antibody
+Abstract: BACKGROUND: The comparative safety and efficacy of the biologics currently approved for asthma are unclear. OBJECTIVE: We compared the safety and efficacy of mepolizumab, benralizumab, and dupilumab in individuals with severe eosinophilic asthma. METHODS: We performed a systematic review of peer-reviewed literature published 2000 to 2021. We studied Bayesian network meta-analyses of exacerbation rates, prebronchodilator FEV(1), the Asthma Control Questionnaire, and serious adverse events in individuals with eosinophilic asthma. RESULTS: Eight randomized clinical trials (n = 6461) were identified. We found in individuals with eosinophils ≥300 cells/μL the following: in reducing exacerbation rates compared to placebo: dupilumab (risk ratio [RR], 0.32; 95% credible interval [CI], 0.23 to 0.45), mepolizumab (RR, 0.37; 95% CI, 0.30 to 0.45), and benralizumab (RR, 0.49; 95% CI, 0.43 to 0.55); in improving FEV(1): dupilumab (mean difference in milliliters [MD] 230; 95% CI, 160 to 300), benralizumab (MD, 150; 95% CI, 100 to 200), and mepolizumab (MD, 150; 95% CI, 66 to 220); and in reducing Asthma Control Questionnaire scores: mepolizumab (MD, -0.63; 95% CI, -0.81 to -0.45), dupilumab (MD, -0.48; 95% CI, -0.83 to -0.14), and benralizumab (MD, -0.32; 95% CI, -0.43 to -0.21). In individuals with eosinophils 150-299 cells/μL, benralizumab (RR, 0.62; 95% CI, 0.52 to 0.73) and dupilumab (RR, 0.60; 95% CI, 0.38 to 0.95) were associated with lower exacerbation rates; and only benralizumab (MD, 81; 95% CI, 8 to 150) significantly improved FEV(1). These differences were minimal compared to clinically important thresholds. For serious adverse events in the overall population, mepolizumab (odds ratio, 0.67; 95% CI, 0.48 to 0.92) and benralizumab (odds ratio, 0.74; 95% CI, 0.59 to 0.93) were associated with lower odds of a serious adverse event, while dupilumab was not different from placebo (odds ratio, 1.0; 95% CI, 0.74 to 1.4). CONCLUSION: There are minimal differences in the efficacy and safety of mepolizumab, benralizumab, and dupilumab in eosinophilic asthma.
+Notes: 1097-6825
+Akenroye, Ayobami
+Lassiter, Grace
+Jackson, John W
+Keet, Corinne
+Segal, Jodi
+Alexander, G Caleb
+Hong, Hwanhee
+K99 MD015767/MD/NIMHD NIH HHS/United States
+T32 HL139426/HL/NHLBI NIH HHS/United States
+Journal Article
+Meta-Analysis
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+Systematic Review
+United States
+2022/07/01
+J Allergy Clin Immunol. 2022 Nov;150(5):1097-1105.e12. doi: 10.1016/j.jaci.2022.05.024. Epub 2022 Jun 27.
+Author Address: Division of Allergy and Clinical Immunology Brigham and Women's Hospital and Harvard Medical School, Boston, Mass; Channing Division of Network Medicine, Brigham and Women's Hospital and Harvard Medical School, Boston, Mass; Department of Epidemiology, Johns Hopkins Bloomberg School of Public Health, Baltimore, Md. Electronic address: aakenroye@bwh.harvard.edu.
+Georgetown College of Medicine, Washington, DC.
+Department of Epidemiology, Johns Hopkins Bloomberg School of Public Health, Baltimore, Md; Center for Drug Safety and Effectiveness, Johns Hopkins Bloomberg School of Public Health, Baltimore, Md; Department of Mental Health, Johns Hopkins Bloomberg School of Public Health, Baltimore, Md.
+Division of Pediatric Allergy and Immunology, University of North Carolina, Chapel Hill, NC.
+Department of Epidemiology, Johns Hopkins Bloomberg School of Public Health, Baltimore, Md; Center for Drug Safety and Effectiveness, Johns Hopkins Bloomberg School of Public Health, Baltimore, Md; Division of General Internal Medicine, Johns Hopkins University School of Medicine, Baltimore, Md.
+Department of Biostatistics and Bioinformatics, Duke University, Durham, NC.
+Database Provider: NLM
+Language: eng

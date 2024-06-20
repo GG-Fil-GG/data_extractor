@@ -1,0 +1,69 @@
+Reference Type:  Journal Article
+Record Number: 13
+Author: Beck, L. A., Thaçi, D., Hamilton, J. D., Graham, N. M., Bieber, T., Rocklin, R., Ming, J. E., Ren, H., Kao, R., Simpson, E., Ardeleanu, M., Weinstein, S. P., Pirozzi, G., Guttman-Yassky, E., Suárez-Fariñas, M., Hager, M. D., Stahl, N., Yancopoulos, G. D. and Radin, A. R.
+Year: 2014
+Title: Dupilumab treatment in adults with moderate-to-severe atopic dermatitis
+Journal: N Engl J Med
+Volume: 371
+Issue: 2
+Pages: 130-9
+Date: Jul 10
+Short Title: Dupilumab treatment in adults with moderate-to-severe atopic dermatitis
+ISSN: 0028-4793
+DOI: 10.1056/NEJMoa1314768
+Accession Number: 25006719
+Keywords: Administration, Topical
+Adult
+Antibodies, Monoclonal/adverse effects/*therapeutic use
+Antibodies, Monoclonal, Humanized
+Biomarkers/blood
+Chemokine CCL17/blood
+Dermatitis, Atopic/*drug therapy/genetics/metabolism
+Dermatologic Agents/adverse effects/*therapeutic use
+Dose-Response Relationship, Drug
+Double-Blind Method
+Drug Therapy, Combination
+Female
+Glucocorticoids/adverse effects/therapeutic use
+Humans
+Immunoglobulin E/blood
+Injections, Subcutaneous
+Interleukin-13/antagonists & inhibitors
+Interleukin-4/antagonists & inhibitors
+Male
+Severity of Illness Index
+Skin/metabolism
+Transcriptome/physiology
+Abstract: BACKGROUND: Dupilumab, a fully human monoclonal antibody that blocks interleukin-4 and interleukin-13, has shown efficacy in patients with asthma and elevated eosinophil levels. The blockade by dupilumab of these key drivers of type 2 helper T-cell (Th2)-mediated inflammation could help in the treatment of related diseases, including atopic dermatitis. METHODS: We performed randomized, double-blind, placebo-controlled trials involving adults who had moderate-to-severe atopic dermatitis despite treatment with topical glucocorticoids and calcineurin inhibitors. Dupilumab was evaluated as monotherapy in two 4-week trials and in one 12-week trial and in combination with topical glucocorticoids in another 4-week study. End points included the Eczema Area and Severity Index (EASI) score, the investigator's global assessment score, pruritus, safety assessments, serum biomarker levels, and disease transcriptome. RESULTS: In the 4-week monotherapy studies, dupilumab resulted in rapid and dose-dependent improvements in clinical indexes, biomarker levels, and the transcriptome. The results of the 12-week study of dupilumab monotherapy reproduced and extended the 4-week findings: 85% of patients in the dupilumab group, as compared with 35% of those in the placebo group, had a 50% reduction in the EASI score (EASI-50, with higher scores in the EASI indicating greater severity of eczema) (P<0.001); 40% of patients in the dupilumab group, as compared with 7% in the placebo group, had a score of 0 to 1 (indicating clearing or near-clearing of skin lesions) on the investigator's global assessment (P<0.001); and pruritus scores decreased (indicating a reduction in itch) by 55.7% in the dupilumab group versus 15.1% in the placebo group (P<0.001). In the combination study, 100% of the patients in the dupilumab group, as compared with 50% of those who received topical glucocorticoids with placebo injection, met the criterion for EASI-50 (P=0.002), despite the fact that patients who received dupilumab plus glucocorticoids used less than half the amount of topical glucocorticoids used by those who received placebo plus the topical medication (P=0.16). Adverse events, such as skin infection, occurred more frequently with placebo; nasopharyngitis and headache were the most frequent adverse events with dupilumab. CONCLUSIONS: Patients treated with dupilumab had marked and rapid improvement in all the evaluated measures of atopic dermatitis disease activity. Side-effect profiles were not dose-limiting. (Funded by Regeneron Pharmaceuticals and Sanofi; ClinicalTrials.gov numbers, NCT01259323, NCT01385657, NCT01639040, and NCT01548404.).
+Notes: 1533-4406
+Beck, Lisa A
+Thaçi, Diamant
+Hamilton, Jennifer D
+Graham, Neil M
+Bieber, Thomas
+Rocklin, Ross
+Ming, Jeffrey E
+Ren, Haobo
+Kao, Richard
+Simpson, Eric
+Ardeleanu, Marius
+Weinstein, Steven P
+Pirozzi, Gianluca
+Guttman-Yassky, Emma
+Suárez-Fariñas, Mayte
+Hager, Melissa D
+Stahl, Neil
+Yancopoulos, George D
+Radin, Allen R
+Clinical Trial, Phase I
+Clinical Trial, Phase II
+Journal Article
+Multicenter Study
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+United States
+2014/07/10
+N Engl J Med. 2014 Jul 10;371(2):130-9. doi: 10.1056/NEJMoa1314768.
+Author Address: From the Department of Dermatology, University of Rochester Medical Center, Rochester (L.A.B.), Regeneron Pharmaceuticals, Tarrytown (J.D.H., N.M.G., H.R., R.K., M.A., S.P.W., M.D.H., N.S., G.D.Y., A.R.R.), the Department of Dermatology and the Immunology Institute, Icahn School of Medicine at Mount Sinai (E.G.-Y.), the Laboratory for Investigative Dermatology (E.G.-Y., M.S.-F.) and the Center for Clinical and Translational Science (M.S.-F.), Rockefeller University, New York - all in New York; the Department of Dermatology, Allergology, and Venereology, Universität zu Lübeck, Lübeck (D.T.), and the Department of Dermatology and Allergology, University of Bonn, Bonn (T.B.) - both in Germany; Sanofi, Bridgewater, NJ (R.R., J.E.M., G.P.); and the Department of Dermatology, Oregon Health and Science University, Portland (E.S.).
+Database Provider: NLM
+Language: eng

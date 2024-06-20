@@ -1,0 +1,41 @@
+Reference Type:  Journal Article
+Record Number: 233
+Author: Alpizar, S., Megally, A., Chen, C., Raj, A., Downie, J. and Colice, G.
+Year: 2021
+Title: Functionality and Performance of an Accessorized Pre-Filled Syringe and an Autoinjector for At-Home Administration of Tezepelumab in Patients with Severe, Uncontrolled Asthma
+Journal: J Asthma Allergy
+Volume: 14
+Pages: 381-392
+Epub Date: 20210419
+Short Title: Functionality and Performance of an Accessorized Pre-Filled Syringe and an Autoinjector for At-Home Administration of Tezepelumab in Patients with Severe, Uncontrolled Asthma
+ISSN: 1178-6965 (Print)
+1178-6965
+DOI: 10.2147/jaa.S305114
+Legal Note: Sady Alpizar is an employee of Clinical Research Trials of Florida and received personal fees from AstraZeneca during the conduct of the PATH-HOME study. Ayman Megally, Claudia Chen, Abhi Raj and Gene Colice are employees of AstraZeneca. John Downie is an employee of Amgen Inc. The authors report no other conflicts of interest in this work.
+PMCID: PMC8064619
+Accession Number: 33907423
+Keywords: accessorized pre-filled syringe
+at-home administration
+autoinjector
+severe asthma
+tezepelumab
+Abstract: BACKGROUND: Tezepelumab is an anti-thymic stromal lymphopoietin monoclonal antibody in development for the treatment of severe asthma. This study assessed the functionality and performance of an accessorized pre-filled syringe (APFS) and an autoinjector (AI) for administration of tezepelumab in the clinic and at home. METHODS: This phase 3, multicenter, randomized, open-label, parallel-group study (PATH-HOME, ClinicalTrials.gov identifier: NCT03968978) was conducted in patients aged 12-80 years with asthma that was uncontrolled despite treatment with medium- to high-dose inhaled corticosteroids plus at least one additional controller medication. Patients received six subcutaneous doses of tezepelumab 210 mg via APFS or AI. The first dose was administered by a healthcare professional, and patients or caregivers administered subsequent doses. First, second, third and final doses were administered in the clinic; fourth and fifth doses were administered at home. The primary endpoint was the proportion of successful administrations of tezepelumab. Secondary endpoints included the functionality and performance of the devices, Asthma Control Questionnaire (ACQ)-6 score, pharmacokinetics and safety. RESULTS: Overall, 216 patients were randomized (APFS, n=111; AI, n=105). Tezepelumab was successfully administered via APFS by 91.7% of the participants (100/109) and via AI by 92.4% (97/105). Overall, 95.4-97.1% of at-home administrations were successful across device groups. Malfunction occurred in 6 of 655 dispensed APFSs and 5 of 624 dispensed AIs. Clinically meaningful improvements in ACQ-6 score were observed after 24 weeks in 81.1% and 76.2% of the patients in the APFS and AI groups, respectively. Tezepelumab pharmacokinetics were consistent between device groups and with previous studies. The most common adverse event was nasopharyngitis (9.3%). Injection-site reactions occurred in 5.7% and 0% of the patients in the AI and APFS groups, respectively. CONCLUSION: This study demonstrated that the APFS and AI were functional and reliable, and performed equally well at home and in the clinic.
+Notes: 1178-6965
+Alpizar, Sady
+Orcid: 0000-0001-8395-304x
+Megally, Ayman
+Chen, Claudia
+Raj, Abhi
+Downie, John
+Colice, Gene
+Journal Article
+New Zealand
+2021/04/29
+J Asthma Allergy. 2021 Apr 19;14:381-392. doi: 10.2147/JAA.S305114. eCollection 2021.
+Author Address: Clinical Research Trials of Florida, Inc., Tampa, FL, USA.
+Late-Stage Development, Respiratory and Immunology, BioPharmaceuticals R&D, AstraZeneca, Gaithersburg, MD, USA.
+Biostatistics, Late-Stage Development, Respiratory and Immunology, BioPharmaceuticals R&D, AstraZeneca, Gaithersburg, MD, USA.
+Device Development, AstraZeneca, South San Francisco, CA, USA.
+Global Development Inflammation, Amgen, Thousand Oaks, CA, USA.
+Database Provider: NLM
+Language: eng

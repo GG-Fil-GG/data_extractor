@@ -1,0 +1,77 @@
+Reference Type:  Journal Article
+Record Number: 195
+Author: Busse, W. W., Maspero, J. F., Lu, Y., Corren, J., Hanania, N. A., Chipps, B. E., Katelaris, C. H., FitzGerald, J. M., Quirce, S., Ford, L. B., Rice, M. S., Kamat, S., Khan, A. H., Jagerschmidt, A., Harel, S., Rowe, P., Pirozzi, G., Amin, N., Ruddy, M., Graham, N. M. H. and Teper, A.
+Year: 2020
+Title: Efficacy of dupilumab on clinical outcomes in patients with asthma and perennial allergic rhinitis
+Journal: Ann Allergy Asthma Immunol
+Volume: 125
+Issue: 5
+Pages: 565-576.e1
+Epub Date: 20200528
+Date: Nov
+Short Title: Efficacy of dupilumab on clinical outcomes in patients with asthma and perennial allergic rhinitis
+ISSN: 1081-1206
+DOI: 10.1016/j.anai.2020.05.026
+Accession Number: 32474156
+Keywords: Adult
+Anti-Allergic Agents/*therapeutic use
+Antibodies, Monoclonal, Humanized/*therapeutic use
+Asthma/*drug therapy
+Biomarkers
+Double-Blind Method
+Eosinophils/cytology
+Female
+Forced Expiratory Volume/drug effects
+Humans
+Immunoglobulin E/blood
+Male
+Middle Aged
+Quality of Life
+Receptors, Interleukin-4, Type II/antagonists & inhibitors
+Rhinitis, Allergic, Perennial/*drug therapy
+Abstract: BACKGROUND: Comorbid perennial allergic rhinitis (PAR) or year-round aeroallergen sensitivity substantially contributes to disease burden in patients with asthma. Dupilumab blocks the shared receptor for interleukin (IL) 4 and IL-13, key drivers of type 2 inflammation that play important roles in asthma and PAR. In the LIBERTY ASTHMA QUEST trial (NCT02414854), dupilumab reduced severe asthma exacerbations and improved forced expiratory volume in 1 second (FEV(1)) in patients with uncontrolled, moderate-to-severe asthma, with greater efficacy observed in patients with elevated type 2 inflammatory biomarkers at baseline (blood eosinophils and fractional exhaled nitric oxide). OBJECTIVE: To assess dupilumab efficacy in LIBERTY ASTHMA QUEST patients with comorbid PAR. METHODS: Severe asthma exacerbation rates, FEV(1), asthma control (5-item Asthma Control Questionnaire), rhinoconjunctivitis-specific health-related quality of life (Standardized Rhinoconjunctivitis Quality of Life Questionnaire +12 scores), and type 2 inflammatory biomarkers during the 52-week treatment period were assessed. RESULTS: A total of 814 of the 1902 patients (42.8%) had comorbid PAR (defined as an allergic rhinitis history and ≥1 perennial aeroallergen specific immunoglobulin E (IgE) level ≥0.35 kU/L at baseline). Dupilumab, 200 and 300 mg every 2 weeks, vs placebo reduced severe exacerbations rates by 32.2% and 34.6% (P < .05 for both) and improved FEV(1) at week 12 by 0.14 L and 0.18 L (P < .01 for both); greater efficacy was observed in patients with elevated baseline blood eosinophil counts (≥300 cells/μL) and fractional exhaled nitric oxide. Dupilumab treatment also numerically improved the 5-item Asthma Control Questionnaire and Standardized Rhinoconjunctivitis Quality of Life Questionnaire +12 scores and suppressed type 2 inflammatory biomarkers. CONCLUSION: Dupilumab improved key asthma-related outcomes, asthma control, and rhinoconjunctivitis-specific health-related quality of life while suppressing type 2 inflammatory biomarkers and perennial allergen-specific IgE in patients with moderate-to-severe asthma and comorbid PAR, highlighting its dual inhibitory effects on IL-4 and IL-13 and its role in managing asthma and PAR.
+Notes: 1534-4436
+Busse, William W
+Maspero, Jorge F
+Lu, Yufang
+Corren, Jonathan
+Hanania, Nicola A
+Chipps, Bradley E
+Katelaris, Constance H
+FitzGerald, J Mark
+Quirce, Santiago
+Ford, Linda B
+Rice, Megan S
+Kamat, Siddhesh
+Khan, Asif H
+Jagerschmidt, Alexandre
+Harel, Sivan
+Rowe, Paul
+Pirozzi, Gianluca
+Amin, Nikhil
+Ruddy, Marcella
+Graham, Neil M H
+Teper, Ariel
+Clinical Trial, Phase III
+Journal Article
+Multicenter Study
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+United States
+2020/06/01
+Ann Allergy Asthma Immunol. 2020 Nov;125(5):565-576.e1. doi: 10.1016/j.anai.2020.05.026. Epub 2020 May 28.
+Author Address: Division of Allergy, Pulmonary and Critical Care Medicine, University of Wisconsin School of Medicine and Public Health, Madison, Wisconsin. Electronic address: wwb@medicine.wisc.edu.
+Fundación CIDEA, Buenos Aires, Argentina.
+Regeneron Pharmaceuticals, Inc, Tarrytown, New York.
+David Geffen School of Medicine at University of California, Los Angeles, Los Angeles, California.
+Baylor College of Medicine, Texas Medical Center, Houston, Texas.
+Capital Allergy and Respiratory Disease Center, Sacramento, California.
+Campbelltown Hospital and Western Sydney University, Campbelltown, Australia.
+The University of British Columbia, Vancouver, British Columbia.
+Department of Allergy, Hospital La Paz Institute for Health Research (IdiPAZ), Madrid, Spain.
+Asthma and Allergy Center, Bellevue, Nebraska.
+Sanofi, Cambridge, Massachusetts.
+Sanofi, Chilly-Mazarin, France.
+Sanofi, Bridgewater, New Jersey.
+Database Provider: NLM
+Language: eng

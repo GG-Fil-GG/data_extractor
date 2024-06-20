@@ -1,0 +1,79 @@
+Reference Type:  Journal Article
+Record Number: 36
+Author: Chapman, K. R., Albers, F. C., Chipps, B., Muñoz, X., Devouassoux, G., Bergna, M., Galkin, D., Azmi, J., Mouneimne, D., Price, R. G. and Liu, M. C.
+Year: 2019
+Title: The clinical benefit of mepolizumab replacing omalizumab in uncontrolled severe eosinophilic asthma
+Journal: Allergy
+Volume: 74
+Issue: 9
+Pages: 1716-1726
+Epub Date: 20190701
+Date: Sep
+Short Title: The clinical benefit of mepolizumab replacing omalizumab in uncontrolled severe eosinophilic asthma
+ISSN: 0105-4538 (Print)
+0105-4538
+DOI: 10.1111/all.13850
+Legal Note: FCA, JA, DM, DG, and RGP are all employees of GSK and hold stocks/shares in GSK. KRC has received consulting fees from AstraZeneca, Boehringer Ingelheim, CSL Behring, GSK, Grifols, Kamada, Novartis, Roche, and Sanofi Regeneron; has undertaken research funded by Amgen, AstraZeneca, Boehringer Ingelheim, CSL Behring, GSK, Grifols, Kamada, Novartis, Roche and Sanofi; has participated in continuing medical education activities sponsored in whole or in part by AstraZeneca, Boehringer Ingelheim, GSK, Grifols, Novartis, and Teva. KRC is participating in research funded by the Canadian Institutes of Health Research and holds the GSK‐CIHR Research Chair in Respiratory Health Care Delivery at the University Health Network, Toronto, Canada. GD has received personal fees or research grants from Novartis Pharma, AstraZeneca, GSK, Boehringer Ingelheim, Mundi Pharma, Vivisol, Sanofi, Chiesi, ALK, TEVA, MSD, AGIR à Dom; has participated in CME activities sponsored by GSK, AstraZeneca, Novartis Pharma, Chiesi, MSD, Takeda, AGIR à Dom, Orkyn, Mundi Pharma, ALK, Stallergenes, Boehringer Ingelheim, TEVA; is participating in research funded by GSK, ALK, AstraZeneca, Novartis Pharma, Boehringer Ingelheim, Vitalair, AB science, Amgen, Lilly, Sanofi, Roche, TEVA. MB has received personal fees or research grants from AstraZeneca, Novartis, GSK, Boehringer Ingelheim, and Sanofi. MCL has received research grants or personal fees from Boehringer Ingelheim, GSK, Mereo Biopharm, and MedImmune. BC is on the speaker's Bureau and advisor for consult for the following companies: AstraZeneca, Boehringer Ingelheim, Circassia, Genentech, Novartis, Teva. XM has received fees as a speaker, scientific advisor or participant of clinical studies for AstraZeneca, Boehringer Ingelheim, Chiesi, Faes, GlaxoSmithKline, Menarini, Mundifarma, Novartis and Teva.
+PMCID: PMC6790683
+Accession Number: 31049972
+Keywords: Adolescent
+Adult
+Aged
+Anti-Asthmatic Agents/administration & dosage/adverse effects/*therapeutic use
+Antibodies, Monoclonal, Humanized/administration & dosage/adverse
+effects/*therapeutic use
+Asthma/diagnosis/*drug therapy/etiology
+Child
+*Drug Substitution
+Eosinophils/*drug effects
+Female
+Humans
+Leukocyte Count
+Male
+Middle Aged
+Omalizumab/administration & dosage/adverse effects/therapeutic use
+Quality of Life
+Severity of Illness Index
+Surveys and Questionnaires
+Treatment Outcome
+Young Adult
+Acq-5
+asthma control
+mepolizumab
+omalizumab
+severe eosinophilic asthma
+Abstract: BACKGROUND: Mepolizumab and omalizumab are treatments for distinct but overlapping severe asthma phenotypes. OBJECTIVE: To assess if patients eligible for both biologics but not optimally controlled with omalizumab experience improved asthma control when switched directly to mepolizumab. METHODS: OSMO was a multicenter, open-label, single-arm, 32-week trial in patients with ≥2 asthma exacerbations in the year prior to enrollment, despite receiving high-dose inhaled corticosteroids and other controller(s), plus omalizumab (≥4 months). At baseline, patients with blood eosinophil counts ≥150 cells/µL (or ≥300 cells/µL in the prior year) and an Asthma Control Questionnaire (ACQ)-5 score ≥1.5 discontinued omalizumab and immediately commenced mepolizumab 100 mg subcutaneously every 4 weeks. Endpoints included change from baseline in ACQ-5 score (primary), St George's Respiratory Questionnaire (SGRQ) score and the proportions of ACQ-5 and SGRQ responders, all at Week 32, and the annualized exacerbation rate over the study period. RESULTS: At Week 32 (intent-to-treat population [n = 145]), the least squares (LS) mean changes (standard error [SE]) in ACQ-5 and SGRQ total scores were -1.45 (0.107) and -19.0 (1.64) points; with 77% and 79% of patients achieving the minimum clinically important differences (ACQ-5: ≥0.5 points; SGRQ: ≥4 points), respectively. The annualized rate of clinically significant exacerbations was 1.18 events/year, a 64% reduction from 3.26 events/year during the previous year. Safety and immunogenicity profiles were consistent with previous trials. CONCLUSION: After directly switching from omalizumab to mepolizumab, patients with uncontrolled severe eosinophilic asthma experienced clinically significant improvements in asthma control, health status, and exacerbation rate, with no tolerability issues reported.
+Notes: 1398-9995
+Chapman, Kenneth R
+Albers, Frank C
+Orcid: 0000-0001-7039-4621
+Chipps, Bradley
+Muñoz, Xavier
+Devouassoux, Gilles
+Bergna, Miguel
+Galkin, Dmitry
+Azmi, Jay
+Mouneimne, Dalal
+Price, Robert G
+Liu, Mark C
+204471/GlaxoSmithKline/International
+Clinical Trial
+Journal Article
+Multicenter Study
+Research Support, Non-U.S. Gov't
+Denmark
+2019/05/03
+Allergy. 2019 Sep;74(9):1716-1726. doi: 10.1111/all.13850. Epub 2019 Jul 1.
+Author Address: Asthma and Airway Centre, University Health Network, University of Toronto, Toronto, Ontario, Canada.
+Global Respiratory Medical Franchise, GSK, Research Triangle Park, North Carolina.
+Capital Allergy and Respiratory Disease Center, Sacramento, California.
+Pulmonology Department, Hospital Universitari Vall d'Hebron, Barcelona, Spain.
+Ciber Enfermedades Respiratorias, Madrid, Spain.
+Service de Pneumologie, Hôpital de la Croix Rousse, Hospices Civils de Lyon, UCB Lyon 1, Lyon, France.
+Respiratory Research, CEMER, Vicente Lopez, Buenos Aires, Argentina.
+Respiratory TAU, GSK, Uxbridge, UK.
+Global Medical Affairs, GSK House, Brentford, Middlesex, UK.
+Clinical Statistics, GSK, Stevenage, UK.
+Divisions of Allergy and Clinical Immunology, Pulmonary and Critical Care Medicine, Johns Hopkins Asthma and Allergy Center, Baltimore, Maryland.
+Database Provider: NLM
+Language: eng

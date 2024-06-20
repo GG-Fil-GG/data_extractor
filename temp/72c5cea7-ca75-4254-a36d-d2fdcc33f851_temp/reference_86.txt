@@ -1,0 +1,52 @@
+Reference Type:  Journal Article
+Record Number: 179
+Author: Castro, M., Mathur, S., Hargreave, F., Boulet, L. P., Xie, F., Young, J., Wilkins, H. J., Henkel, T. and Nair, P.
+Year: 2011
+Title: Reslizumab for poorly controlled, eosinophilic asthma: a randomized, placebo-controlled study
+Journal: Am J Respir Crit Care Med
+Volume: 184
+Issue: 10
+Pages: 1125-32
+Epub Date: 20110818
+Date: Nov 15
+Short Title: Reslizumab for poorly controlled, eosinophilic asthma: a randomized, placebo-controlled study
+ISSN: 1073-449x
+DOI: 10.1164/rccm.201103-0396OC
+Accession Number: 21852542
+Keywords: Adult
+Antibodies, Monoclonal, Humanized/*therapeutic use
+Asthma/*drug therapy/physiopathology
+Double-Blind Method
+Eosinophils/drug effects
+Female
+Forced Expiratory Volume/drug effects
+Humans
+Interleukin-5/*antagonists & inhibitors/physiology
+Leukocyte Count
+Male
+Middle Aged
+Pulmonary Eosinophilia/*drug therapy
+Sputum/cytology
+Surveys and Questionnaires
+Treatment Outcome
+Abstract: RATIONALE: Eosinophilic asthma is a phenotype of asthma characterized by the persistence of eosinophils in the airways. IL-5 is involved in the activation and survival of eosinophils. OBJECTIVES: To evaluate the effect of the antibody to IL-5, reslizumab, in patients with eosinophilic asthma that is poorly controlled with high-dose inhaled corticosteroid. METHODS: Patients were randomly assigned to receive infusions of reslizumab at 3.0 mg/kg (n = 53) or placebo (n = 53) at baseline and at Weeks 4, 8, and 12, with stratification by baseline Asthma Control Questionnaire (ACQ) score less than or equal to 2 or greater than 2. The primary efficacy measure was the difference between the reslizumab and placebo groups in the change in ACQ score from baseline to end of therapy (Week 15 or early withdrawal). MEASUREMENTS AND MAIN RESULTS: Mean changes from baseline to end of therapy in ACQ score were -0.7 in the reslizumab group and -0.3 in the placebo group (P = 0.054) and in FEV(1) were 0.18 and -0.08 L, respectively (P = 0.002). In those patients with nasal polyps, the changes in ACQ score were -1.0 and -0.1, respectively (P = 0.012). Median percentage reductions from baseline in sputum eosinophils were 95.4 and 38.7%, respectively (P = 0.007). Eight percent of patients in the reslizumab group and 19% of patients in the placebo group had an asthma exacerbation (P = 0.083). The most common adverse events with reslizumab were nasopharyngitis, fatigue, and pharyngolaryngeal pain. CONCLUSIONS: Patients receiving reslizumab showed significantly greater reductions in sputum eosinophils, improvements in airway function, and a trend toward greater asthma control than those receiving placebo. Reslizumab was generally well tolerated.
+Notes: 1535-4970
+Castro, Mario
+Mathur, Sameer
+Hargreave, Frederick
+Boulet, Louis-Philippe
+Xie, Fang
+Young, James
+Wilkins, H Jeffrey
+Henkel, Timothy
+Nair, Parameswaran
+Res-5-0010 Study Group
+Journal Article
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+United States
+2011/08/20
+Am J Respir Crit Care Med. 2011 Nov 15;184(10):1125-32. doi: 10.1164/rccm.201103-0396OC. Epub 2011 Aug 18.
+Author Address: Washington University School of Medicine, St. Louis, MO 63110, USA. castrom@wustl.edu
+Database Provider: NLM
+Language: eng

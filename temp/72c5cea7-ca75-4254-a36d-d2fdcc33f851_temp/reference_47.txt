@@ -1,0 +1,70 @@
+Reference Type:  Journal Article
+Record Number: 251
+Author: Bernstein, J. A., Virchow, J. C., Murphy, K., Maspero, J. F., Jacobs, J., Adir, Y., Humbert, M., Castro, M., Marsteller, D. A., McElhattan, J., Hickey, L., Garin, M., Vanlandingham, R. and Brusselle, G.
+Year: 2020
+Title: Effect of fixed-dose subcutaneous reslizumab on asthma exacerbations in patients with severe uncontrolled asthma and corticosteroid sparing in patients with oral corticosteroid-dependent asthma: results from two phase 3, randomised, double-blind, placebo-controlled trials
+Journal: Lancet Respir Med
+Volume: 8
+Issue: 5
+Pages: 461-474
+Epub Date: 20200214
+Date: May
+Short Title: Effect of fixed-dose subcutaneous reslizumab on asthma exacerbations in patients with severe uncontrolled asthma and corticosteroid sparing in patients with oral corticosteroid-dependent asthma: results from two phase 3, randomised, double-blind, placebo-controlled trials
+ISSN: 2213-2600
+DOI: 10.1016/s2213-2600(19)30372-8
+Accession Number: 32066536
+Keywords: Administration, Oral
+Adult
+Anti-Asthmatic Agents/*administration & dosage
+Antibodies, Monoclonal, Humanized/*administration & dosage
+Asthma/*drug therapy/physiopathology
+Dose-Response Relationship, Drug
+Double-Blind Method
+Eosinophilia/drug therapy
+Eosinophils/metabolism
+Female
+Forced Expiratory Volume/drug effects/physiology
+Glucocorticoids/administration & dosage
+Humans
+Injections, Subcutaneous
+Leukocyte Count
+Male
+Middle Aged
+Nebulizers and Vaporizers
+Severity of Illness Index
+Abstract: BACKGROUND: Reslizumab 3 mg/kg administered intravenously is approved for the treatment of severe eosinophilic asthma. We assessed the safety and efficacy of subcutaneous reslizumab 110 mg in two trials in patients with uncontrolled severe asthma and increased blood eosinophils. The aim was to establish whether subcutaneous reslizumab 110 mg can reduce exacerbation rates in these patients (study 1) or reduce maintenance oral corticosteroid dose in patients with corticosteroid-dependent asthma (study 2). METHODS: Both studies were randomised, double-blind, placebo-controlled, phase 3 studies. Entry criteria for study 1 were uncontrolled severe asthma, two or more asthma exacerbations in the previous year, a blood eosinophil count of 300 cells per μL or more (including no more than 30% patients with an eosinophil count <400 cells/μL), and at least a medium dose of inhaled corticosteroids with one or more additional asthma controllers. Patients in study 2 had severe asthma, a blood eosinophil count of 300 cells per μL or more, daily maintenance oral corticosteroid (prednisone 5-40 mg, or equivalent), and high-dose inhaled corticosteroids plus another controller. Patients were randomly assigned (1:1) to subcutaneous reslizumab (110 mg) or placebo once every 4 weeks for 52 weeks in study 1 and 24 weeks in study 2. Patients and investigators were masked to treatment assignment. Primary efficacy outcomes were frequency of exacerbations during 52 weeks in study 1 and categorised percentage reduction in daily oral corticosteroid dose from baseline to weeks 20-24 in study 2. Primary efficacy analyses were by intention to treat, and safety analyses included all patients who received at least one dose of study treatment. These studies are registered with ClinicalTrials.gov, NCT02452190 (study 1) and NCT02501629 (study 2). FINDINGS: Between Aug 12, 2015, and Jan 31, 2018, 468 patients in study 1 were randomly assigned to placebo (n=232) or subcutaneous reslizumab (n=236), and 177 in study 2 to placebo (n=89) or subcutaneous reslizumab (n=88). In study 1, we found no significant difference in the exacerbation rate between reslizumab and placebo in the intention-to-treat population (rate ratio 0·79, 95% CI 0·56-1·12; p=0·19). Subcutaneous reslizumab reduced exacerbation frequency compared with placebo in the subgroup of patients with blood eosinophil counts of 400 cells per μL or more (0·64, 95% CI 0·43-0·95). Greater reductions in annual exacerbation risk (p=0·0035) and longer time to first exacerbation were observed for patients with higher trough serum reslizumab concentrations. In study 2, we found no difference between placebo and fixed-dose subcutaneous reslizumab in categorised percentage reduction in daily oral corticosteroid dose (odds ratio for a lower category of oral corticosteroid use in the reslizumab group vs the placebo group, 1·23, 95% CI 0·70-2·16; p=0·47). The frequency of adverse events and serious adverse events with reslizumab were similar to those with placebo in both studies. INTERPRETATION: Fixed-dose (110 mg) subcutaneous reslizumab was not effective in reducing exacerbation frequency in patients with uncontrolled asthma and increased blood eosinophils (≥300 cells/μL), or in reducing the daily maintenance oral corticosteroid dose in patients with oral corticosteroid-dependent severe eosinophilic asthma. Higher exposures than those observed with 110 mg subcutaneous reslizumab are required to achieve maximal efficacy. FUNDING: Teva Branded Pharmaceutical Products R&D.
+Notes: 2213-2619
+Bernstein, Jonathan A
+Virchow, J Christian
+Murphy, Kevin
+Maspero, Jorge Fernando
+Jacobs, Joshua
+Adir, Yochai
+Humbert, Marc
+Castro, Mario
+Marsteller, Douglas A
+McElhattan, Jennifer
+Hickey, Lisa
+Garin, Margaret
+Vanlandingham, Rebecca
+Brusselle, Guy
+Clinical Trial, Phase III
+Journal Article
+Multicenter Study
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+England
+2020/02/19
+Lancet Respir Med. 2020 May;8(5):461-474. doi: 10.1016/S2213-2600(19)30372-8. Epub 2020 Feb 14.
+Author Address: Department of Internal Medicine, Division of Immunology/Allergy Section, University of Cincinnati College of Medicine, Cincinnati, OH, USA; Bernstein Clinical Research Center, Cincinnati, OH, USA. Electronic address: bernstja@ucmail.uc.edu.
+Departments of Pulmonary Medicine and Intensive Care Medicine, Universitätsmedizin Rostock, Rostock, Germany.
+Allergy, Asthma and Pulmonary Research, Boys Town National Research Hospital, Boys Town, NE, USA.
+Allergy and Respiratory Research Unit, Fundación CIDEA, Buenos Aires, Argentina.
+Allergy and Asthma Clinical Research, Walnut Creek, CA, USA.
+Pulmonary Division, Lady Davis Carmel Medical Center, Faculty of Medicine, The Technion, Institute of Technology, Haifa, Israel.
+Université Paris-Saclay, Assistance Publique-Hôpitaux de Paris, Service de Pneumologie, Hôpital Bicêtre, Le Kremlin-Bicêtre, France.
+Division of Pulmonary, Critical Care and Sleep Medicine, University of Kansas School of Medicine, Kansas City, KS, USA.
+Teva Branded Pharmaceutical Products, West Chester, PA, USA.
+Department of Respiratory Medicine, Ghent University Hospital, Ghent, Belgium; Departments of Epidemiology and Respiratory Medicine, Erasmus MC-University Medical Center Rotterdam, Rotterdam, Netherlands.
+Database Provider: NLM
+Language: eng

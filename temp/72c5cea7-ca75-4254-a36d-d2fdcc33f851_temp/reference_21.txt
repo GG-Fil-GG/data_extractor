@@ -1,0 +1,73 @@
+Reference Type:  Journal Article
+Record Number: 21
+Author: Bacharier, L. B., Maspero, J. F., Katelaris, C. H., Fiocchi, A. G., Gagnon, R., de Mir, I., Jain, N., Sher, L. D., Mao, X., Liu, D., Zhang, Y., Khan, A. H., Kapoor, U., Khokhar, F. A., Rowe, P. J., Deniz, Y., Ruddy, M., Laws, E., Patel, N., Weinreich, D. M., Yancopoulos, G. D., Amin, N., Mannent, L. P., Lederer, D. J. and Hardin, M.
+Year: 2021
+Title: Dupilumab in Children with Uncontrolled Moderate-to-Severe Asthma
+Journal: N Engl J Med
+Volume: 385
+Issue: 24
+Pages: 2230-2240
+Date: Dec 9
+Short Title: Dupilumab in Children with Uncontrolled Moderate-to-Severe Asthma
+ISSN: 0028-4793
+DOI: 10.1056/NEJMoa2106567
+Accession Number: 34879449
+Keywords: Anti-Asthmatic Agents/administration & dosage/adverse effects/*therapeutic use
+Antibodies, Monoclonal, Humanized/administration & dosage/adverse
+effects/*therapeutic use
+Asthma/*drug therapy/physiopathology
+Biomarkers/analysis
+Breath Tests
+Child
+Double-Blind Method
+Drug Therapy, Combination
+Female
+Forced Expiratory Volume
+Humans
+Injections, Subcutaneous
+Lung/physiopathology
+Male
+Nitric Oxide/administration & dosage
+Patient Acuity
+Symptom Flare Up
+Abstract: BACKGROUND: Children with moderate-to-severe asthma continue to have disease complications despite the receipt of standard-of-care therapy. The monoclonal antibody dupilumab has been approved for the treatment of adults and adolescents with asthma as well as with other type 2 inflammatory diseases. METHODS: In this 52-week phase 3, randomized, double-blind, placebo-controlled trial, we assigned 408 children between the ages of 6 and 11 years who had uncontrolled moderate-to-severe asthma to receive a subcutaneous injection of dupilumab (at a dose of 100 mg for those weighing ≤30 kg and 200 mg for those weighing >30 kg) or matched placebo every 2 weeks. All the children continued to receive a stable dose of standard background therapy. The primary end point was the annualized rate of severe asthma exacerbations. Secondary end points included the change from baseline in the percentage of predicted prebronchodilator forced expiratory volume in 1 second (ppFEV(1)) at week 12 and in the score on the Asthma Control Questionnaire 7 Interviewer-Administered (ACQ-7-IA) at week 24. End points were evaluated in the two primary efficacy populations who had either a type 2 inflammatory asthma phenotype (≥150 blood eosinophils per cubic millimeter or a fraction of exhaled nitric oxide of ≥20 ppb at baseline) or a blood eosinophil count of at least 300 cells per cubic millimeter at baseline. RESULTS: In patients with the type 2 inflammatory phenotype, the annualized rate of severe asthma exacerbations was 0.31 (95% confidence interval [CI], 0.22 to 0.42) with dupilumab and 0.75 (95% CI, 0.54 to 1.03) with placebo (relative risk reduction in the dupilumab group, 59.3%; 95% CI, 39.5 to 72.6; P<0.001). The mean (±SE) change from baseline in the ppFEV(1) was 10.5±1.0 percentage points with dupilumab and 5.3±1.4 percentage points with placebo (mean difference, 5.2 percentage points; 95% CI, 2.1 to 8.3; P<0.001). Dupilumab also resulted in significantly better asthma control than placebo (P<0.001). Similar results were observed in the patients with an eosinophil count of at least 300 cells per cubic millimeter at baseline. The incidence of serious adverse events was similar in the two groups. CONCLUSIONS: Among children with uncontrolled moderate-to-severe asthma, those who received add-on dupilumab had fewer asthma exacerbations and better lung function and asthma control than those who received placebo. (Funded by Sanofi and Regeneron Pharmaceuticals; Liberty Asthma VOYAGE ClinicalTrials.gov number, NCT02948959.).
+Notes: 1533-4406
+Bacharier, Leonard B
+Maspero, Jorge F
+Katelaris, Constance H
+Fiocchi, Alessandro G
+Orcid: 0000-0002-2549-0523
+Gagnon, Remi
+de Mir, Ines
+Jain, Neal
+Sher, Lawrence D
+Mao, Xuezhou
+Liu, Dongfang
+Zhang, Yi
+Khan, Asif H
+Kapoor, Upender
+Khokhar, Faisal A
+Rowe, Paul J
+Deniz, Yamo
+Ruddy, Marcella
+Laws, Elizabeth
+Patel, Naimish
+Weinreich, David M
+Yancopoulos, George D
+Amin, Nikhil
+Mannent, Leda P
+Lederer, David J
+Orcid: 0000-0001-5258-0228
+Hardin, Megan
+Liberty Asthma VOYAGE Investigators
+Clinical Trial, Phase III
+Journal Article
+Multicenter Study
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+United States
+2021/12/09
+N Engl J Med. 2021 Dec 9;385(24):2230-2240. doi: 10.1056/NEJMoa2106567.
+Author Address: From Monroe Carell Jr. Children's Hospital at Vanderbilt, Nashville (L.B.B.); Fundación CIDEA, Buenos Aires (J.F.M.); Campbelltown Hospital, Campbelltown, NSW, and Western Sydney University, Sydney (C.H.K.) - both in Australia; Bambino Gesù Children's Hospital IRCCS, Rome (A.G.F.); Clinique Spécialisée en Allergie de la Capitale, Quebec, QC, Canada (R.G.); Hospital Vall d'Hebron, Barcelona (I.M.); Arizona Allergy and Immunology Research, Gilbert (N.J.); Peninsula Research Associates, Rolling Hills Estates, CA (L.D.S.); Sanofi, Bridgewater, NJ (X.M., U.K., P.J.R., E.L.); Sanofi, Beijing (D.L.); Regeneron Pharmaceuticals, Tarrytown, NY (Y.Z., F.A.K., Y.D., M.R., D.M.W., G.D.Y., N.A., D.J.L.); Sanofi, Chilly-Mazarin, France (A.H.K., L.P.M.); and Sanofi Genzyme, Cambridge, MA (N.P., M.H.).
+Database Provider: NLM
+Language: eng

@@ -1,0 +1,36 @@
+Reference Type:  Journal Article
+Record Number: 453
+Author: Antoniu, S. A.
+Year: 2009
+Title: Mepolizumab for difficult-to-control asthma with persistent sputum eosinophilia
+Journal: Expert Opin Investig Drugs
+Volume: 18
+Issue: 6
+Pages: 869-71
+Date: Jun
+Short Title: Mepolizumab for difficult-to-control asthma with persistent sputum eosinophilia
+ISSN: 1354-3784
+DOI: 10.1517/13543780902922678
+Accession Number: 19426126
+Keywords: Anti-Inflammatory Agents/administration & dosage/*therapeutic use
+Antibodies, Monoclonal/administration & dosage/adverse effects/*therapeutic use
+Antibodies, Monoclonal, Humanized
+Asthma/blood/complications/*drug therapy
+Drug Therapy, Combination
+Eosinophilia/*complications
+Humans
+Prednisone/administration & dosage/therapeutic use
+Randomized Controlled Trials as Topic
+Sputum/*cytology
+Abstract: BACKGROUND: In asthma, anti-inflammatory therapy can usually reduce airway eosinophilic inflammation; but in certain subgroups this persists despite maximal therapy, and disease control is suboptimal. Mepolizumab is an anti IL-5. antibody that might reduce airway inflammation in such subgroups. METHODS AND RESULTS: Evaluation of the efficacy and safety data on mepolizumab in two studies performed in patients with refractory and corticosteroid-dependent asthma with persistent sputum eosinophilia. Mepolizumab given intravenously once a month was able to reduce sputum/blood eosinophilia and asthma exacerbations and to improve quality of life. CONCLUSIONS: Mepolizumab may be a promising anti-inflammatory therapy in asthma subgroups with heavy eosinophilic load in which conventional anti-inflammatory therapy is only partially effective.
+Notes: 1744-7658
+Antoniu, Sabina A
+Comment
+Journal Article
+Randomized Controlled Trial
+England
+2009/05/12
+Expert Opin Investig Drugs. 2009 Jun;18(6):869-71. doi: 10.1517/13543780902922678.
+Author Address: Pulmonary Disease University Hospital, Division of Pulmonary Disease, University of Medicine and Pharmacy Gr T Popa, Iasi, Romania. sabina.antonela.antoniu@pneum.umfiasi.ro
+Database Provider: NLM
+Language: eng

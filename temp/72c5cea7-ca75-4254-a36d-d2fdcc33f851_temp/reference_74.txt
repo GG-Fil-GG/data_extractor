@@ -1,0 +1,45 @@
+Reference Type:  Journal Article
+Record Number: 309
+Author: Calzetta, L., Matera, M. G. and Rogliani, P.
+Year: 2019
+Title: Monoclonal antibodies in severe asthma: is it worth it?
+Journal: Expert Opin Drug Metab Toxicol
+Volume: 15
+Issue: 6
+Pages: 517-520
+Epub Date: 20190523
+Date: Jun
+Short Title: Monoclonal antibodies in severe asthma: is it worth it?
+ISSN: 1742-5255
+DOI: 10.1080/17425255.2019.1621837
+Accession Number: 31104515
+Keywords: Anti-Asthmatic Agents/administration & dosage/*therapeutic use
+Antibodies, Monoclonal/administration & dosage/*therapeutic use
+Asthma/*drug therapy/physiopathology
+Forced Expiratory Volume
+Humans
+Medication Adherence
+Randomized Controlled Trials as Topic
+Severity of Illness Index
+Asthma exacerbation
+lung function
+meta-analysis
+monoclonal antibodies
+severe asthma
+Abstract: Background: To date, there is the strong need to compare the efficacy across the monoclonal antibodies (mAbs) approved to treat severe asthma. Research design and method: A quantitative synthesis has been performed to compare the impact of omalizumab, mepolizumab, reslizumab, benralizumab, dupilumab, and placebo on the risk of exacerbation and change in forced expiratory flow in 1 s (FEV(1)) in severe asthmatic patients. Results: All the investigated mAbs were more effective than placebo in reducing the risk of exacerbation and improving lung function. Dupilumab showed a general superiority compared to the other mAbs, as it significantly reduced the risk of exacerbation vs. omalizumab, and significantly improved FEV(1) when compared to omalizumab, mepolizumab, and benralizumab. The overall-marked placebo effect indicates that a better adherence to drug regimens in the context of RCTs may lead to noteworthy improvement in the clinical condition of severe asthmatic patients. Conclusions: Further extensive meta-analyses are needed to identify the factors influencing the efficacy profile of mAbs in severe asthma. This may also permit to identify the profile of patients that are specifically responsive to either anti-IgE, anti-IL-4Rα, anti-IL-5, or anti-IL-5Rα mAbs.
+Notes: 1744-7607
+Calzetta, Luigino
+Orcid: 0000-0003-0456-069x
+Matera, Maria Gabriella
+Rogliani, Paola
+Comparative Study
+Journal Article
+Meta-Analysis
+England
+2019/05/21
+Expert Opin Drug Metab Toxicol. 2019 Jun;15(6):517-520. doi: 10.1080/17425255.2019.1621837. Epub 2019 May 23.
+Author Address: a Unit of Respiratory Medicine, Department of Experimental Medicine , University of Rome "Tor Vergata" , Rome , Italy.
+b Department of Health Sciences , University of Catanzaro "Magna Græcia" , Catanzaro , Italy.
+c Unit of Pharmacology, Department of Experimental Medicine , University of Campania "Luigi Vanvitelli" , Naples , Italy.
+Database Provider: NLM
+Language: eng

@@ -1,0 +1,48 @@
+Reference Type:  Journal Article
+Record Number: 278
+Author: Chan, R., RuiWen Kuo, C., Jabbal, S. and Lipworth, B. J.
+Year: 2023
+Title: Eosinophil depletion with benralizumab is associated with attenuated mannitol airway hyperresponsiveness in severe uncontrolled eosinophilic asthma
+Journal: J Allergy Clin Immunol
+Volume: 151
+Issue: 3
+Pages: 700-705.e10
+Epub Date: 20221116
+Date: Mar
+Short Title: Eosinophil depletion with benralizumab is associated with attenuated mannitol airway hyperresponsiveness in severe uncontrolled eosinophilic asthma
+ISSN: 0091-6749
+DOI: 10.1016/j.jaci.2022.10.028
+Accession Number: 36400178
+Keywords: Adult
+Humans
+Middle Aged
+Adrenal Cortex Hormones/therapeutic use
+*Anti-Asthmatic Agents/therapeutic use
+*Asthma/drug therapy
+Disease Progression
+Double-Blind Method
+Drug Therapy, Combination
+Eosinophils
+*Pulmonary Eosinophilia/drug therapy
+Quality of Life
+Airway hyperresponsiveness
+asthma control
+benralizumab
+mannitol
+severe asthma
+Abstract: BACKGROUND: Airway hyperresponsiveness (AHR) and eosinophilia are hallmarks of persistent asthma. OBJECTIVE: We investigated whether eosinophil depletion with benralizumab might attenuate indirect mannitol AHR in severe uncontrolled asthma using a pragmatic open-label design. METHODS: After a 4-week run-in period with provision of usual inhaled corticosteroids and/or long-acting β-agonist (baseline), adults with mannitol-responsive uncontrolled severe eosinophilic asthma received 3 doses of open-label benralizumab 30 mg every 4 weeks, followed by 16 weeks' washout after the last dose. The primary outcome was doubling difference (DD) in provocative dose of mannitol required to decrease FEV(1) by 10% (PD(10)) at the end point after 12 weeks, powered at 90% with 18 patients required to detect 1 DD. Secondary outcomes included measures assessed by the asthma control questionnaire and mini-asthma quality of life questionnaire. RESULTS: Twenty-one patients completed 12 weeks' benralizumab therapy at the end point at week 12. Mean (SEM) age was 53 (4) years, and FEV(1) 80.2% (4.1%) inhaled corticosteroid dose was 1895 (59) μg, with 12 receiving long-acting muscarinic antagonist and 13 leukotriene receptor antagonists. Improvement in AHR was significant by 8 weeks, with a mean 2.1 DD (95% confidence interval 1.0, 3.3; P < .01) change in PD(10) at week 12, while mean changes in asthma control questionnaire and mini-asthma quality of life questionnaire were significant by week 2 and sustained over 12 weeks, both exceeding the minimal important difference. Peripheral blood eosinophils were depleted by 2 weeks (439 to 6 cells/μL). No significant improvement occurred in lung function after 12 weeks. Domiciliary peak flow and symptoms also improved with benralizumab. CONCLUSION: Eosinophil depletion results in clinically meaningful attenuated AHR in severe uncontrolled asthma patients.
+Notes: 1097-6825
+Chan, Rory
+RuiWen Kuo, Chris
+Jabbal, Sunny
+Lipworth, Brian J
+Journal Article
+Pragmatic Clinical Trial
+Research Support, Non-U.S. Gov't
+United States
+2022/11/19
+J Allergy Clin Immunol. 2023 Mar;151(3):700-705.e10. doi: 10.1016/j.jaci.2022.10.028. Epub 2022 Nov 16.
+Author Address: From the Scottish Centre for Respiratory Research, School of Medicine, University of Dundee, Ninewells Hospital, Dundee, United Kingdom.
+From the Scottish Centre for Respiratory Research, School of Medicine, University of Dundee, Ninewells Hospital, Dundee, United Kingdom. Electronic address: b.j.lipworth@dundee.ac.uk.
+Database Provider: NLM
+Language: eng

@@ -1,0 +1,82 @@
+Reference Type:  Journal Article
+Record Number: 41
+Author: Buchheit, K. M., Lewis, E., Gakpo, D., Hacker, J., Sohail, A., Taliaferro, F., Berreondo Giron, E., Asare, C., Vukovic, M., Bensko, J. C., Dwyer, D. F., Shalek, A. K., Ordovas-Montanes, J. and Laidlaw, T. M.
+Year: 2021
+Title: Mepolizumab targets multiple immune cells in aspirin-exacerbated respiratory disease
+Journal: J Allergy Clin Immunol
+Volume: 148
+Issue: 2
+Pages: 574-584
+Epub Date: 20210616
+Date: Aug
+Short Title: Mepolizumab targets multiple immune cells in aspirin-exacerbated respiratory disease
+ISSN: 0091-6749 (Print)
+0091-6749
+DOI: 10.1016/j.jaci.2021.05.043
+Legal Note: Conflict of Interest: T Laidlaw has served on scientific advisory boards for GlaxoSmithKline and Sanofi-Genzyme, Optinose, and Regeneron. K Buchheit has served on scientific advisory boards for AstraZeneca and GlaxoSmithKline. J Bensko has served on scientific advisory boards for GlaxoSmithKline. J Ordovas-Montanes reports compensation for consulting services with Cellarity and Hovione. A Shalek reports compensation for consulting and/or SAB membership from Merck, Honeycomb Biotechnologies, Cellarity, Repertoire Immune Medicines, Hovione, Third Rock Ventures, Ochre Bio, Relation Therapeutics, and Dahlia Biosciences. A Shalek has received research support from Merck, Novartis, Leo Pharma, Janssen, the Bill and Melinda Gates Foundation, the Moore Foundation, the Pew-Stewart Trust, Fondation MIT, the Chan Zuckerberg Initiative, Novo Nordisk and the FDA unrelated to this work. The rest of the authors have no conflicts of interest to disclose.
+PMCID: PMC9096876
+NIHMSID: NIHMS1797711
+Accession Number: 34144111
+Keywords: Adolescent
+Adult
+Aged
+Antibodies, Monoclonal, Humanized/*administration & dosage
+*Asthma, Aspirin-Induced/drug therapy/immunology/urine
+*Basophils/immunology/pathology
+Eicosanoids/immunology/urine
+*Eosinophils/immunology/pathology
+Female
+Humans
+Interleukin-5/immunology
+Interleukin-5 Receptor alpha Subunit/immunology
+Male
+Middle Aged
+*Nasal Polyps/drug therapy/immunology/urine
+Aspirin-exacerbated respiratory disease
+Crth2
+Il-5
+chronic rhinosinusitis
+leukotriene
+mepolizumab
+nasal polyp
+prostaglandin D(2)
+prostaglandin F(2α)
+Abstract: BACKGROUND: Eosinophilic asthma and nasal polyposis are hallmarks of aspirin-exacerbated respiratory disease (AERD), and IL-5 inhibition has been shown to provide therapeutic benefit. However, IL-5Rα is expressed on many cells in addition to eosinophils, and the mechanisms by which IL-5 inhibition leads to clinical benefit in eosinophilic asthma and nasal polyposis are unlikely to be due exclusively to antieosinophil effects. OBJECTIVE: We sought to identify the mechanisms by which anti-IL-5 treatment with mepolizumab improves respiratory inflammation in AERD. METHODS: The clinical characteristics, circulating granulocytes, nasal scraping transcripts, eosinophilic cationic protein, tryptase, and antibody levels, and urinary and nasal eicosanoid levels were measured for 18 subjects with AERD who were taking mepolizumab and compared with those of 18 matched subjects with AERD who were not taking mepolizumab. RESULTS: Subjects taking mepolizumab had significantly fewer peripheral blood eosinophils and basophils, and those cells that remained had higher surface CRTH2 expression than did the cells from subjects not taking mepolizumab. Nasal prostaglandin F(2α), prostaglandin D(2) metabolites, leukotriene B(4), and thromboxane levels were lower in subjects taking mepolizumab, as were urinary levels of tetranor-prostaglandin D(2) and leukotriene E(4). The nasal epithelial cell transcripts that were overexpressed among subjects with AERD who were taking mepolizumab were enriched for genes involved in tight junction formation and cilium organization. Nasal and urinary prostaglandin E(2), tryptase, and antibody levels were not different between the 2 groups. CONCLUSION: IL-5 inhibition in AERD decreases production of inflammatory eicosanoids and upregulates tight junction-associated nasal epithelial cell transcripts, likely due to decreased IL-5 signaling on tissue mast cells, eosinophils, and epithelial cells. These direct effects on multiple relevant immune cells contribute to the mechanism of benefit afforded by mepolizumab.
+Notes: 1097-6825
+Buchheit, Kathleen M
+Lewis, Erin
+Gakpo, Deborah
+Hacker, Jonathan
+Sohail, Aaqib
+Taliaferro, Faith
+Berreondo Giron, Evans
+Asare, Chelsea
+Vukovic, Marko
+Bensko, Jillian C
+Dwyer, Daniel F
+Shalek, Alex K
+Ordovas-Montanes, Jose
+Laidlaw, Tanya M
+R01 HL128241/HL/NHLBI NIH HHS/United States
+K23 AI139352/AI/NIAID NIH HHS/United States
+T32 AI007306/AI/NIAID NIH HHS/United States
+U19 AI095219/AI/NIAID NIH HHS/United States
+DRG-2274-16/HHMI/Howard Hughes Medical Institute/United States
+U24 AI118672/AI/NIAID NIH HHS/United States
+Clinical Trial
+Journal Article
+Research Support, N.I.H., Extramural
+Research Support, Non-U.S. Gov't
+United States
+2021/06/19
+J Allergy Clin Immunol. 2021 Aug;148(2):574-584. doi: 10.1016/j.jaci.2021.05.043. Epub 2021 Jun 16.
+Author Address: Department of Medicine, Harvard Medical School, the Division of Allergy and Clinical Immunology, Brigham and Women's Hospital, Boston, Mass.
+Division of Allergy and Clinical Immunology, Brigham and Women's Hospital, Boston, Mass.
+Division of Gastroenterology, Boston Children's Hospital, Boston, Mass; Broad Institute of MIT and Harvard, Cambridge, Mass.
+Division of Gastroenterology, Boston Children's Hospital, Boston, Mass.
+Broad Institute of MIT and Harvard, Cambridge, Mass; Ragon Institute of Massachusetts General Hospital, MIT and Harvard, Cambridge, Mass; Institute for Medical Engineering and Science, Department of Chemistry, and Koch Institute for Integrative Cancer Research, MIT, Cambridge, Mass.
+Broad Institute of MIT and Harvard, Cambridge, Mass; Ragon Institute of Massachusetts General Hospital, MIT and Harvard, Cambridge, Mass; Institute for Medical Engineering and Science, Department of Chemistry, and Koch Institute for Integrative Cancer Research, MIT, Cambridge, Mass; Program in Immunology, Harvard Medical School, Boston, Mass; Harvard-MIT Division of Health Sciences & Technology, Cambridge, Mass.
+Division of Gastroenterology, Boston Children's Hospital, Boston, Mass; Broad Institute of MIT and Harvard, Cambridge, Mass; Program in Immunology, Harvard Medical School, Boston, Mass; Harvard Stem Cell Institute, Cambridge, Mass.
+Department of Medicine, Harvard Medical School, the Division of Allergy and Clinical Immunology, Brigham and Women's Hospital, Boston, Mass. Electronic address: tlaidlaw@bwh.harvard.edu.
+Database Provider: NLM
+Language: eng

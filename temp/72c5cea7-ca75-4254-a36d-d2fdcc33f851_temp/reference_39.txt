@@ -1,0 +1,35 @@
+Reference Type:  Journal Article
+Record Number: 152
+Author: Bayrak Durmaz, M. S., Çelebi Sözener, Z. and Bavbek, S.
+Year: 2022
+Title: Eosinophilic granulomatosis with polyangitis: A new target for biologicals
+Journal: Tuberk Toraks
+Volume: 70
+Issue: 1
+Pages: 93-101
+Date: Mar
+Short Title: Eosinophilic granulomatosis with polyangitis: A new target for biologicals
+ISSN: 0494-1373
+DOI: 10.5578/tt.20229911
+Original Publication: Eozinofilik granülomatöz polianjitis: Biyolojikler için yeni bir hedef.
+Accession Number: 35362309
+Keywords: *Churg-Strauss Syndrome/diagnosis/drug therapy
+Eosinophils
+Glucocorticoids/therapeutic use
+*Granulomatosis with Polyangiitis/complications
+Humans
+Immunosuppressive Agents/therapeutic use
+Randomized Controlled Trials as Topic
+Abstract: Eosinophilic granulomatosis with polyangiitis (EGPA, Churg-Strauss syndrome) is a rare systemic necrotizing granulomatous vasculitis in the spectrum of anti-neutrophil cytoplasmic antibody (ANCA)-associated vasculitis (AAV). Nevertheless, EGPA has specific clinical, biological and histological properties different from other AAVs [microscopic polyangiitis (MPA) and granulomatous polyangiitis (GPA)]. Recently, thanks to the studies conducted to understand the pathophysiology of EGPA, unlike neutrophils in other AAVs, the main cells involved in EGPA have been observed to be eosinophils. The key role of eosinophils in EGPA and recent development of targeted agents to treat other eosinophil-related diseases have created new therapeutic opportunities for EGPA. Conventional treatment of EGPA relies mainly on agents that decrease inflammation. Cornerstone therapy is systemic glucocorticoids, used as monotherapy or in combination with immunosuppressive agents. However, new therapeutic approaches are needed especially for persistent asthma symptoms, refractory disease, relapses and problems associated with corticosteroid dependence. Recently, the first large-scale randomized controlled clinical trial on polyangiitis and eosinophilic granulomatosis has demonstrated the efficacy of eosinophil-targeted biotherapy anti-interleukin-5 (IL-5) mepolizumab, and is approved for the management of EGPA. This finding opens a new era for EGPA management. This review provides an overview of eosinophilic granulomatosis with polyangiitis in the light of new targeted biological therapies.
+Notes: 2980-3187
+Bayrak Durmaz, Makbule Seda
+Çelebi Sözener, Zeynep
+Bavbek, Sevim
+Journal Article
+Review
+Turkey
+2022/04/02
+Tuberk Toraks. 2022 Mar;70(1):93-101. doi: 10.5578/tt.20229911.
+Author Address: Division of Immunology and Allergy, Department of Chest Diseases, Ankara University Faculty of Medicine, Ankara, Turkey.
+Database Provider: NLM
+Language: eng

@@ -1,0 +1,52 @@
+Reference Type:  Journal Article
+Record Number: 141
+Author: Bachert, C., Gevaert, P. and Hellings, P.
+Year: 2017
+Title: Biotherapeutics in Chronic Rhinosinusitis with and without Nasal Polyps
+Journal: J Allergy Clin Immunol Pract
+Volume: 5
+Issue: 6
+Pages: 1512-1516
+Epub Date: 20170516
+Date: Nov-Dec
+Short Title: Biotherapeutics in Chronic Rhinosinusitis with and without Nasal Polyps
+DOI: 10.1016/j.jaip.2017.04.024
+Accession Number: 28526278
+Keywords: Antibodies, Monoclonal/therapeutic use
+Antibodies, Monoclonal, Humanized/therapeutic use
+Biological Therapy
+Chronic Disease
+Clinical Trials as Topic
+Cytokines/immunology/metabolism
+Humans
+Immunotherapy/*methods
+Nasal Polyps/complications/*therapy
+Omalizumab/therapeutic use
+Quality of Life
+Rhinitis/complications/*therapy
+Sinusitis/complications/*therapy
+Th2 Cells/immunology
+Biologics
+Biomarkers
+Chronic rhinosinusitis
+Dupilumab
+Endotype
+Mepolizumab
+Nasal polyps
+Omalizumab
+Type 2 inflammation
+Abstract: In western countries, 85% of chronic rhinosinusitis with nasal polyp disease reveals a type 2 inflammatory pattern with expression of IL-4, -5, and -13 as well as increased concentrations of IgE, whereas chronic rhinosinusitis without nasal polyps merely expresses these biomarkers. The degree of type 2 inflammation furthermore is associated with disease severity, asthma comorbidity, and recurrence of disease after surgery. Therefore, these biomarkers also form the targets for innovative therapeutic approaches such as monoclonal antibodies directed against IgE, IL-5, and IL-4 receptor alpha, blocking the activity of IL-4 and -13. Having demonstrated efficacy in severe asthma, the antibodies have been tested in proof-of-concept studies in patients with nasal polyposis with or without asthma, and have demonstrated their potential to reduce nasal and sinus nasal polyp burden monitored by nasal endoscopy and computed tomography scanning, and to improve typical symptoms. No biomarkers have been identified to select subjects for therapy, to predict response to a specific drug, or to monitor treatment success, which is best documented by nasal polyp score and symptoms. Phase 3 studies are currently in preparation or running, which aim to demonstrate efficacy in larger patient populations and to achieve registration for the indication nasal polyps.
+Notes: 2213-2201
+Bachert, Claus
+Gevaert, Philippe
+Hellings, Peter
+Journal Article
+Review
+United States
+2017/05/21
+J Allergy Clin Immunol Pract. 2017 Nov-Dec;5(6):1512-1516. doi: 10.1016/j.jaip.2017.04.024. Epub 2017 May 16.
+Author Address: Upper Airways Research Laboratory, Ghent University, Ghent, Belgium; Division of ENT Diseases, CLINTEC, Karolinska Institute, Stockholm, Sweden. Electronic address: claus.bachert@ugent.be.
+Upper Airways Research Laboratory, Ghent University, Ghent, Belgium.
+Department of Otorhinolaryngology, HNS, UZ Leuven, Leuven, Belgium.
+Database Provider: NLM
+Language: eng

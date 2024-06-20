@@ -1,0 +1,22 @@
+Reference Type:  Journal Article
+Record Number: 455
+Year: 2020
+Title: Erratum: Onset of Effect, Changes in Airflow Obstruction and Lung Volume, and Health-Related Quality of Life Improvements with Benralizumab for Patients with Severe Eosinophilic Asthma: Phase IIIb Randomized, Controlled Trial (SOLANA) [Corrigendum]
+Journal: J Asthma Allergy
+Volume: 13
+Pages: 135
+Epub Date: 20200313
+Short Title: Erratum: Onset of Effect, Changes in Airflow Obstruction and Lung Volume, and Health-Related Quality of Life Improvements with Benralizumab for Patients with Severe Eosinophilic Asthma: Phase IIIb Randomized, Controlled Trial (SOLANA) [Corrigendum]
+ISSN: 1178-6965 (Print)
+1178-6965
+DOI: 10.2147/jaa.S251079
+PMCID: PMC7081714
+Accession Number: 32214829
+Abstract: [This corrects the article DOI: 10.2147/JAA.S240044.].
+Notes: 1178-6965
+Published Erratum
+New Zealand
+2020/03/28
+J Asthma Allergy. 2020 Mar 13;13:135. doi: 10.2147/JAA.S251079. eCollection 2020.
+Database Provider: NLM
+Language: eng

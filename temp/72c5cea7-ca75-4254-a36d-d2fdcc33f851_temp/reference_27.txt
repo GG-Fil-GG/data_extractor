@@ -1,0 +1,76 @@
+Reference Type:  Journal Article
+Record Number: 430
+Author: Bachert, C., Mannent, L., Naclerio, R. M., Mullol, J., Ferguson, B. J., Gevaert, P., Hellings, P., Jiao, L., Wang, L., Evans, R. R., Pirozzi, G., Graham, N. M., Swanson, B., Hamilton, J. D., Radin, A., Gandhi, N. A., Stahl, N., Yancopoulos, G. D. and Sutherland, E. R.
+Year: 2016
+Title: Effect of Subcutaneous Dupilumab on Nasal Polyp Burden in Patients With Chronic Sinusitis and Nasal Polyposis: A Randomized Clinical Trial
+Journal: Jama
+Volume: 315
+Issue: 5
+Pages: 469-79
+Date: Feb 2
+Short Title: Effect of Subcutaneous Dupilumab on Nasal Polyp Burden in Patients With Chronic Sinusitis and Nasal Polyposis: A Randomized Clinical Trial
+ISSN: 0098-7484
+DOI: 10.1001/jama.2015.19330
+Accession Number: 26836729
+Keywords: Adult
+Aged
+Anti-Inflammatory Agents/*administration & dosage/adverse effects
+Antibodies, Monoclonal/*administration & dosage/adverse effects
+Antibodies, Monoclonal, Humanized
+Asthma/drug therapy
+Chronic Disease
+Double-Blind Method
+Drug Administration Schedule
+Female
+Humans
+Injections, Subcutaneous
+Interleukin-13/*antagonists & inhibitors
+Interleukin-4/*antagonists & inhibitors
+Least-Squares Analysis
+Male
+Middle Aged
+Mometasone Furoate/administration & dosage
+Nasal Polyps/drug therapy
+Nasal Sprays
+Quality of Life
+Sinusitis/complications/*drug therapy
+Abstract: IMPORTANCE: Dupilumab has demonstrated efficacy in patients with asthma and atopic dermatitis, which are both type 2 helper T-cell-mediated diseases. OBJECTIVE: To assess inhibition of interleukins 4 and 13 with dupilumab in patients with chronic sinusitis and nasal polyposis. DESIGN, SETTING, AND PARTICIPANTS: A randomized, double-blind, placebo-controlled parallel-group study conducted at 13 sites in the United States and Europe between August 2013 and August 2014 in 60 adults with chronic sinusitis and nasal polyposis refractory to intranasal corticosteroids with 16 weeks of follow-up. INTERVENTIONS: Subcutaneous dupilumab (a 600 mg loading dose followed by 300 mg weekly; n = 30) or placebo (n = 30) plus mometasone furoate nasal spray for 16 weeks. MAIN OUTCOMES AND MEASURES: Change in endoscopic nasal polyp score (range, 0-8; higher scores indicate worse status) at 16 weeks (primary end point). Secondary end points included Lund-Mackay computed tomography (CT) score (range, 0-24; higher scores indicate worse status), 22-item SinoNasal Outcome Test score (range, 0-110; higher scores indicating worse quality of life; minimal clinically important difference ≥8.90), sense of smell assessed using the University of Pennsylvania Smell Identification Test (UPSIT) score (range, 0-40; higher scores indicate better status), symptoms, and safety. RESULTS: Among the 60 patients who were randomized (mean [SD] age, 48.4 years [9.4 years]; 34 men [56.7%]; 35 with comorbid asthma), 51 completed the study. The least squares (LS) mean change in nasal polyp score was -0.3 (95% CI, -1.0 to 0.4) with placebo and -1.9 (95% CI, -2.5 to -1.2) with dupilumab (LS mean difference, -1.6 [95% CI, -2.4 to -0.7]; P < .001). The LS mean difference between the 2 groups for the Lund-Mackay CT total score was -8.8 (95% CI, -11.1 to -6.6; P < .001). Significant improvements with dupilumab were also observed for the 22-item SinoNasal Outcome Test (LS mean difference between groups, -18.1 [95% CI, -25.6 to -10.6]; P < .001) and sense of smell assessed by UPSIT (LS mean difference, 14.8 [95% CI, 10.9 to 18.7]; P < .001). The most common adverse events were nasopharyngitis (33% in the placebo group vs 47% in the dupilumab group), injection site reactions (7% vs 40%, respectively), and headache (17% vs 20%). CONCLUSIONS AND RELEVANCE: Among adults with symptomatic chronic sinusitis and nasal polyposis refractory to intranasal corticosteroids, the addition of subcutaneous dupilumab to mometasone furoate nasal spray compared with mometasone alone reduced endoscopic nasal polyp burden after 16 weeks. Further studies are needed to assess longer treatment duration, larger samples, and direct comparison with other medications. TRIAL REGISTRATION: clinicaltrials.gov Identifier: NCT01920893.
+Notes: 1538-3598
+Bachert, Claus
+Mannent, Leda
+Naclerio, Robert M
+Mullol, Joaquim
+Ferguson, Berrylin J
+Gevaert, Philippe
+Hellings, Peter
+Jiao, Lixia
+Wang, Lin
+Evans, Robert R
+Pirozzi, Gianluca
+Graham, Neil M
+Swanson, Brian
+Hamilton, Jennifer D
+Radin, Allen
+Gandhi, Namita A
+Stahl, Neil
+Yancopoulos, George D
+Sutherland, E Rand
+Journal Article
+Multicenter Study
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+United States
+2016/02/03
+JAMA. 2016 Feb 2;315(5):469-79. doi: 10.1001/jama.2015.19330.
+Author Address: Upper Airway Research Laboratory, Department of Otorhinolaryngology, Ghent University Hospital, Ghent, Belgium2Clintec, Karolinska Institute, Stockholm, Sweden.
+Research and Development, Sanofi, Chilly Mazarin, France.
+University of Chicago, Chicago, Illinois.
+Hospital Clinic, Institut d'Investigacions Biomèdiques August Pi i Sunyer, Barcelona, Spain.
+University of Pittsburgh Medical Center, Pittsburgh, Pennsylvania.
+Upper Airway Research Laboratory, Department of Otorhinolaryngology, Ghent University Hospital, Ghent, Belgium.
+Laboratory of Experimental Immunology, Department of Otorhinolaryngology-Head and Neck Surgery, University Hospitals Leuven, Leuven, Belgium.
+Research and Development, Sanofi, Bridgewater, New Jersey.
+Regeneron Pharmaceuticals Inc, Tarrytown, New York.
+Immunology and Inflammation Development Franchise, Sanofi Research and Development, Cambridge, Massachusetts.
+Database Provider: NLM
+Language: eng

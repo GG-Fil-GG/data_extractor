@@ -1,0 +1,61 @@
+Reference Type:  Journal Article
+Record Number: 178
+Author: Bjermer, L., Lemiere, C., Maspero, J., Weiss, S., Zangrilli, J. and Germinaro, M.
+Year: 2016
+Title: Reslizumab for Inadequately Controlled Asthma With Elevated Blood Eosinophil Levels: A Randomized Phase 3 Study
+Journal: Chest
+Volume: 150
+Issue: 4
+Pages: 789-798
+Epub Date: 20160404
+Date: Oct
+Short Title: Reslizumab for Inadequately Controlled Asthma With Elevated Blood Eosinophil Levels: A Randomized Phase 3 Study
+ISSN: 0012-3692
+DOI: 10.1016/j.chest.2016.03.032
+Accession Number: 27056586
+Keywords: Administration, Inhalation
+Adolescent
+Adrenal Cortex Hormones/therapeutic use
+Adrenergic beta-Agonists/therapeutic use
+Adult
+Anti-Asthmatic Agents/*therapeutic use
+Antibodies, Monoclonal, Humanized/*therapeutic use
+Asthma/complications/*drug therapy/immunology/physiopathology
+Child
+Double-Blind Method
+Eosinophilia/complications/*immunology
+Female
+Forced Expiratory Volume
+Humans
+Male
+Maximal Midexpiratory Flow Rate
+Patient Reported Outcome Measures
+Surveys and Questionnaires
+Treatment Outcome
+Vital Capacity
+Young Adult
+asthma
+eosinophil
+phase 3
+reslizumab
+Abstract: BACKGROUND: This phase 3 study further characterizes the efficacy and safety of reslizumab (a humanized anti-IL-5 monoclonal antibody) in patients aged 12 to 75 years with asthma inadequately controlled by at least a medium-dose inhaled corticosteroid and with a blood eosinophil count ≥ 400 cells/μL. METHODS: Patients were randomized to receive reslizumab 0.3 or 3.0 mg/kg or placebo administered once every 4 weeks for 16 weeks (total four doses). The primary end point was change from baseline in pre-bronchodilator FEV(1) over 16 weeks. Secondary end points included FVC, forced expiratory flow at 25% to 75% of FVC (FEF(25%-75%)), patient-reported control of asthma symptoms, short-acting β-agonist (SABA) use, blood eosinophil levels, and safety. RESULTS: Reslizumab significantly improved FEV(1) (difference vs placebo [reslizumab 0.3 and 3.0 mg/kg], 115 mL [95% CI, 16-215; P = .0237] and 160 mL [95% CI, 60-259; P = .0018]). Clinically meaningful increases in FVC (130 mL) and FEF(25%-75%) (233 mL/s) were observed with reslizumab 3.0 mg/kg. Reslizumab improved scores on the Asthma Control Questionnaire (ACQ) and Asthma Quality of Life Questionnaire (AQLQ) vs placebo (greater effects seen with 3.0 mg/kg; P < .05). The minimally important difference was reached for the AQLQ (reslizumab 3.0 mg/kg) but not on the ACQ. Scores on the Asthma Symptom Utility Index and SABA use were improved with reslizumab. The most common adverse events were worsening of asthma, headache, and nasopharyngitis; most events were mild to moderate in severity. CONCLUSIONS: Reslizumab improved lung function, asthma control and symptoms, and quality of life. It was well tolerated in patients with inadequately controlled asthma (despite standard therapy) and elevated blood eosinophil levels. Overall, the 3.0-mg/kg dose of reslizumab provided greater improvements in asthma outcomes vs the 0.3-mg/kg dose, with comparable safety. TRIAL REGISTRY: ClinicalTrials.gov; No.: NCT01270464; URL: www.clinicaltrials.gov.
+Notes: 1931-3543
+Bjermer, Leif
+Lemiere, Catherine
+Maspero, Jorge
+Weiss, Sivan
+Zangrilli, James
+Germinaro, Matthew
+Clinical Trial, Phase III
+Journal Article
+Randomized Controlled Trial
+United States
+2016/04/09
+Chest. 2016 Oct;150(4):789-798. doi: 10.1016/j.chest.2016.03.032. Epub 2016 Apr 4.
+Author Address: Skåne University Hospital, Lund University, Lund, Sweden. Electronic address: leif.bjermer@med.lu.se.
+Sacré-Coeur Hospital, Université de Montréal, Montreal, QC, Canada.
+Fundacion CIDEA, Allergy/Respiratory Research, Buenos Aires, Argentina.
+Teva Pharmaceuticals, Netanya, Israel.
+Teva Pharmaceuticals, Frazer, PA.
+Database Provider: NLM
+Language: eng

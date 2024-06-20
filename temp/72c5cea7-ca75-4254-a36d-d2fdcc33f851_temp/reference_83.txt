@@ -1,0 +1,47 @@
+Reference Type:  Journal Article
+Record Number: 384
+Author: Carr, W. W., McDonald, M. and Meizlik, P.
+Year: 2019
+Title: Effect of intravenously administered reslizumab on spirometric lung age in patients with moderate-to-severe eosinophilic asthma
+Journal: Allergy Asthma Proc
+Volume: 40
+Issue: 4
+Pages: 240-249
+Date: Jul 1
+Short Title: Effect of intravenously administered reslizumab on spirometric lung age in patients with moderate-to-severe eosinophilic asthma
+ISSN: 1088-5412
+DOI: 10.2500/aap.2019.40.4225
+Accession Number: 31262379
+Keywords: Administration, Intravenous
+Adolescent
+Adult
+Anti-Asthmatic Agents/*therapeutic use
+Antibodies, Monoclonal, Humanized/*therapeutic use
+Asthma/*drug therapy
+Child
+Double-Blind Method
+Eosinophilia/*drug therapy
+Female
+Humans
+Lung/pathology/*physiology
+Male
+Middle Aged
+Placebos
+Quality of Life
+Spirometry
+Young Adult
+Abstract: Background: Spirometric lung age expresses lung function relative to chronological age. It has been effective in encouraging smoking cessation and has been used in the assessment of asthma. Reslizumab, a humanized anti-interleukin-5 monoclonal antibody, is approved as add-on therapy for adults with severe asthma and elevated blood eosinophils. Objective: To assess the effect of reslizumab versus placebo on the change in lung age over 52 weeks and the correlation between change in lung age and quality of life in moderate-to-severe asthma. Methods: This was a post hoc analysis of two randomized, double-blind, placebo-controlled trials. Patients ages 12-75 years with moderate-to-severe, inadequately controlled asthma and elevated blood eosinophils received intravenous reslizumab 3.0 mg/kg or placebo every 4 weeks for 1 year. Spirometry was performed every 4 weeks, and the Asthma Quality of Life Questionnaire (AQLQ) score was assessed at baseline and weeks 16, 32, and 52. Results: Mean improvement in lung-age deficit at week 52 was -8.73 years for reslizumab versus -3.80 years for placebo, a treatment difference of 5 years (p < 0.0001). A statistically significant effect was seen as early as 4 weeks. In AQLQ responders (a ≥ 0.5 increase in AQLQ score), a statistically significant inverse relationship between the change from baseline in lung age and AQLQ score at weeks 16, 32, and 52 was observed among patients treated with reslizumab only. Among lung-age responders (≥5 years' reduction), a statistically significantly greater proportion of patients on reslizumab achieved ≥0.5 increase in the AQLQ score versus placebo at all time points. Conclusion: Reslizumab reduced lung-age deficit by 5 years in patients with moderate-to-severe inadequately controlled eosinophilic asthma. Improvement in lung age correlated with improved quality of life. Lung age is a simple indication of pulmonary function and could be a valuable tool in asthma education.Clinical trials NCT01287039 and NCT01285323, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.clinicaltrials.gov">www.clinicaltrials.gov</ext-link>.
+Notes: 1539-6304
+Carr, Warner W
+McDonald, Mirna
+Meizlik, Paige
+Journal Article
+Randomized Controlled Trial
+Research Support, Non-U.S. Gov't
+United States
+2019/07/03
+Allergy Asthma Proc. 2019 Jul 1;40(4):240-249. doi: 10.2500/aap.2019.40.4225.
+Author Address: From the Allergy and Asthma Associates, Mission Viejo, California.
+Teva Branded Pharmaceutical Products R&D Inc., Malvern, Pennsylvania.
+Database Provider: NLM
+Language: eng

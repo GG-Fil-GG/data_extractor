@@ -1,0 +1,51 @@
+Reference Type:  Journal Article
+Record Number: 362
+Author: Castro, M., Rabe, K. F., Corren, J., Pavord, I. D., Katelaris, C. H., Tohda, Y., Zhang, B., Rice, M. S., Maroni, J., Rowe, P., Pirozzi, G., Amin, N., Ruddy, M., Akinlade, B., Graham, N. M. H. and Teper, A.
+Year: 2020
+Title: Dupilumab improves lung function in patients with uncontrolled, moderate-to-severe asthma
+Journal: ERJ Open Res
+Volume: 6
+Issue: 1
+Epub Date: 20200127
+Date: Jan
+Short Title: Dupilumab improves lung function in patients with uncontrolled, moderate-to-severe asthma
+ISSN: 2312-0541 (Print)
+2312-0541
+DOI: 10.1183/23120541.00204-2019
+Legal Note: Conflict of interest: M. Castro reports grants, personal fees and nonfinancial support from Sanofi, and personal fees from Regeneron Pharmaceuticals, during the conduct of the study; and grants from the American Lung Association, Chiesi, the NIH, Novartis and PCORI, grants and personal fees from AstraZeneca, Boehringer Ingelheim and Sanofi, and personal fees from 4D Pharma, Aviragen Theraputics, Boston Scientific, Elsevier, Genentech, Nuvaira, Teva, Therabron, Theravance Biopharma, Vectura and VIDA Pharma, outside the submitted work. Conflict of interest: K.F. Rabe reports personal fees from AstraZeneca, Boehringer Ingelheim, Chiesi, Novartis, Sanofi, Sterna Biologicals, Teva and Verona Pharma, outside the submitted work. Conflict of interest: J. Corren reports grants and nonfinancial support from Sanofi during the conduct of the study. Conflict of interest: I.D. Pavord reports personal fees and nonfinancial support from Sanofi, and personal fees from Regeneron Pharmaceuticals, during the conduct of the study; and personal fees from Aerocrine AB, Almirall, Circassia, Dey Pharma, Genentech, Knopp Biosciences, Merck, MSD, Novartis, RespiVert and Schering-Plough, personal fees and nonfinancial support from AstraZeneca, Boehringer Ingelheim, GSK, Napp Pharmaceuticals and Teva, and grants, personal fees and nonfinancial support from Chiesi, outside the submitted work. Conflict of interest: C.H. Katelaris reports grants from Sanofi outside the submitted work. Conflict of interest: Y. Tohda reports personal fees from Sanofi during the conduct of the study; and personal fees from AstraZeneca and KYORIN Pharmaceutical, outside the submitted work. Conflict of interest: B. Zhang reports personal fees from Sanofi during the conduct of the study. Conflict of interest: M.S. Rice reports personal fees from Sanofi during the conduct of the study. Conflict of interest: J. Maroni reports personal fees from Regeneron Pharmaceuticals during the conduct of the study. Conflict of interest: P. Rowe reports personal fees from Sanofi during the conduct of the study. Conflict of interest: G. Pirozzi reports personal fees from Sanofi during the conduct of the study. Conflict of interest: N. Amin reports personal fees from Regeneron Pharmaceuticals during the conduct of the study. Conflict of interest: M. Ruddy reports personal fees from Regeneron Pharmaceuticals during the conduct of the study. Conflict of interest: B. Akinlade reports personal fees from Regeneron Pharmaceuticals during the conduct of the study. Conflict of interest: N.M.H. Graham reports personal fees from Regeneron Pharmaceuticals during the conduct of the study. Conflict of interest: A. Teper reports personal fees from Sanofi during the conduct of the study.
+PMCID: PMC6983496
+Accession Number: 32010719
+Abstract: BACKGROUND: Dupilumab, a fully human monoclonal antibody, blocks the shared receptor component for interleukin-4 and interleukin-13, key drivers of type 2 inflammation. In the phase 3 LIBERTY ASTHMA QUEST trial (NCT02414854) in patients with uncontrolled, moderate-to-severe asthma, add-on dupilumab 200 mg or 300 mg every 2 weeks reduced exacerbations and improved forced expiratory volume in 1 s (FEV(1)) and quality of life over 52 weeks. This analysis evaluates dupilimab's effect on lung function in the overall population, and subgroups with baseline elevated type 2 inflammatory biomarkers. METHODS: Patients were randomised to 52 weeks of subcutaneous dupilumab 200 mg every 2 weeks, 300 mg every 2 weeks, or matched-volume placebos. Lung function outcomes were analysed in the overall population, in patients with ≥150 eosinophils·µL(-1), ≥300 eosinophils·µL(-1), ≥25 ppb fractional exhaled nitric oxide (F (eNO)), and both ≥150 eosinophils·µL(-1) and ≥25 ppb F (eNO), at baseline. RESULTS: Dupilumab treatment (200 mg and 300 mg every 2 weeks) resulted in significant improvements versus placebo after 52 weeks in pre-bronchodilator FEV(1) (0.20 and 0.13 L, respectively, versus placebo) and post-bronchodilator FEV(1) (0.19 and 0.13 L, respectively), forced vital capacity (FVC) (0.20 and 0.14 L, respectively), forced expiratory flow (0.19 and 0.13 L·s(-1), respectively) and pre-bronchodilator FEV(1)/FVC ratio (1.75% and 1.61%, respectively) in the overall population (p<0.001). Difference versus placebo in post-bronchodilator FEV(1) slope of change (weeks 4-52) was significant (0.04 L·year(-1); p<0.05). Greater improvements were achieved in patients with elevated baseline blood eosinophil and/or F (eNO) levels for most outcomes. CONCLUSIONS: Dupilumab improves lung function outcomes, including large and small airway measurements and fixed airway obstruction, in patients with uncontrolled, moderate-to-severe asthma; particularly in patients with elevated biomarkers of type 2 inflammation.
+Notes: 2312-0541
+Castro, Mario
+Rabe, Klaus F
+Corren, Jonathan
+Pavord, Ian D
+Katelaris, Constance H
+Tohda, Yuji
+Zhang, Bingzhi
+Rice, Megan S
+Maroni, Jaman
+Rowe, Paul
+Pirozzi, Gianluca
+Amin, Nikhil
+Ruddy, Marcella
+Akinlade, Bolanle
+Graham, Neil M H
+Teper, Ariel
+Journal Article
+England
+2020/02/06
+ERJ Open Res. 2020 Jan 27;6(1):00204-2019. doi: 10.1183/23120541.00204-2019. eCollection 2020 Jan.
+Author Address: Washington University School of Medicine, St Louis, MO, USA.
+LungenClinic Grosshansdorf and Christian Albrechts University, members of the German Center for Lung Research (DZL), Kiel, Germany.
+David Geffen School of Medicine at UCLA, Los Angeles, CA, USA.
+NIHR Oxford Biomedical Research Centre, University of Oxford, Oxford, UK.
+Campbelltown Hospital, Campbelltown, NSW, Australia.
+Western Sydney University, Sydney, NSW, Australia.
+Dept of Respiratory Medicine and Allergology, Kindai University Faculty of Medicine, Osakasayama, Japan.
+Sanofi, Bridgewater, NJ, USA.
+Sanofi, Cambridge, MA, USA.
+Regeneron Pharmaceuticals, Inc., Tarrytown, NY, USA.
+Database Provider: NLM
+Language: eng

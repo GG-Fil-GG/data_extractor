@@ -1,0 +1,37 @@
+Reference Type:  Journal Article
+Record Number: 420
+Author: Caminati, M., Bagnasco, D., Vaia, R. and Senna, G.
+Year: 2019
+Title: New horizons for the treatment of severe, eosinophilic asthma: benralizumab, a novel precision biologic
+Journal: Biologics
+Volume: 13
+Pages: 89-95
+Epub Date: 20190522
+Short Title: New horizons for the treatment of severe, eosinophilic asthma: benralizumab, a novel precision biologic
+ISSN: 1177-5475 (Print)
+1177-5475
+DOI: 10.2147/btt.S157183
+Legal Note: The authors declare that they have no conflicts of interest in this work.
+PMCID: PMC6535408
+Accession Number: 31190733
+Keywords: anti IL-5 mAbs
+benralizumab efficacy
+benralizumab mechanism of action
+benralizumab safety
+eosinophilic asthma
+severe asthma
+Abstract: In the last decades, the increasing evidence concerning inflammation mechanisms underlying severe eosinophilic asthma has highlighted new potential therapeutic targets and has paved the way to new selective biologic drugs. Understanding the mechanism of action and the clinical outcomes of a particular drug along with the clinical and biological characteristics of the patient population for which that drug was intended may ensure appropriate selection of patients that will respond to that drug. Under this perspective, the present review will focus on the mechanisms of action and clinical evidence of benralizumab as a treatment option for severe eosinophilic asthma, in order to provide a concise overview and a reference for clinical practice. Benralizumab is a fully humanized afucosylated IgG1κ mAb that binds to an epitope on IL-5 Rα, and inhibits IL-5 signaling. Benralizumab also sustains antibody-directed cell-mediated cytotoxicity (ADCC) of eosinophils and basophils and consequently depletes IL-5Rα-expressing cells. As a result, it is responsible for a substantial depletion of blood, tissue, and bone marrow eosinophilia. This unique mechanism of action may account for a more complete and rapid action profile. Randomized clinical trials have demonstrated that benralizumab provides an optimal safety profile, and is able to significantly reduce asthma exacerbations, oral steroid intake, and to improve lung function. Some clinical predictors of enhanced clinical response to benralizumab have also been identified, including: a level of blood eosinophils ≥300 μL(-1), oral steroids use, the presence of nasal polyposis, FVC <65% of predicted, and a history of three or more exacerbations per year at baseline. These results can be helpful in identifying the best responder patients to benralizumab. As a step forward, the definition of the responder profile for each of the available biological treatment options will potentially support even more the pathway to precision medicine and the critical matching of the right drug with the right patient.
+Notes: 1177-5491
+Caminati, Marco
+Bagnasco, Diego
+Vaia, Rachele
+Senna, Gianenrico
+Journal Article
+New Zealand
+2019/06/14
+Biologics. 2019 May 22;13:89-95. doi: 10.2147/BTT.S157183. eCollection 2019.
+Author Address: Asthma Center and Allergy Unit, Verona University Hospital, Verona, Italy.
+Department of Medicine, School of Specialization in Allergy and Clinical Immunology, University of Verona, Verona, Italy.
+Allergy & Respiratory Diseases, DIMI Department of Internal Medicine, University of Genoa, Genoa, Italy.
+Database Provider: NLM
+Language: eng
