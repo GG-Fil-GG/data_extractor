@@ -2,6 +2,7 @@ import re
 import csv
 from flask import Flask, request, jsonify, render_template, send_file
 import os
+from dotenv import load_dotenv
 import uuid
 import shutil
 import requests
@@ -15,6 +16,8 @@ import threading
 import time
 import schedule
 from parsers import parsers
+
+load_dotenv()
 
 app = Flask(__name__, template_folder='app/templates')
 
@@ -78,7 +81,6 @@ class JobManager:
                         logging.error(f"Error while deleting root directory {temp_root_dir}: {e}")
             self.update_status("Data Extraction Complete")
             logging.info("Temporary directory cleanup completed.")
-
 
     def get_job_data(self):
         return self.job_data
@@ -427,11 +429,10 @@ def begin_extraction():
 
     document_handler = DocumentHandler(job_manager)
     query_manager = QueryManager(job_manager)
-    
-    api_key_filepath = "/Users/giorgioarangutani/Library/CloudStorage/OneDrive-Personal/My projects/IT and AI/da_key.txt"
-    with open(api_key_filepath, 'r') as file:
-        api_key = file.read().strip()
 
+    api_key = os.getenv('OPENAI_API_KEY')
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY not set in .env file")
     llm_interface = LLMInterface(api_key)
 
     data_extractor = DataExtractor(job_manager, document_handler, query_manager, llm_interface)
