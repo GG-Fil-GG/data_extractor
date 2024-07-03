@@ -5,7 +5,7 @@ from app.services.query_manager import QueryManager
 from app.services.job_manager import JobManager
 from app.services.llm_interface import LLMInterface
 from app.services.output_generator import OutputGenerator
-from parsers import parsers
+from app.services.parsers import parsers
 
 def handle_errors(func):
     @wraps(func)
