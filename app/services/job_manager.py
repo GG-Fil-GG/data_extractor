@@ -30,7 +30,8 @@ class JobManager:
     @handle_errors
     def initialize_temp_dir(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        temp_root_dir = os.path.join(script_dir, "temp")
+        root_dir = os.path.abspath(os.path.join(script_dir, "../.."))
+        temp_root_dir = os.path.join(root_dir, "temp")
         os.makedirs(temp_root_dir, exist_ok=True)
         temp_job_dir = os.path.join(temp_root_dir, f"{self.job_data['Job ID']}_temp")
         os.makedirs(temp_job_dir, exist_ok=True)
