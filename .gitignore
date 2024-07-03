@@ -68,3 +68,6 @@ logs/
 # Misc folders
 old/
 temp/
+
+# GitHub
+.gitignore
