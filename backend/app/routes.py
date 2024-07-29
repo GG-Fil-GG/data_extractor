@@ -1,6 +1,6 @@
 import os
 import logging
-from flask import Flask, request, jsonify, render_template, send_file
+from flask import Flask, request, jsonify, render_template, send_file, send_from_directory
 from werkzeug.utils import secure_filename
 from app.services.job_manager import JobManager
 from app.services.document_handler import DocumentHandler
@@ -9,7 +9,7 @@ from app.services.data_extractor import DataExtractor
 from app.services.output_generator import OutputGenerator
 from app.services.llm_interface import LLMInterface
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, static_folder='../frontend/dist', template_folder='../frontend/dist')
 
 logging.basicConfig(level=logging.DEBUG)
 logging.getLogger('pdfminer').setLevel(logging.WARNING)
@@ -18,7 +18,7 @@ job_store = {}
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/begin_extraction', methods=['POST'])
 def begin_extraction():
