@@ -1,26 +1,40 @@
+<!-- App.vue -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <h1>DataExtractor.com</h1>
+    <DocumentsBlock />
+    <QueriesBlock />
+    <ExportBlock />
+    <ExtractionBlock />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DocumentsBlock from './components/DocumentsBlock.vue'
+import QueriesBlock from './components/QueriesBlock.vue'
+import ExportBlock from './components/ExportBlock.vue'
+import ExtractionBlock from './components/ExtractionBlock.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    DocumentsBlock,
+    QueriesBlock,
+    ExportBlock,
+    ExtractionBlock
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
