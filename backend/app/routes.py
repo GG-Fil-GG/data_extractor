@@ -1,6 +1,6 @@
 import os
 import logging
-from flask import Flask, request, jsonify, render_template, send_file, send_from_directory
+from flask import request, jsonify, send_file, send_from_directory
 from werkzeug.utils import secure_filename
 from app.services.job_manager import JobManager
 from app.services.document_handler import DocumentHandler
@@ -8,79 +8,79 @@ from app.services.query_manager import QueryManager
 from app.services.data_extractor import DataExtractor
 from app.services.output_generator import OutputGenerator
 from app.services.llm_interface import LLMInterface
+from flask import Blueprint, jsonify
+import json
 
-app = Flask(__name__, static_folder='../frontend/dist', template_folder='../frontend/dist')
+main = Blueprint('main', __name__)
 
 logging.basicConfig(level=logging.DEBUG)
 logging.getLogger('pdfminer').setLevel(logging.WARNING)
 
 job_store = {}
 
-@app.route('/')
-def index():
-    return send_from_directory(app.static_folder, 'index.html')
-
-@app.route('/begin_extraction', methods=['POST'])
+@main.route('/begin_extraction', methods=['POST'])
 def begin_extraction():
-    job_manager = JobManager()
-    job_manager.initialize_temp_dir()
+    logging.info("Received request for begin_extraction")
+    logging.info(f"Request method: {request.method}")
+    logging.info(f"Request headers: {request.headers}")
+    logging.info(f"Request form data: {request.form}")
+    logging.info(f"Request files: {request.files}")
+    
+    try:
+        job_manager = JobManager()
+        job_manager.initialize_temp_dir()
 
-    files = request.files.getlist('files')
-    logging.info(f"Received {len(files)} files")
-    for i, file in enumerate(files):
-        filename = secure_filename(file.filename)
-        path = os.path.join(job_manager.job_data["Temp Dir"], filename)
-        file.save(path)
-        alias = request.form.get(f'doc_alias_{i}')
-        ext = request.form.get(f'doc_ext_{i}')
-        logging.info(f"File {i}: filename={filename}, alias={alias}, ext={ext}")
-        job_manager.job_data["Documents"].append({
-            "Path": path,
-            "Alias": alias,
-            "Ext": ext
-        })
+        documents_data = json.loads(request.form['documents'])
+        processed_documents = []
 
-    queries = []
-    query_index = 0
-    while f'query_text_{query_index}' in request.form:
-        text = request.form.get(f'query_text_{query_index}')
-        alias = request.form.get(f'query_alias_{query_index}')
-        format = request.form.get(f'query_format_{query_index}')
-        logging.info(f"Query {query_index}: text={text}, alias={alias}, format={format}")
-        if text and alias and format:
-            queries.append({
-                "Text": text,
-                "Alias": alias,
-                "Format": format
-            })
-        query_index += 1
-    job_manager.job_data["Queries"] = queries
+        for index, doc_metadata in enumerate(documents_data):
+            file_key = f'file_{index}'
+            if file_key in request.files:
+                file = request.files[file_key]
+                filename = secure_filename(file.filename)
+                path = os.path.join(job_manager.job_data["Temp Dir"], filename)
+                file.save(path)
+                
+                processed_doc = {
+                    "Path": path,
+                    "Alias": doc_metadata['Alias'],
+                    "Ext": doc_metadata['Ext']
+                }
+                processed_documents.append(processed_doc)
+            else:
+                logging.warning(f"File not found for document at index {index}")
 
-    logging.info(f"Documents: {job_manager.job_data['Documents']}")
-    logging.info(f"Queries: {job_manager.job_data['Queries']}")
+        job_manager.job_data["Documents"] = processed_documents
 
-    job_manager.job_data["Export Format"] = request.form['export_format']
-    job_manager.job_data["Orientation"] = request.form['orientation']
+        # Parse queries
+        job_manager.job_data["Queries"] = json.loads(request.form['queries'])
 
-    document_handler = DocumentHandler(job_manager)
-    query_manager = QueryManager(job_manager)
+        # Parse export format and orientation
+        job_manager.job_data["Export Format"] = request.form['export_format']
+        job_manager.job_data["Orientation"] = request.form['orientation']
 
-    api_key = os.getenv('OPENAI_API_KEY')
-    if not api_key:
-        raise ValueError("OPENAI_API_KEY not set in .env file")
-    llm_interface = LLMInterface(api_key)
+        document_handler = DocumentHandler(job_manager)
+        query_manager = QueryManager(job_manager)
 
-    data_extractor = DataExtractor(job_manager, document_handler, query_manager, llm_interface)
-    job_data = data_extractor.run()
+        api_key = os.getenv('OPENAI_API_KEY')
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY not set in .env file")
+        llm_interface = LLMInterface(api_key)
 
-    output_generator = OutputGenerator(job_manager)
-    output_generator.generate_output()
+        data_extractor = DataExtractor(job_manager, document_handler, query_manager, llm_interface)
+        job_data = data_extractor.run()
 
-    job_store[job_manager.job_data["Job ID"]] = job_manager
+        output_generator = OutputGenerator(job_manager)
+        output_generator.generate_output()
 
-    return jsonify(job_data)
+        job_store[job_manager.job_data["Job ID"]] = job_manager
 
-@app.route('/download_results/<job_id>', methods=['GET'])
+        return jsonify(job_manager.get_job_data())
+    except Exception as e:
+        logging.error(f"Error in begin_extraction: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+@main.route('/download_results/<job_id>', methods=['GET'])
 def download_results(job_id):
     logging.info(f"Download requested for job ID: {job_id}")
 
@@ -118,9 +118,9 @@ def download_results(job_id):
 
     return response
 
-if __name__ == "__main__":
-    from app.cleanup import run_cleanup_job
-    import threading
-    cleanup_thread = threading.Thread(target=run_cleanup_job, daemon=True)
-    cleanup_thread.start()
-    app.run(debug=True)
+@main.route('/test', methods=['GET'])
+def test():
+    print("Test route accessed")  # Add this line
+    return jsonify({"message": "Test successful"}), 200
+
+print("Routes registered")  # Add this line
