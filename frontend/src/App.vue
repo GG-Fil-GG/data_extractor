@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import DocumentsBlock from './components/DocumentsBlock.vue'
 import QueriesBlock from './components/QueriesBlock.vue'
 import ExportBlock from './components/ExportBlock.vue'
@@ -22,6 +23,12 @@ export default {
     QueriesBlock,
     ExportBlock,
     ExtractionBlock
+  },
+  created() {
+    this.initializeStore()
+  },
+  methods: {
+    ...mapActions(['initializeStore'])
   }
 }
 </script>

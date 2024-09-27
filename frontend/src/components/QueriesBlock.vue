@@ -3,13 +3,19 @@
     <div class="block queries-block">
       <h2>Queries</h2>
       <div v-for="(query, index) in queries" :key="index" class="query-row">
-        <input v-model="query.alias" :placeholder="'Query ' + (index + 1)" class="query-alias" />
-        <input v-model="query.text" placeholder="Please enter your query here" class="query-text" />
-        <select v-model="query.format" class="query-format">
+        <input :value="query.Alias" @input="updateQueryField(index, 'Alias', $event.target.value)" :placeholder="'Query ' + (index + 1)" class="query-alias" />
+        <input :value="query.Text" @input="updateQueryField(index, 'Text', $event.target.value)" placeholder="Please enter your query here" class="query-text" />
+        <select :value="query.Format" @change="updateQueryField(index, 'Format', $event.target.value)" class="query-format">
           <option value="free-form">Free-form</option>
           <option value="integer">Integer</option>
-          <option value="float">Floating-point number</option>
-          <!-- Add more options as needed -->
+          <option value="floating-point number">Floating-point number</option>
+          <option value="comma-separated list">Comma-separated list</option>
+          <option value="yes/no">Yes/No</option>
+          <option value="median (95% CI)">Median (95% CI)</option>
+          <option value="mean (SD)">Mean (SD)</option>
+          <option value="mean (SE)">Mean (SE)</option>
+          <option value="range">Range</option>
+          <option value="date (DD-MM-YYYY)">Date (DD-MM-YYYY)</option>
         </select>
         <div class="query-controls">
           <button @click="moveQuery(index, -1)" :disabled="index === 0">↑</button>
@@ -22,31 +28,45 @@
   </template>
   
   <script>
+  import { mapState, mapMutations } from 'vuex'
+  
   export default {
     name: 'QueriesBlock',
-    data() {
-      return {
-        queries: []
-      }
+    computed: {
+      ...mapState(['queries'])
     },
     methods: {
+      ...mapMutations(['setQueries']),
       addQuery() {
-        this.queries.push({
-          alias: `Query ${this.queries.length + 1}`,
-          text: '',
-          format: 'free-form'
-        })
+        this.setQueries(queries => [
+          ...queries,
+          { Alias: `Query ${queries.length + 1}`, Text: '', Format: 'free-form' }
+        ])
       },
       moveQuery(index, direction) {
         const newIndex = index + direction
         if (newIndex >= 0 && newIndex < this.queries.length) {
-          const temp = this.queries[index]
-          this.$set(this.queries, index, this.queries[newIndex])
-          this.$set(this.queries, newIndex, temp)
+          this.setQueries(queries => {
+            const newQueries = [...queries]
+            const temp = newQueries[index]
+            newQueries[index] = newQueries[newIndex]
+            newQueries[newIndex] = temp
+            return newQueries
+          })
         }
       },
       removeQuery(index) {
-        this.queries.splice(index, 1)
+        this.setQueries(queries => queries.filter((_, i) => i !== index))
+      },
+      updateQueryField(index, field, value) {
+        this.setQueries(queries => {
+          const newQueries = [...queries]
+          newQueries[index] = { ...newQueries[index], [field]: value }
+          return newQueries
+        })
+      },
+      validateQueries() {
+        return this.queries.every(query => query.Text.trim() !== '')
       }
     }
   }
@@ -78,7 +98,7 @@
   }
   
   .query-format {
-    width: 150px;
+    width: 200px;
     padding: 5px;
     margin-right: 10px;
   }
