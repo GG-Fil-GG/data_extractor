@@ -10,6 +10,7 @@ from app.services.output_generator import OutputGenerator
 from app.services.llm_interface import LLMInterface
 from flask import Blueprint, jsonify
 import json
+from app.services.token_counter import count_tokens
 
 main = Blueprint('main', __name__)
 
@@ -33,27 +34,22 @@ def begin_extraction():
         documents_data = json.loads(request.form['documents'])
         processed_documents = []
 
-        for index, doc_metadata in enumerate(documents_data):
-            file_key = f'file_{index}'
-            if file_key in request.files:
-                file = request.files[file_key]
-                filename = secure_filename(file.filename)
-                path = os.path.join(job_manager.job_data["Temp Dir"], filename)
-                file.save(path)
-                
-                if 'Alias' not in doc_metadata or 'Ext' not in doc_metadata:
-                    logging.error(f"Missing Alias or Ext for document at index {index}")
-                    continue
+        for doc_metadata in documents_data:
+            path = doc_metadata['Path']
+            alias = doc_metadata['Alias']
+            ext = doc_metadata['Ext']
 
-                processed_doc = {
-                    "Path": path,
-                    "Alias": doc_metadata['Alias'],
-                    "Ext": doc_metadata['Ext']
-                }
-                processed_documents.append(processed_doc)
-                logging.info(f"Processed document: {processed_doc}")
-            else:
-                logging.warning(f"File not found for document at index {index}")
+            if not os.path.exists(path):
+                logging.error(f"File not found at path: {path}")
+                continue
+
+            processed_doc = {
+                "Path": path,
+                "Alias": alias,
+                "Ext": ext
+            }
+            processed_documents.append(processed_doc)
+            logging.info(f"Processed document: {processed_doc}")
 
         job_manager.job_data["Documents"] = processed_documents
 
@@ -144,3 +140,29 @@ def test():
     return jsonify({"message": "Test successful"}), 200
 
 print("Routes registered")  # Add this line
+
+@main.route('/count_tokens', methods=['POST'])
+def count_tokens_route():
+    try:
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        temp_path = os.path.join('/tmp', filename)
+        file.save(temp_path)
+
+        # Extract text from the file based on its extension
+        ext = filename.split('.')[-1].lower()
+        document_handler = DocumentHandler(None)  # No job manager needed for this operation
+        text = document_handler.extract_text_from_file(temp_path, ext)
+
+        # Count tokens in the extracted text
+        token_count = count_tokens(text)
+        token_limit = 4096  # Example token limit
+
+        if token_count > token_limit:
+            return jsonify({"error": "File exceeds token limit"}), 400
+
+        # Return the path to the file if it is valid
+        return jsonify({"file_path": temp_path})
+    except Exception as e:
+        logging.error(f"Error in count_tokens: {str(e)}")
+        return jsonify({"error": str(e)}), 500

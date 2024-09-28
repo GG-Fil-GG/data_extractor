@@ -40,6 +40,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import { countTokens } from '../services/api';
 
 export default {
   name: 'DocumentsBlock',
@@ -60,7 +61,7 @@ export default {
     triggerFileInput() {
       this.$refs.fileInput.click();
     },
-    handleFileUpload(event) {
+    async handleFileUpload(event) {
       const supportedFormats = ['text/plain', 'application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
       const files = Array.from(event.target.files);
       const validFiles = files.filter(file => supportedFormats.includes(file.type));
@@ -69,18 +70,30 @@ export default {
         alert('Some files were removed because they are not in supported formats (txt, docx, pdf).');
       }
 
-      const newDocuments = validFiles.map(file => {
-        const nameParts = file.name.split('.');
-        return {
-          file: file,
-          fileName: file.name,
-          Alias: nameParts.slice(0, -1).join('.'),
-          Ext: nameParts.pop().toLowerCase(),
-          size: this.formatFileSize(file.size)
-        }
-      });
+      for (const file of validFiles) {
+        const formData = new FormData();
+        formData.append('file', file);
 
-      this.setDocuments(documents => [...documents, ...newDocuments]);
+        try {
+          const response = await countTokens(formData);
+          console.log('countTokens response:', response);  // Add this line to check the response
+          const filePath = response.data.file_path;
+
+          const nameParts = file.name.split('.');
+          const newDocument = {
+            filePath: filePath,
+            fileName: file.name,
+            Alias: nameParts.slice(0, -1).join('.'),
+            Ext: nameParts.pop().toLowerCase(),
+            size: this.formatFileSize(file.size),
+            file: file  // Ensure the file property is set
+          };
+          this.setDocuments(documents => [...documents, newDocument]);
+        } catch (error) {
+          console.error('Error counting tokens:', error);
+          alert('There was an error processing your file. Please try again.');
+        }
+      }
     },
     moveDocument(index, direction) {
       const newIndex = index + direction;

@@ -66,7 +66,7 @@ export default createStore({
              state.queries.length > 0 && 
              state.queries.every(q => q.Text && q.Alias && q.Format) &&
              state.exportFormat && 
-             state.orientation
+             state.orientation;
     },
     hasValidDocuments: state => {
       return state.documents.some(doc => doc && doc.file);

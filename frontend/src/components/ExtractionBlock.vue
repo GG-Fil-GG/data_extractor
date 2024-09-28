@@ -29,7 +29,8 @@ export default {
     ...mapState(['documents', 'queries', 'exportFormat', 'orientation', 'extractionStatus', 'downloadLink']),
     ...mapGetters(['isExtractionReady', 'hasValidDocuments']),
     canExtract() {
-      console.log('Documents in ExtractionBlock:', JSON.stringify(this.documents));
+      console.log('isExtractionReady:', this.isExtractionReady);
+      console.log('hasValidDocuments:', this.hasValidDocuments);
       return this.isExtractionReady && this.hasValidDocuments;
     }
   },
@@ -45,27 +46,18 @@ export default {
       // Prepare documents metadata
       const documentsMetadata = this.documents.map((doc) => ({
         Alias: doc.Alias,
-        Ext: doc.Ext
+        Ext: doc.Ext,
+        Path: doc.filePath
       }));
       console.log('Documents metadata being sent:', documentsMetadata);
       formData.append('documents', JSON.stringify(documentsMetadata));
 
-      // Add files separately
-      this.documents.forEach((doc, index) => {
-        formData.append(`file_${index}`, doc.file);
-      });
-
-      // Add queries as JSON string
+      // Prepare queries
       formData.append('queries', JSON.stringify(this.queries));
 
       // Add export format and orientation
-      formData.append('export_format', this.exportFormat.toLowerCase());
+      formData.append('export_format', this.exportFormat);
       formData.append('orientation', this.orientation);
-
-      console.log('FormData contents:');
-      for (let [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
 
       try {
         console.log("Sending request to backend");
