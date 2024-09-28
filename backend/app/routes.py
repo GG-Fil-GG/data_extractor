@@ -1,6 +1,6 @@
 import os
 import logging
-from flask import request, jsonify, send_file, send_from_directory
+from flask import request, jsonify, send_file, send_from_directory, url_for
 from werkzeug.utils import secure_filename
 from app.services.job_manager import JobManager
 from app.services.document_handler import DocumentHandler
@@ -41,12 +41,17 @@ def begin_extraction():
                 path = os.path.join(job_manager.job_data["Temp Dir"], filename)
                 file.save(path)
                 
+                if 'Alias' not in doc_metadata or 'Ext' not in doc_metadata:
+                    logging.error(f"Missing Alias or Ext for document at index {index}")
+                    continue
+
                 processed_doc = {
                     "Path": path,
                     "Alias": doc_metadata['Alias'],
                     "Ext": doc_metadata['Ext']
                 }
                 processed_documents.append(processed_doc)
+                logging.info(f"Processed document: {processed_doc}")
             else:
                 logging.warning(f"File not found for document at index {index}")
 
@@ -75,15 +80,32 @@ def begin_extraction():
 
         job_store[job_manager.job_data["Job ID"]] = job_manager
 
-        return jsonify(job_manager.get_job_data())
+        return jsonify({"job_id": job_manager.job_data["Job ID"]})
     except Exception as e:
         logging.error(f"Error in begin_extraction: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-@main.route('/download_results/<job_id>', methods=['GET'])
-def download_results(job_id):
-    logging.info(f"Download requested for job ID: {job_id}")
+@main.route('/download_results', methods=['GET'])
+def download_results():
+    job_id = request.args.get('job_id')
+    if not job_id:
+        return jsonify({"error": "No job ID provided"}), 400
 
+    job_manager = job_store.get(job_id)
+    if not job_manager:
+        logging.error(f"Job ID not found: {job_id}")
+        return jsonify({"error": "Results file not found"}), 404
+
+    job_data = job_manager.get_job_data()
+    output_format = job_data["Export Format"]
+    
+    # Generate a URL for the actual file download
+    download_url = url_for('main.get_file', job_id=job_id, _external=True)
+    
+    return jsonify({"downloadUrl": download_url})
+
+@main.route('/get_file/<job_id>', methods=['GET'])
+def get_file(job_id):
     job_manager = job_store.get(job_id)
     if not job_manager:
         logging.error(f"Job ID not found: {job_id}")
@@ -93,8 +115,6 @@ def download_results(job_id):
     output_format = job_data["Export Format"]
     temp_dir = job_data["Temp Dir"]
     results_path = os.path.join(temp_dir, f'{job_id}.{output_format}')
-
-    logging.info(f"Looking for results file at path: {results_path}")
 
     if not os.path.exists(results_path):
         logging.error(f"Results file not found at path: {results_path}")

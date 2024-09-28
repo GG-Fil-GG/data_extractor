@@ -33,7 +33,7 @@ class JobManager:
         root_dir = os.path.abspath(os.path.join(script_dir, "../.."))
         temp_root_dir = os.path.join(root_dir, "temp")
         os.makedirs(temp_root_dir, exist_ok=True)
-        temp_job_dir = os.path.join(temp_root_dir, f"{self.job_data['Job ID']}_temp")
+        temp_job_dir = os.path.join(temp_root_dir, f"{self.job_data['Job ID']}")
         os.makedirs(temp_job_dir, exist_ok=True)
         self.job_data["Temp Dir"] = temp_job_dir
         logging.info(f"Temporary directory created: {temp_job_dir}")
