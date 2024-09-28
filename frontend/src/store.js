@@ -1,5 +1,6 @@
 // store.js
 import { createStore } from 'vuex'
+import { downloadResults } from './services/api' // Corrected import path
 
 export default createStore({
   state: {
@@ -39,17 +40,24 @@ export default createStore({
     },
     setDownloadLink(state, link) {
       state.downloadLink = link
+    },
+    resetState(state) {
+      state.documents = [];
+      state.queries = [];
+      state.exportFormat = 'csv';
+      state.orientation = 'doc_row';
+      state.extractionStatus = '';
+      state.downloadLink = '';
     }
   },
   actions: {
     initializeStore({ commit }) {
       // Initialize store with default values if needed
-      commit('setDocuments', [])
-      commit('setQueries', [])
-      commit('setExportFormat', 'csv')
-      commit('setOrientation', 'doc_row')
-      commit('setExtractionStatus', '')
-      commit('setDownloadLink', '')
+      commit('resetState');
+    },
+    async setDownloadLink({ commit }, jobId) {
+      const downloadUrl = await downloadResults(jobId);  // Add await here
+      commit('setDownloadLink', downloadUrl);
     }
   },
   getters: {

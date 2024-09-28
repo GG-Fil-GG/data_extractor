@@ -1,7 +1,7 @@
 <!-- App.vue -->
 <template>
   <div id="app">
-    <h1>DataExtractor.com</h1>
+    <h1 class="app-heading">DataExtractor.com</h1>
     <DocumentsBlock />
     <QueriesBlock />
     <ExportBlock />
@@ -35,13 +35,16 @@ export default {
 
 <style>
 #app {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
+  font-family: Calibri, sans-serif;
+  max-width: 1123px;
+  min-width: 794px;
   margin: 0 auto;
   padding: 20px;
 }
 
-h1 {
+.app-heading {
   text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 </style>

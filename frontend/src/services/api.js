@@ -8,6 +8,7 @@ export const beginExtraction = (formData) => {
   });
 };
 
-export const downloadResults = (jobId) => {
-  return `/download_results/${jobId}`;
+export const downloadResults = async (jobId) => {
+  const response = await axios.get(`/download_results`, { params: { job_id: jobId } });
+  return response.data.downloadUrl;
 };
