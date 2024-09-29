@@ -34,8 +34,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 #app {
-  font-family: Calibri, sans-serif;
+  font-family: Roboto, sans-serif;
   max-width: 1123px;
   min-width: 794px;
   margin: 0 auto;
@@ -44,7 +46,7 @@ export default {
 
 .app-heading {
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 </style>

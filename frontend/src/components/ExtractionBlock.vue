@@ -104,7 +104,7 @@ export default {
 
 <style scoped>
 .block {
-  background-color: #e6f3ff;
+  background-color: #848C8E;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 3px;
@@ -114,8 +114,8 @@ export default {
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 5px;
-  font-size: 24px;
-  color: #333;
+  font-size: 28px;
+  color: #F1F2EE;
 }
 
 .extraction-content {
@@ -130,26 +130,26 @@ export default {
   height: 30px;
   padding: 5px 10px;
   font-size: 16px;
-  background-color: #008CBA;
-  color: white;
+  background-color: #DCF763;
+  color: #435058;
   border: none;
   cursor: pointer;
   border-radius: 3px;
 }
 
 .extraction-button:disabled {
-  background-color: #cccccc;
+  background-color: #DCF763;
   cursor: not-allowed;
 }
 
 .extraction-button:hover:not(:disabled) {
-  background-color: #007B9A;
+  background-color: #DCF763;
 }
 
 .extraction-status {
   margin-top: 10px;
   font-weight: bold;
-  color: #333;
+  color: #F1F2EE;
 }
 
 .reset-button {
@@ -157,14 +157,14 @@ export default {
   height: 30px;
   padding: 5px 10px;
   font-size: 16px;
-  background-color: #f44336;
-  color: white;
+  background-color: #DCF763;
+  color: #435058;
   border: none;
   cursor: pointer;
   border-radius: 3px;
 }
 
 .reset-button:hover {
-  background-color: #d32f2f;
+  background-color: #DCF763;
 }
 </style>

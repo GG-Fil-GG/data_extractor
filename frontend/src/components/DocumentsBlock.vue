@@ -157,7 +157,7 @@ export default {
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 5px;
-  font-size: 24px;
+  font-size: 28px;
   color: #333;
 }
 

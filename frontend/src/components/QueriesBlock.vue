@@ -12,7 +12,9 @@
     </div>
     <div v-for="(query, index) in queries" :key="index" class="query-row">
       <input :value="query.Alias" @input="updateQueryField(index, 'Alias', $event.target.value)" :placeholder="'Query ' + (index + 1)" class="query-alias-field" />
+      <span v-if="errors[index] && errors[index].Alias" class="error">{{ errors[index].Alias }}</span>
       <input :value="query.Text" @input="updateQueryField(index, 'Text', $event.target.value)" placeholder="Please enter your query here" class="query-text-field" />
+      <span v-if="errors[index] && errors[index].Text" class="error">{{ errors[index].Text }}</span>
       <select :value="query.Format" @change="updateQueryField(index, 'Format', $event.target.value)" class="query-format-field" :style="{ width: maxQueryFormatWidth + 'px' }">
         <option value="free-form">Free-form</option>
         <option value="integer">Integer</option>
@@ -48,6 +50,11 @@ import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'QueriesBlock',
+  data() {
+    return {
+      errors: []
+    }
+  },
   computed: {
     ...mapState(['queries']),
     maxQueryFormatWidth() {
@@ -83,11 +90,31 @@ export default {
       this.setQueries(queries => queries.filter((_, i) => i !== index))
     },
     updateQueryField(index, field, value) {
-      this.setQueries(queries => {
-        const newQueries = [...queries]
-        newQueries[index] = { ...newQueries[index], [field]: value }
-        return newQueries
-      })
+      const newQueries = [...this.queries]
+      newQueries[index] = { ...newQueries[index], [field]: value }
+
+      // Validate the updated field
+      this.errors[index] = this.errors[index] || {}
+      if (field === 'Alias') {
+        if (!value.trim()) {
+          this.errors[index].Alias = 'Alias cannot be empty'
+        } else if (newQueries.some((query, i) => i !== index && query.Alias === value)) {
+          this.errors[index].Alias = 'Alias must be unique'
+        } else {
+          this.errors[index].Alias = ''
+        }
+      } else if (field === 'Text') {
+        if (!value.trim()) {
+          this.errors[index].Text = 'Text cannot be empty'
+        } else {
+          this.errors[index].Text = ''
+        }
+      }
+
+      // Update the queries if there are no errors
+      if (!this.errors[index].Alias && !this.errors[index].Text) {
+        this.setQueries(() => newQueries)
+      }
     },
     validateQueries() {
       return this.queries.every(query => query.Text.trim() !== '')
@@ -108,7 +135,7 @@ export default {
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 5px;
-  font-size: 24px;
+  font-size: 28px;
   color: #333;
 }
 
@@ -254,5 +281,11 @@ export default {
   border: none;
   cursor: pointer;
   border-radius: 3px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
 }
 </style>

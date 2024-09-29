@@ -156,7 +156,7 @@ def count_tokens_route():
 
         # Count tokens in the extracted text
         token_count = count_tokens(text)
-        token_limit = 4096  # Example token limit
+        token_limit = 120000  # Example token limit
 
         if token_count > token_limit:
             return jsonify({"error": "File exceeds token limit"}), 400
