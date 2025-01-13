@@ -5,17 +5,15 @@
     <div v-if="queries.length > 0" class="fields-header">
       <div class="query-alias-header">Alias</div>
       <div class="query-text-header">Text</div>
-      <div class="query-format-header" :style="{ width: maxQueryFormatWidth + 'px' }">Format</div>
-      <div class="move-up-button-header"></div>
-      <div class="move-down-button-header"></div>
-      <div class="remove-button-header"></div>
+      <div class="query-format-header">Format</div>
+      <div class="actions-header">Actions</div>
     </div>
     <div v-for="(query, index) in queries" :key="index" class="query-row">
       <input :value="query.Alias" @input="updateQueryField(index, 'Alias', $event.target.value)" :placeholder="'Query ' + (index + 1)" class="query-alias-field" />
       <span v-if="errors[index] && errors[index].Alias" class="error">{{ errors[index].Alias }}</span>
       <input :value="query.Text" @input="updateQueryField(index, 'Text', $event.target.value)" placeholder="Please enter your query here" class="query-text-field" />
       <span v-if="errors[index] && errors[index].Text" class="error">{{ errors[index].Text }}</span>
-      <select :value="query.Format" @change="updateQueryField(index, 'Format', $event.target.value)" class="query-format-field" :style="{ width: maxQueryFormatWidth + 'px' }">
+      <select :value="query.Format" @change="updateQueryField(index, 'Format', $event.target.value)" class="query-format-field">
         <option value="free-form">Free-form</option>
         <option value="integer">Integer</option>
         <option value="floating-point number">Floating-point number</option>
@@ -27,19 +25,19 @@
         <option value="range">Range</option>
         <option value="date (DD-MM-YYYY)">Date (DD-MM-YYYY)</option>
       </select>
-      <button
-        @click="moveQuery(index, -1)"
-        :disabled="index === 0"
-        class="move-up-button"
-        :class="{ 'disabled': index === 0 }"
-      >↑</button>
-      <button
-        @click="moveQuery(index, 1)"
-        :disabled="index === queries.length - 1"
-        class="move-down-button"
-        :class="{ 'disabled': index === queries.length - 1 }"
-      >↓</button>
-      <button @click="removeQuery(index)" class="remove-button">×</button>
+      <div class="actions">
+        <button
+          @click="moveQuery(index, -1)"
+          :disabled="index === 0"
+          class="move-up-button"
+        >↑</button>
+        <button
+          @click="moveQuery(index, 1)"
+          :disabled="index === queries.length - 1"
+          class="move-down-button"
+        >↓</button>
+        <button @click="removeQuery(index)" class="remove-button">×</button>
+      </div>
     </div>
     <button @click="addQuery" class="add-query">Add query</button>
   </div>
@@ -118,8 +116,8 @@ export default {
     },
     validateQueries() {
       return this.queries.every(query => query.Text.trim() !== '')
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -139,133 +137,45 @@ export default {
   color: #333;
 }
 
-.fields-header {
-  display: flex;
-  align-items: stretch;
-  margin-bottom: 10px;
-}
-
-.query-alias-header {
-  width: 100px;
-  flex: none;
-  margin-right: 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.query-text-header {
-  flex: 1;
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.query-format-header {
-  flex: none;
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.move-up-button-header {
-  flex: none;
-  margin: 0 5px;
-  width: 30px;
-  border: none;
-}
-
-.move-down-button-header {
-  flex: none;
-  margin: 0 5px;
-  width: 30px;
-  border: none;
-}
-
-.remove-button-header {
-  flex: none;
-  margin-left: 5px;
-  width: 30px;
-  border: none;
-}
-
-.query-row {
-  display: flex;
+.fields-header, .query-row {
+  display: grid;
+  grid-template-columns: 200px 3fr 200px 110px;
   align-items: stretch;
   height: 30px;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-.query-alias-field {
-  width: 100px;
-  flex: none;
-  margin-right: 5px;
+.query-alias-header, .query-text-header, .query-format-header, .actions-header {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.query-alias-field, .query-text-field, .query-format-field {
   padding: 5px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-sizing: border-box;
 }
 
-.query-text-field {
-  flex: 1;
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-sizing: border-box;
+.actions {
+  display: flex;
+  gap: 10px;
 }
 
-.query-format-field {
-  flex: none;
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-
-.move-up-button {
-  flex: none;
-  margin: 0 5px;
+.move-up-button, .move-down-button, .remove-button {
   width: 30px;
   background-color: #008CBA;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 3px;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
-.move-down-button {
-  flex: none;
-  margin: 0 5px;
-  width: 30px;
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.remove-button {
-  flex: none;
-  margin-left: 5px;
-  width: 30px;
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.move-up-button.disabled, .move-down-button.disabled {
+.move-up-button:disabled, .move-down-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }

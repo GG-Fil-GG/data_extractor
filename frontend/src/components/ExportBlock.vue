@@ -55,56 +55,25 @@ export default {
   color: #333;
 }
 
-.fields-header {
-  display: flex;
+.fields-header, .export-row {
+  display: grid;
+  grid-template-columns: 200px 200px;
   align-items: stretch;
-  justify-content: left;
+  height: 30px;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-.export-format-header {
-  width: 200px;
-  margin-right: 5px;
+.export-format-header, .orientation-header {
   padding: 5px;
   font-size: 16px;
   font-weight: bold;
-  box-sizing: border-box;
 }
 
-.orientation-header {
-  width: 200px;
-  margin-left: 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.export-row {
-  display: flex;
-  align-items: stretch;
-  height: 30px;
-  justify-content: left;
-  margin-bottom: 20px;
-}
-
-.export-format-select {
-  width: 200px;
-  margin-right: 5px;
+.export-format-select, .orientation-select {
   padding: 5px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-sizing: border-box;
-}
-
-.orientation-select {
-  width: 200px;
-  margin-left: 5px;
-  padding: 5px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-sizing: border-box;
 }
 </style>

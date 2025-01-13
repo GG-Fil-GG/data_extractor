@@ -1,0 +1,72 @@
+/* src/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.block {
+  background-color: #e6f3ff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.block-heading {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 28px;
+  color: #333;
+}
+
+.fields-header, .document-row, .query-row, .export-row {
+  display: grid;
+  align-items: stretch;
+  height: 30px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.fields-header div, .document-row div, .query-row div, .export-row div {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input, select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #005f8a;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+}

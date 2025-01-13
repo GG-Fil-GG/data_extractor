@@ -5,10 +5,8 @@
     <div v-if="documents.length > 0" class="fields-header">
       <div class="document-name-header">Name</div>
       <div class="document-alias-header">Alias</div>
-      <div class="document-size-header" :style="{ width: maxDocumentSizeWidth + 'px' }">Size</div>
-      <div class="move-up-button-header"></div>
-      <div class="move-down-button-header"></div>
-      <div class="remove-button-header"></div>
+      <div class="document-size-header">Size</div>
+      <div class="actions-header">Actions</div>
     </div>
     <div v-for="(doc, index) in documents" :key="index" class="document-row">
       <div class="document-name-field">{{ doc.fileName }}</div>
@@ -18,20 +16,20 @@
         :placeholder="'Document ' + (index + 1) + ' Alias'" 
         class="document-alias-field" 
       />
-      <div class="document-size-field" :style="{ width: maxDocumentSizeWidth + 'px' }">{{ doc.size }}</div>
-      <button 
-        @click="moveDocument(index, -1)" 
-        :disabled="index === 0" 
-        class="move-up-button"
-        :class="{ 'disabled': index === 0 }"
-      >↑</button>
-      <button 
-        @click="moveDocument(index, 1)" 
-        :disabled="index === documents.length - 1" 
-        class="move-down-button"
-        :class="{ 'disabled': index === documents.length - 1 }"
-      >↓</button>
-      <button @click="removeDocument(index)" class="remove-button">×</button>
+      <div class="document-size-field">{{ doc.size }}</div>
+      <div class="actions">
+        <button 
+          @click="moveDocument(index, -1)" 
+          :disabled="index === 0" 
+          class="move-up-button"
+        >↑</button>
+        <button 
+          @click="moveDocument(index, 1)" 
+          :disabled="index === documents.length - 1" 
+          class="move-down-button"
+        >↓</button>
+        <button @click="removeDocument(index)" class="remove-button">×</button>
+      </div>
     </div>
     <input type="file" ref="fileInput" @change="handleFileUpload" accept=".txt,.docx,.pdf" multiple class="file-input" />
     <button @click="triggerFileInput" class="select-documents-button">Select documents</button>
@@ -161,134 +159,45 @@ export default {
   color: #333;
 }
 
-.fields-header {
-  display: flex;
-  align-items: stretch;
-  margin-bottom: 10px;
-}
-
-.document-name-header {
-  flex: 1;
-  margin-right: 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.document-alias-header {
-  flex: 2;
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.document-size-header {
-  flex: none;
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.move-up-button-header {
-  flex: none;
-  margin: 0 5px;
-  width: 30px;
-  border: none;
-}
-
-.move-down-button-header {
-  flex: none;
-  margin: 0 5px;
-  width: 30px;
-  border: none;
-}
-
-.remove-button-header {
-  flex: none;
-  margin-left: 5px;
-  width: 30px;
-  border: none;
-}
-
-.document-row {
-  display: flex;
+.fields-header, .document-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr minmax(80px, auto) 110px;
   align-items: stretch;
   height: 30px;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-.document-name-field {
-  flex: 1;
-  margin-right: 5px;
+.document-name-header, .document-alias-header, .document-size-header, .actions-header {
   padding: 5px;
   font-size: 16px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-sizing: border-box;
+  font-weight: bold;
 }
 
-.document-alias-field {
-  flex: 2;
-  margin: 0 5px;
+.document-name-field, .document-alias-field, .document-size-field {
   padding: 5px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-sizing: border-box;
 }
 
-.document-size-field {
-  flex: none;
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 16px;
-  background-color: #f0f0f0;
-  text-align: right;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-sizing: border-box;
+.actions {
+  display: flex;
+  gap: 10px;
 }
 
-.move-up-button {
-  flex: none;
-  margin: 0 5px;
+.move-up-button, .move-down-button, .remove-button {
   width: 30px;
   background-color: #008CBA;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 3px;
+  padding: 5px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-.move-down-button {
-  flex: none;
-  margin: 0 5px;
-  width: 30px;
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.remove-button {
-  flex: none;
-  margin-left: 5px;
-  width: 30px;
-  background-color: #008CBA;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.move-up-button.disabled, .move-down-button.disabled {
+.move-up-button:disabled, .move-down-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
