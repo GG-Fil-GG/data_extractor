@@ -12,13 +12,28 @@ The `job_data` object is the central data structure that maintains the state and
     "temp_dir": "string (path)",
     "status": "string (status code)",
     "system_message": "string",
+    "openai_config": {
+        "model": "string",
+        "assistant_id": "string",
+        "max_tokens": "integer",
+        "temperature": "number",
+        "file_purpose": "string"
+    },
     "documents": [
         {
             "id": "string (UUID)",
             "name": "string (filename)",
-            "path": "string (path)",
+            "path": "string (path, optional after upload)",
             "format": "string (PDF|DOCX|TXT)",
-            "size": "integer (bytes)"
+            "size": "integer (bytes)",
+            "openai_file": {
+                "file_id": "string",
+                "purpose": "string",
+                "status": "string",
+                "error": "string",
+                "upload_time": "string (ISO datetime)",
+                "retry_count": "integer"
+            }
         }
     ],
     "threads": [
@@ -64,6 +79,23 @@ The `job_data` object is the central data structure that maintains the state and
             "total_operations": "integer",
             "completed_operations": "integer",
             "completed_documents": ["string (UUID)"]
+        },
+        "file_uploads": {
+            "total_files": "integer",
+            "uploaded_files": "integer",
+            "failed_files": ["string (document_id)"],
+            "upload_progress": "number (0-100)",
+            "average_upload_speed": "number (bytes/second)",
+            "start_time": "string (ISO datetime)",
+            "end_time": "string (ISO datetime)"
+        }
+    },
+    "errors": {
+        "document_id": {
+            "type": "string",
+            "message": "string",
+            "timestamp": "string",
+            "retry_count": "integer"
         }
     }
 }
@@ -81,6 +113,9 @@ The `job_data` object is the central data structure that maintains the state and
   - "paused": Processing temporarily halted, can be resumed
   - "complete": All processing finished
   - "error": Job encountered an unrecoverable error
+  - "uploading_files": Files are being uploaded to OpenAI
+  - "upload_complete": All files successfully uploaded
+  - "upload_failed": One or more file uploads failed
 - **system_message**: Global developer message used to guide LLM behavior across all interactions in this job. Can contain extensive context and instructions (max length: 32,768 characters)
 
 ### Documents Array
@@ -91,6 +126,7 @@ Each document object contains:
 - **path**: Path to the document in the temporary directory (max length: 4096 characters)
 - **format**: File format of the document
 - **size**: Size of the document in bytes
+- **openai_file**: OpenAI file information
 
 ### Threads Array
 
@@ -241,65 +277,15 @@ Maintains overall job progress:
     "name": "report.pdf",
     "path": "/temp/550e8400/report.pdf",
     "format": "PDF",
-    "size": 1048576
-}
-```
-
-### Adding a New Thread with Queries
-```json
-{
-    "id": "7b2ff47f-ea91-4b5f-b3a5-9c2ec59f9abc",
-    "title": "demographic_data",
-    "queries": [
-        {
-            "id": "a1b2c3d4-e5f6-4a5b-9c3d-12345678abcd",
-            "title": "study_population_age",
-            "text": "What was the mean age and standard deviation of the study population?",
-            "format": "mean_sd"
-        }
-    ]
-}
-```
-
-### Storing a Response
-```json
-{
-    "responses": {
-        "550e8400-e29b-41d4-a716-446655440000": {
-            "7b2ff47f-ea91-4b5f-b3a5-9c2ec59f9abc": {
-                "a1b2c3d4-e5f6-4a5b-9c3d-12345678abcd": "45.7 (SD: 12.3)"
-            }
-        }
+    "size": 1048576,
+    "openai_file": {
+        "file_id": "openai-file-id-1",
+        "purpose": "assistants",
+        "status": "uploaded",
+        "error": null
     }
 }
 ```
 
-### Example CSV Output Structure
+### Adding a New Thread with Queries
 ```
-Thread          | Demographic Data     | Demographic Data     | Treatment Data    | Treatment Data
-Query           | Population Age       | Gender Distribution  | Dosage           | Side Effects
-Document 1.pdf  | 45.7 (SD: 12.3)     | M: 60%, F: 40%      | 500mg            | Headache, Nausea
-Document 2.pdf  | 52.3 (SD: 15.1)     | M: 45%, F: 55%      | 750mg            | None reported
-```
-
-## Important Notes
-
-1. **Document Names**: With the removal of aliases, document names (original filenames) are used directly in output generation
-
-2. **Thread Sequence**: Threads are processed in their array order, with queries within each thread processed sequentially to maintain conversation context
-
-3. **Response Organization**: The nested structure of responses preserves thread context while maintaining document-query relationships
-
-4. **State Tracking**: The addition of the state object enables pause/resume functionality and progress tracking
-
-5. **System Message**: Now global to the job rather than per-query, ensuring consistent context across all threads
-
-## Migration Considerations
-
-When migrating from the previous structure:
-
-1. Document aliases will be replaced with original filenames
-2. Queries will be organized into threads
-3. Responses will be restructured to maintain thread context
-4. New state tracking fields will be added
-5. System message will be moved to the job level 
