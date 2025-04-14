@@ -1,9 +1,8 @@
 import os
-import re
 import logging
-import fitz
-from docx import Document
 from functools import wraps
+from openai import OpenAI
+import time
 
 def handle_errors(func):
     @wraps(func)
@@ -16,67 +15,98 @@ def handle_errors(func):
     return wrapper
 
 class DocumentHandler:
-    def __init__(self, job_manager):
+    def __init__(self, job_manager, openai_client):
         self.job_manager = job_manager
+        self.openai_client = openai_client
+        self.max_retries = 3
+        self.retry_delay = 5  # seconds
 
     @handle_errors
     def process_documents(self):
-        temp_dir = self.job_manager.job_data["Temp Dir"]
+        """
+        Process all documents in the current job by uploading them to OpenAI.
+        Updates job status and tracks upload progress.
+        """
+        self.job_manager.update_status("uploading_files")
+        
         for document in self.job_manager.job_data["Documents"]:
-            path = document["Path"]
-            alias = os.path.splitext(document["Alias"])[0]
-            ext = document["Ext"]
-            text = self.extract_text_from_file(path, ext)
-            cleaned_text = self.clean_text(text)
-            txt_path = os.path.join(temp_dir, alias + '.txt')
-            with open(txt_path, 'w', encoding='utf-8') as txt_file:
-                txt_file.write(cleaned_text)
-            document["Path"] = txt_path
-            logging.info(f"Processed document: {document}")
-        self.job_manager.update_status("Documents Processed")
-        logging.info("Documents processed successfully")
-
-    @handle_errors
-    def extract_text_from_file(self, path, ext):
-        parse_methods = {
-            '.pdf': self.parse_pdf,
-            '.docx': self.parse_docx,
-            '.txt': self.parse_txt
-        }
-        if f".{ext}" in parse_methods:
-            return parse_methods[f".{ext}"](path)
+            try:
+                # Initialize OpenAI file info
+                document["openai_file"] = {
+                    "file_id": None,
+                    "purpose": "assistants",
+                    "status": "pending",
+                    "error": None,
+                    "upload_time": None,
+                    "retry_count": 0
+                }
+                
+                # Upload file to OpenAI
+                self.upload_file_to_openai(document)
+                
+                # Update job state
+                self.job_manager.update_file_upload_progress()
+                
+            except Exception as e:
+                logging.error(f"Failed to process document {document['name']}: {e}")
+                document["openai_file"]["status"] = "error"
+                document["openai_file"]["error"] = str(e)
+                self.job_manager.add_failed_file(document["id"])
+        
+        # Check if all files were uploaded successfully
+        if self.job_manager.job_data["state"]["file_uploads"]["failed_files"]:
+            self.job_manager.update_status("upload_failed")
         else:
-            raise ValueError(f"Unsupported file extension: {ext}")
+            self.job_manager.update_status("upload_complete")
 
     @handle_errors
-    def parse_txt(self, path):
-        with open(path, "r", encoding="utf-8") as file:
-            return file.read()
+    def upload_file_to_openai(self, document):
+        """
+        Upload a file to OpenAI with retry mechanism.
+        
+        Args:
+            document: Document object containing file information
+        """
+        retry_count = 0
+        while retry_count < self.max_retries:
+            try:
+                # Upload file to OpenAI
+                with open(document["path"], "rb") as file:
+                    response = self.openai_client.files.create(
+                        file=file,
+                        purpose="assistants"
+                    )
+                
+                # Update document with OpenAI file info
+                document["openai_file"].update({
+                    "file_id": response.id,
+                    "status": "uploaded",
+                    "upload_time": response.created_at,
+                    "retry_count": retry_count
+                })
+                
+                return
+                
+            except Exception as e:
+                retry_count += 1
+                document["openai_file"]["retry_count"] = retry_count
+                
+                if retry_count == self.max_retries:
+                    raise Exception(f"Failed to upload file after {self.max_retries} attempts: {e}")
+                
+                logging.warning(f"Retry {retry_count} for file {document['name']}: {e}")
+                time.sleep(self.retry_delay)
 
     @handle_errors
-    def parse_docx(self, path):
-        doc = Document(path)
-        return "\n".join([paragraph.text for paragraph in doc.paragraphs])
-
-    @handle_errors
-    def parse_pdf(self, file_path):
-        text = ""
-        document = fitz.open(file_path)
-        for page_num in range(len(document)):
-            page = document.load_page(page_num)
-            text += page.get_text()
-        return text
-
-    def clean_text(self, text):
-        text = re.sub(r'[^\x20-\x7E]+', ' ', text)
-        return text
-
-    @handle_errors
-    def load_text(self, file_path):
-        try:
-            with open(file_path, 'r', encoding='utf-8') as file:
-                return file.read()
-        except UnicodeDecodeError:
-            logging.warning(f"UTF-8 decoding failed for {file_path}, trying ISO-8859-1 encoding")
-            with open(file_path, 'r', encoding='ISO-8859-1') as file:
-                return file.read()
+    def cleanup_files(self):
+        """
+        Clean up uploaded files from OpenAI.
+        """
+        for document in self.job_manager.job_data["Documents"]:
+            if document["openai_file"]["file_id"]:
+                try:
+                    self.openai_client.files.delete(file_id=document["openai_file"]["file_id"])
+                    document["openai_file"]["status"] = "deleted"
+                except Exception as e:
+                    logging.error(f"Failed to delete file {document['name']} from OpenAI: {e}")
+                    document["openai_file"]["error"] = str(e)

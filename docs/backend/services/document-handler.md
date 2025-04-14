@@ -2,14 +2,15 @@
 
 ## Overview
 
-The Document Handler is a core service responsible for processing different document types and extracting their text content. It supports multiple file formats including PDF, DOCX, and TXT files, and provides a unified interface for text extraction regardless of the source format.
+The Document Handler is a core service responsible for managing document uploads to OpenAI's API. It handles the secure and efficient transfer of documents to OpenAI's infrastructure, where they can be processed by AI models. The service includes robust error handling and retry mechanisms to ensure reliable file processing.
 
 ## Responsibilities
 
-- Extracting text from different file formats (PDF, DOCX, TXT)
-- Cleaning and preprocessing text for optimal extraction
-- Managing document metadata
-- Handling encoding issues during text extraction
+- Managing file uploads to OpenAI's API
+- Tracking upload status and progress
+- Implementing retry mechanisms for failed uploads
+- Handling file cleanup after processing
+- Managing document metadata and OpenAI file references
 
 ## Class Structure
 
@@ -18,129 +19,132 @@ The `DocumentHandler` class is defined in `backend/app/services/document_handler
 ### Initialization
 
 ```python
-def __init__(self, job_manager):
+def __init__(self, job_manager, openai_client):
     self.job_manager = job_manager
+    self.openai_client = openai_client
+    self.max_retries = 3
+    self.retry_delay = 5  # seconds
 ```
 
-The Document Handler is initialized with a reference to the Job Manager, which provides access to job data and status updates.
+The Document Handler is initialized with:
+- A reference to the Job Manager for job data and status updates
+- An OpenAI client for file operations
+- Configuration for retry attempts and delays
 
 ## Key Methods
 
 ### process_documents()
 
-Processes all documents in the current job, extracting text from each file and saving it as a text file for further processing.
+Processes all documents in the current job by uploading them to OpenAI and tracking their status.
 
 ```python
 def process_documents(self):
-    temp_dir = self.job_manager.job_data["Temp Dir"]
+    self.job_manager.update_status("uploading_files")
+    
     for document in self.job_manager.job_data["Documents"]:
-        path = document["Path"]
-        alias = os.path.splitext(document["Alias"])[0]
-        ext = document["Ext"]
-        text = self.extract_text_from_file(path, ext)
-        cleaned_text = self.clean_text(text)
-        txt_path = os.path.join(temp_dir, alias + '.txt')
-        with open(txt_path, 'w', encoding='utf-8') as txt_file:
-            txt_file.write(cleaned_text)
-        document["Path"] = txt_path
-    self.job_manager.update_status("Documents Processed")
-```
-
-This method:
-1. Gets the temporary directory from the job data
-2. Iterates through each document in the job
-3. Extracts text from the document using the appropriate parser
-4. Cleans the extracted text
-5. Saves the cleaned text to a new text file
-6. Updates the document's path to point to the new text file
-7. Updates the job status
-
-### extract_text_from_file()
-
-Extracts text from a file based on its extension.
-
-```python
-def extract_text_from_file(self, path, ext):
-    parse_methods = {
-        '.pdf': self.parse_pdf,
-        '.docx': self.parse_docx,
-        '.txt': self.parse_txt
-    }
-    if f".{ext}" in parse_methods:
-        return parse_methods[f".{ext}"](path)
+        try:
+            # Initialize OpenAI file info
+            document["openai_file"] = {
+                "file_id": None,
+                "purpose": "assistants",
+                "status": "pending",
+                "error": None,
+                "upload_time": None,
+                "retry_count": 0
+            }
+            
+            # Upload file to OpenAI
+            self.upload_file_to_openai(document)
+            
+            # Update job state
+            self.job_manager.update_file_upload_progress()
+            
+        except Exception as e:
+            logging.error(f"Failed to process document {document['name']}: {e}")
+            document["openai_file"]["status"] = "error"
+            document["openai_file"]["error"] = str(e)
+            self.job_manager.add_failed_file(document["id"])
+    
+    # Check if all files were uploaded successfully
+    if self.job_manager.job_data["state"]["file_uploads"]["failed_files"]:
+        self.job_manager.update_status("upload_failed")
     else:
-        raise ValueError(f"Unsupported file extension: {ext}")
+        self.job_manager.update_status("upload_complete")
 ```
 
 This method:
-1. Maps file extensions to their respective parsing methods
-2. Calls the appropriate parsing method based on the file extension
-3. Raises an error if the file extension is not supported
+1. Updates the job status to indicate file uploads are in progress
+2. Iterates through each document in the job
+3. Initializes OpenAI file metadata
+4. Uploads the file to OpenAI with retry mechanism
+5. Updates the job state with upload progress
+6. Handles any upload failures
+7. Updates the final job status based on upload success
 
-### File-Specific Parsers
+### upload_file_to_openai()
 
-#### parse_txt()
-
-Extracts text from a plain text file.
-
-```python
-def parse_txt(self, path):
-    with open(path, "r", encoding="utf-8") as file:
-        return file.read()
-```
-
-#### parse_docx()
-
-Extracts text from a Microsoft Word document.
+Handles the actual file upload to OpenAI with retry mechanism.
 
 ```python
-def parse_docx(self, path):
-    doc = Document(path)
-    return "\n".join([paragraph.text for paragraph in doc.paragraphs])
+def upload_file_to_openai(self, document):
+    retry_count = 0
+    while retry_count < self.max_retries:
+        try:
+            # Upload file to OpenAI
+            with open(document["path"], "rb") as file:
+                response = self.openai_client.files.create(
+                    file=file,
+                    purpose="assistants"
+                )
+            
+            # Update document with OpenAI file info
+            document["openai_file"].update({
+                "file_id": response.id,
+                "status": "uploaded",
+                "upload_time": response.created_at,
+                "retry_count": retry_count
+            })
+            
+            return
+            
+        except Exception as e:
+            retry_count += 1
+            document["openai_file"]["retry_count"] = retry_count
+            
+            if retry_count == self.max_retries:
+                raise Exception(f"Failed to upload file after {self.max_retries} attempts: {e}")
+            
+            logging.warning(f"Retry {retry_count} for file {document['name']}: {e}")
+            time.sleep(self.retry_delay)
 ```
 
-#### parse_pdf()
+This method:
+1. Attempts to upload the file to OpenAI
+2. Implements a retry mechanism with configurable attempts and delays
+3. Updates document metadata with upload status and file ID
+4. Handles and logs upload failures
 
-Extracts text from a PDF document.
+### cleanup_files()
+
+Manages the cleanup of uploaded files from OpenAI after processing is complete.
 
 ```python
-def parse_pdf(self, file_path):
-    text = ""
-    document = fitz.open(file_path)
-    for page_num in range(len(document)):
-        page = document.load_page(page_num)
-        text += page.get_text()
-    return text
+def cleanup_files(self):
+    for document in self.job_manager.job_data["Documents"]:
+        if document["openai_file"]["file_id"]:
+            try:
+                self.openai_client.files.delete(file_id=document["openai_file"]["file_id"])
+                document["openai_file"]["status"] = "deleted"
+            except Exception as e:
+                logging.error(f"Failed to delete file {document['name']} from OpenAI: {e}")
+                document["openai_file"]["error"] = str(e)
 ```
 
-### Text Processing
-
-#### clean_text()
-
-Cleans the extracted text by removing non-printable characters.
-
-```python
-def clean_text(self, text):
-    text = re.sub(r'[^\x20-\x7E]+', ' ', text)
-    return text
-```
-
-### Utility Methods
-
-#### load_text()
-
-Loads text from a file with fallback encoding support.
-
-```python
-def load_text(self, file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            return file.read()
-    except UnicodeDecodeError:
-        logging.warning(f"UTF-8 decoding failed for {file_path}, trying ISO-8859-1 encoding")
-        with open(file_path, 'r', encoding='ISO-8859-1') as file:
-            return file.read()
-```
+This method:
+1. Iterates through all processed documents
+2. Deletes uploaded files from OpenAI
+3. Updates document status
+4. Handles and logs any deletion failures
 
 ## Error Handling
 
@@ -168,29 +172,35 @@ This decorator:
 The Document Handler integrates with:
 
 - **Job Manager**: Receives job data and updates job status
-- **Data Extractor**: Provides processed text for extraction
-- **Token Counter**: Indirectly supports token counting through text extraction
+- **OpenAI API**: Handles file uploads and management
+- **Data Extractor**: Provides access to uploaded files for processing
+- **Token Counter**: Indirectly supports token counting through OpenAI's processing
 
-## Supported File Types
+## File Status Tracking
 
-| File Type | Extension | Library Used |
-|-----------|-----------|-------------|
-| PDF | .pdf | PyMuPDF (fitz) |
-| Microsoft Word | .docx | python-docx |
-| Plain Text | .txt | Built-in Python file handling |
+The Document Handler maintains detailed status information for each file:
+
+| Status | Description |
+|--------|-------------|
+| pending | Initial state before upload |
+| uploaded | Successfully uploaded to OpenAI |
+| error | Failed to upload after retries |
+| deleted | Successfully removed from OpenAI |
+
+## Performance Considerations
+
+- Network latency can affect upload times
+- Large files may require more retry attempts
+- Rate limits should be considered for bulk uploads
+- Proper cleanup is essential to manage OpenAI storage usage
 
 ## Example Flow
 
 1. User uploads documents through the frontend
 2. Backend receives the documents and creates a job
 3. Document Handler processes each document:
-   - Extracts text using the appropriate parser
-   - Cleans the text to remove non-printable characters
-   - Saves the processed text to a temporary file
-4. The processed text files are used for subsequent extraction steps
-
-## Performance Considerations
-
-- PDF parsing can be memory-intensive for large documents
-- Text cleaning helps reduce token count and improve extraction quality
-- Fallback encoding support ensures compatibility with various text encodings 
+   - Initializes OpenAI file metadata
+   - Uploads file to OpenAI with retry mechanism
+   - Tracks upload status and progress
+4. The uploaded files are available for subsequent processing steps
+5. Files are cleaned up after processing is complete 
