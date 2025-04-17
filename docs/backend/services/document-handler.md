@@ -7,6 +7,7 @@ The Document Handler is a core service responsible for managing document uploads
 ## Responsibilities
 
 - Managing file uploads to OpenAI's API
+- Validating file sizes and PDF page counts
 - Tracking upload status and progress
 - Implementing retry mechanisms for failed uploads
 - Handling file cleanup after processing
@@ -24,14 +25,52 @@ def __init__(self, job_manager, openai_client):
     self.openai_client = openai_client
     self.max_retries = 3
     self.retry_delay = 5  # seconds
+    self.max_total_size = 32 * 1024 * 1024  # 32MB in bytes
+    self.max_total_pages = 100  # Only applies to PDFs
 ```
 
 The Document Handler is initialized with:
 - A reference to the Job Manager for job data and status updates
 - An OpenAI client for file operations
 - Configuration for retry attempts and delays
+- File size and page count limits
 
 ## Key Methods
+
+### validate_documents()
+
+Validates all documents collectively before upload:
+- Total size limit (32MB) applies to all file types
+- Page count limit (100) only applies to PDF files
+
+```python
+def validate_documents(self):
+    total_size = 0
+    total_pdf_pages = 0
+    
+    for document in self.job_manager.job_data["Documents"]:
+        # Check file size for all files
+        file_size = os.path.getsize(document["path"])
+        total_size += file_size
+        
+        # Only count pages for PDF files
+        if document["Ext"].lower() == "pdf":
+            try:
+                page_count = self.get_pdf_page_count(document)
+                total_pdf_pages += page_count
+            except ValueError as ve:
+                raise ve
+    
+    # Validate total size
+    if total_size > self.max_total_size:
+        raise ValueError(f"Total file size {total_size/1024/1024:.2f}MB exceeds maximum of 32MB")
+    
+    # Validate PDF pages
+    if total_pdf_pages > self.max_total_pages:
+        raise ValueError(f"Total PDF pages {total_pdf_pages} exceeds maximum of 100 pages")
+    
+    return total_size, total_pdf_pages
+```
 
 ### process_documents()
 
@@ -41,16 +80,33 @@ Processes all documents in the current job by uploading them to OpenAI and track
 def process_documents(self):
     self.job_manager.update_status("uploading_files")
     
+    try:
+        # Validate all documents collectively
+        total_size, total_pdf_pages = self.validate_documents()
+        
+        # Update job data with total counts
+        self.job_manager.job_data["state"]["file_uploads"].update({
+            "total_size": total_size,
+            "total_pdf_pages": total_pdf_pages
+        })
+        
+    except ValueError as ve:
+        logging.error(f"Document validation failed: {ve}")
+        self.job_manager.update_status("validation_failed")
+        return
+    
     for document in self.job_manager.job_data["Documents"]:
         try:
             # Initialize OpenAI file info
             document["openai_file"] = {
                 "file_id": None,
-                "purpose": "assistants",
+                "purpose": "user_data",
                 "status": "pending",
                 "error": None,
                 "upload_time": None,
-                "retry_count": 0
+                "retry_count": 0,
+                "file_size": os.path.getsize(document["path"]),
+                "page_count": self.get_pdf_page_count(document) if document["Ext"].lower() == "pdf" else None
             }
             
             # Upload file to OpenAI
@@ -74,12 +130,14 @@ def process_documents(self):
 
 This method:
 1. Updates the job status to indicate file uploads are in progress
-2. Iterates through each document in the job
-3. Initializes OpenAI file metadata
-4. Uploads the file to OpenAI with retry mechanism
-5. Updates the job state with upload progress
-6. Handles any upload failures
-7. Updates the final job status based on upload success
+2. Validates all documents collectively
+3. Updates job state with total size and PDF page counts
+4. Iterates through each document in the job
+5. Initializes OpenAI file metadata
+6. Uploads the file to OpenAI with retry mechanism
+7. Updates the job state with upload progress
+8. Handles any upload failures
+9. Updates the final job status based on upload success
 
 ### upload_file_to_openai()
 
@@ -94,7 +152,7 @@ def upload_file_to_openai(self, document):
             with open(document["path"], "rb") as file:
                 response = self.openai_client.files.create(
                     file=file,
-                    purpose="assistants"
+                    purpose="user_data"
                 )
             
             # Update document with OpenAI file info
@@ -187,6 +245,20 @@ The Document Handler maintains detailed status information for each file:
 | error | Failed to upload after retries |
 | deleted | Successfully removed from OpenAI |
 
+## File Validation Rules
+
+The Document Handler enforces the following validation rules:
+
+1. **Total Size Limit**:
+   - Applies to all file types
+   - Maximum total size: 32MB
+   - Includes all files in the job
+
+2. **Page Count Limit**:
+   - Only applies to PDF files
+   - Maximum total pages: 100
+   - Non-PDF files are not counted towards this limit
+
 ## Performance Considerations
 
 - Network latency can affect upload times
@@ -199,6 +271,7 @@ The Document Handler maintains detailed status information for each file:
 1. User uploads documents through the frontend
 2. Backend receives the documents and creates a job
 3. Document Handler processes each document:
+   - Validates total size and PDF page counts
    - Initializes OpenAI file metadata
    - Uploads file to OpenAI with retry mechanism
    - Tracks upload status and progress
