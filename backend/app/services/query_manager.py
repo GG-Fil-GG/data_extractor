@@ -32,19 +32,21 @@ class QueryManager:
             }
 
     @handle_errors
-    def create_thread(self, thread_id: str) -> Dict:
+    def create_thread(self, thread_id: str, title: str) -> Dict:
         """
         Initialize a new conversation thread.
         Adds the system_message from job data as the initial developer message.
         
         Args:
             thread_id: Unique identifier for the thread
+            title: Display title for the thread
             
         Returns:
             Dict: Thread state information
         """
         thread = {
             "id": thread_id,
+            "title": title,
             "created_at": datetime.utcnow().isoformat(),
             "messages": [],
             "token_count": 0,
@@ -60,7 +62,7 @@ class QueryManager:
         if system_message:
             self.add_message(thread_id, "developer", system_message)
         
-        logging.info(f"Created new thread {thread_id}")
+        logging.info(f"Created new thread {thread_id} with title '{title}'")
         return thread
 
     @handle_errors
@@ -225,14 +227,14 @@ class QueryManager:
         return self.job_manager.job_data["state"]["queries"]
 
     @handle_errors
-    def process_query(self, thread_id: str, query_text: str) -> Dict:
+    def process_query(self, thread_id: str, query_id: str) -> Dict:
         """
         Process a query within an existing thread.
         The thread should already have the system_message as its initial developer message.
         
         Args:
             thread_id: Thread identifier
-            query_text: The query text to process
+            query_id: Query identifier to process
             
         Returns:
             Dict: Processing result including response and metadata
@@ -240,8 +242,22 @@ class QueryManager:
         if thread_id not in self.threads:
             raise ValueError(f"Thread {thread_id} does not exist")
             
+        # Find the query in job_data
+        query = None
+        for thread in self.job_manager.job_data["threads"]:
+            if thread["id"] == thread_id:
+                for q in thread["queries"]:
+                    if q["id"] == query_id:
+                        query = q
+                        break
+                if query:
+                    break
+                    
+        if not query:
+            raise ValueError(f"Query {query_id} not found in thread {thread_id}")
+            
         # Add user query
-        self.add_message(thread_id, "user", query_text)
+        self.add_message(thread_id, "user", query["text"])
         
         # Update thread status
         self.update_thread_status(thread_id, "processing")
@@ -261,7 +277,9 @@ class QueryManager:
             
             return {
                 "thread_id": thread_id,
+                "query_id": query_id,
                 "response": response,
+                "format": query["format"],
                 "status": "complete"
             }
             

@@ -142,6 +142,7 @@ The Query Manager integrates with:
   - Accesses job data and system message
   - Updates job status and progress
   - Maintains query state
+  - Reads queries from the threads array in job_data
 
 - **LLMInterface**:
   - Provides message history for processing
@@ -183,6 +184,35 @@ Each thread maintains the following information:
 }
 ```
 
+## Query Structure
+
+Queries are defined in the job_data structure as part of the threads array:
+
+```json
+{
+    "threads": [
+        {
+            "id": "thread-uuid",
+            "title": "Thread Title",
+            "queries": [
+                {
+                    "id": "query-uuid",
+                    "title": "Query Title",
+                    "text": "Query text",
+                    "format": "format_type"
+                }
+            ]
+        }
+    ]
+}
+```
+
+Where:
+- `id`: Unique identifier for the query
+- `title`: Display title for the query (max length: 255 characters)
+- `text`: The actual query text (max length: 32,768 characters)
+- `format`: Response format specification (e.g., free_form, integer, etc.)
+
 ## Error Handling
 
 The Query Manager uses a decorator pattern for error handling:
@@ -210,23 +240,6 @@ This decorator:
 - Message history trimming prevents excessive memory usage
 - Token counting helps track and optimize context usage
 - Thread status tracking enables efficient progress monitoring
-
-## Query Structure
-
-From what we've seen in other parts of the system, queries have the following structure:
-
-```json
-{
-  "Alias": "Query Name",
-  "Text": "What is the main conclusion?",
-  "Format": "free-form"
-}
-```
-
-Where:
-- `Alias` is a user-friendly name for the query
-- `Text` is the actual query text sent to the LLM
-- `Format` specifies how the response should be structured
 
 ## Future Enhancements
 
