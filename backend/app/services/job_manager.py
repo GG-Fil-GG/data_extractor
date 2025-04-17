@@ -30,7 +30,10 @@ class JobManager:
                     "total_files": 0,
                     "uploaded_files": 0,
                     "failed_files": [],
-                    "status": "pending"
+                    "status": "pending",
+                    "total_size": 0,  # Total size of all files in bytes
+                    "total_pdf_pages": 0,  # Total pages across all PDF files
+                    "validation_status": "pending"  # Track validation status
                 }
             }
         }
@@ -49,6 +52,12 @@ class JobManager:
     def update_status(self, new_status):
         self.job_data["Status"] = new_status
         logging.info(f"Job status updated to: {new_status}")
+        
+        # Update validation status based on job status
+        if new_status == "validation_failed":
+            self.job_data["state"]["file_uploads"]["validation_status"] = "failed"
+        elif new_status == "uploading_files":
+            self.job_data["state"]["file_uploads"]["validation_status"] = "passed"
 
     def update_file_upload_progress(self):
         """
@@ -60,7 +69,26 @@ class JobManager:
             if doc.get("openai_file", {}).get("status") == "uploaded"
         )
         state["total_files"] = len(self.job_data["Documents"])
-        state["status"] = "complete" if state["uploaded_files"] == state["total_files"] else "in_progress"
+        
+        # Update total size and PDF pages from document metadata
+        state["total_size"] = sum(
+            doc.get("openai_file", {}).get("file_size", 0)
+            for doc in self.job_data["Documents"]
+        )
+        state["total_pdf_pages"] = sum(
+            doc.get("openai_file", {}).get("page_count", 0)
+            for doc in self.job_data["Documents"]
+            if doc.get("Ext", "").lower() == "pdf"
+        )
+        
+        # Update overall status
+        if state["uploaded_files"] == state["total_files"]:
+            state["status"] = "complete"
+        elif state["failed_files"]:
+            state["status"] = "failed"
+        else:
+            state["status"] = "in_progress"
+            
         logging.info(f"File upload progress: {state['uploaded_files']}/{state['total_files']}")
 
     def add_failed_file(self, file_id):
@@ -83,7 +111,10 @@ class JobManager:
                 - total_files: Total number of files to upload
                 - uploaded_files: Number of successfully uploaded files
                 - failed_files: List of file IDs that failed to upload
-                - status: Overall upload status (pending/in_progress/complete)
+                - status: Overall upload status (pending/in_progress/complete/failed)
+                - total_size: Total size of all files in bytes
+                - total_pdf_pages: Total pages across all PDF files
+                - validation_status: Status of document validation (pending/passed/failed)
         """
         return self.job_data["state"]["file_uploads"]
 
