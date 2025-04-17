@@ -24,7 +24,15 @@ class JobManager:
             "Responses": {},
             "Status": "Initialized",
             "Export Format": "",
-            "Orientation": ""
+            "Orientation": "",
+            "state": {
+                "file_uploads": {
+                    "total_files": 0,
+                    "uploaded_files": 0,
+                    "failed_files": [],
+                    "status": "pending"
+                }
+            }
         }
 
     @handle_errors
@@ -41,6 +49,43 @@ class JobManager:
     def update_status(self, new_status):
         self.job_data["Status"] = new_status
         logging.info(f"Job status updated to: {new_status}")
+
+    def update_file_upload_progress(self):
+        """
+        Updates the file upload progress in the job state.
+        """
+        state = self.job_data["state"]["file_uploads"]
+        state["uploaded_files"] = sum(
+            1 for doc in self.job_data["Documents"]
+            if doc.get("openai_file", {}).get("status") == "uploaded"
+        )
+        state["total_files"] = len(self.job_data["Documents"])
+        state["status"] = "complete" if state["uploaded_files"] == state["total_files"] else "in_progress"
+        logging.info(f"File upload progress: {state['uploaded_files']}/{state['total_files']}")
+
+    def add_failed_file(self, file_id):
+        """
+        Adds a file ID to the list of failed uploads.
+        
+        Args:
+            file_id: The ID of the file that failed to upload
+        """
+        if file_id not in self.job_data["state"]["file_uploads"]["failed_files"]:
+            self.job_data["state"]["file_uploads"]["failed_files"].append(file_id)
+            logging.error(f"Added failed file to tracking: {file_id}")
+
+    def get_file_upload_status(self):
+        """
+        Returns the current file upload status.
+        
+        Returns:
+            dict: Current file upload status including:
+                - total_files: Total number of files to upload
+                - uploaded_files: Number of successfully uploaded files
+                - failed_files: List of file IDs that failed to upload
+                - status: Overall upload status (pending/in_progress/complete)
+        """
+        return self.job_data["state"]["file_uploads"]
 
     @handle_errors
     def finalize_extraction(self):
