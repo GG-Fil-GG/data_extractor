@@ -11,6 +11,7 @@ The Job Manager is a core service that maintains the state and data for extracti
 - Storing document and query information
 - Tracking extraction responses
 - Maintaining job status
+- Tracking file upload progress and failures
 - Cleaning up temporary files when jobs are complete
 
 ## Class Structure
@@ -29,7 +30,15 @@ def __init__(self):
         "Responses": {},
         "Status": "Initialized",
         "Export Format": "",
-        "Orientation": ""
+        "Orientation": "",
+        "state": {
+            "file_uploads": {
+                "total_files": 0,
+                "uploaded_files": 0,
+                "failed_files": [],
+                "status": "pending"
+            }
+        }
     }
 ```
 
@@ -40,6 +49,7 @@ The Job Manager initializes with a job data dictionary containing:
 - An empty dictionary for responses
 - Initial status of "Initialized"
 - Empty export format and orientation (to be set later)
+- File upload state tracking
 
 ## Key Methods
 
@@ -74,6 +84,60 @@ def update_status(self, new_status):
     self.job_data["Status"] = new_status
     logging.info(f"Job status updated to: {new_status}")
 ```
+
+### update_file_upload_progress()
+
+Updates the file upload progress in the job state.
+
+```python
+def update_file_upload_progress(self):
+    state = self.job_data["state"]["file_uploads"]
+    state["uploaded_files"] = sum(
+        1 for doc in self.job_data["Documents"]
+        if doc.get("openai_file", {}).get("status") == "uploaded"
+    )
+    state["total_files"] = len(self.job_data["Documents"])
+    state["status"] = "complete" if state["uploaded_files"] == state["total_files"] else "in_progress"
+    logging.info(f"File upload progress: {state['uploaded_files']}/{state['total_files']}")
+```
+
+This method:
+1. Gets the current file upload state
+2. Counts successfully uploaded files
+3. Updates total files count
+4. Updates overall upload status
+5. Logs the current progress
+
+### add_failed_file()
+
+Adds a file ID to the list of failed uploads.
+
+```python
+def add_failed_file(self, file_id):
+    if file_id not in self.job_data["state"]["file_uploads"]["failed_files"]:
+        self.job_data["state"]["file_uploads"]["failed_files"].append(file_id)
+        logging.error(f"Added failed file to tracking: {file_id}")
+```
+
+This method:
+1. Checks if the file ID is already in the failed files list
+2. Adds the file ID to the list if not present
+3. Logs the failure
+
+### get_file_upload_status()
+
+Returns the current file upload status.
+
+```python
+def get_file_upload_status(self):
+    return self.job_data["state"]["file_uploads"]
+```
+
+This method returns a dictionary containing:
+- total_files: Total number of files to upload
+- uploaded_files: Number of successfully uploaded files
+- failed_files: List of file IDs that failed to upload
+- status: Overall upload status (pending/in_progress/complete)
 
 ### get_job_data()
 
@@ -150,7 +214,15 @@ The job data is a dictionary with the following structure:
     {
       "Alias": "Document Name",
       "Path": "/path/to/document.txt",
-      "Ext": "pdf"
+      "Ext": "pdf",
+      "openai_file": {
+        "file_id": "openai-file-id",
+        "purpose": "assistants",
+        "status": "uploaded",
+        "error": null,
+        "upload_time": "2024-03-20T12:00:00Z",
+        "retry_count": 0
+      }
     }
   ],
   "Queries": [
@@ -167,7 +239,15 @@ The job data is a dictionary with the following structure:
   },
   "Status": "Current Status",
   "Export Format": "csv or docx",
-  "Orientation": "doc_row or query_row"
+  "Orientation": "doc_row or query_row",
+  "state": {
+    "file_uploads": {
+      "total_files": 5,
+      "uploaded_files": 4,
+      "failed_files": ["file-id-1"],
+      "status": "in_progress"
+    }
+  }
 }
 ```
 
@@ -176,16 +256,18 @@ The job data is a dictionary with the following structure:
 The Job Manager tracks the following status transitions:
 
 1. **Initialized**: Initial job state
-2. **Documents Processed**: Document text extracted
-3. **Queries Processed, Responses Collected**: Extraction complete
-4. **CSV/DOCX Output Generated**: Output file created
-5. **Data Extraction Complete**: Job finalized and cleaned up
+2. **uploading_files**: Files are being uploaded to OpenAI
+3. **upload_complete**: All files successfully uploaded
+4. **upload_failed**: One or more files failed to upload
+5. **Queries Processed, Responses Collected**: Extraction complete
+6. **CSV/DOCX Output Generated**: Output file created
+7. **Data Extraction Complete**: Job finalized and cleaned up
 
 ## Integration with Other Services
 
 The Job Manager integrates with all other components:
 
-- **Document Handler**: Stores document information and paths
+- **Document Handler**: Stores document information and tracks upload status
 - **Query Manager**: Stores query information
 - **Data Extractor**: Coordinates the extraction process
 - **LLM Interface**: Indirectly through the Data Extractor
@@ -214,14 +296,16 @@ Where:
 1. Job Manager is created with a new job ID
 2. Temporary directory is initialized
 3. Documents and queries are added to the job data
-4. Document Handler processes documents and updates paths
-5. Data Extractor collects responses and updates the job data
-6. Output Generator creates the output file
-7. Job Manager finalizes the extraction and cleans up
+4. Document Handler uploads files to OpenAI and updates status
+5. Job Manager tracks upload progress and failures
+6. Data Extractor collects responses and updates the job data
+7. Output Generator creates the output file
+8. Job Manager finalizes the extraction and cleans up
 
 ## Performance Considerations
 
 - Job data is stored in memory during the extraction process
 - Temporary files are created for document text and output
 - Cleanup is performed after the download is complete
-- Each job has a unique ID and temporary directory 
+- Each job has a unique ID and temporary directory
+- File upload status is tracked in memory for real-time updates 
