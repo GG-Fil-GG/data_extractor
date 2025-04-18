@@ -65,19 +65,6 @@ The `job_data` object is the central data structure that maintains the state and
         "orientation": "string (documents_in_rows|documents_in_columns)"
     },
     "state": {
-        "is_paused": "boolean",
-        "active_operations": {
-            "document_id": {
-                "status": "string (processing|complete)",
-                "active_threads": {
-                    "thread_id": {
-                        "status": "string (processing|complete)",
-                        "current_query_id": "string (UUID|null)",
-                        "completed_queries": ["string (UUID)"]
-                    }
-                }
-            }
-        },
         "file_uploads": {
             "total_files": "integer",
             "uploaded_files": "integer",
@@ -179,12 +166,6 @@ Tracks the current state of the extraction process:
 - **total_pdf_pages**: Total pages across all PDF files
 - **validation_status**: Status of document validation
 
-#### Threads State
-- **total_threads**: Total number of threads
-- **completed_threads**: Number of completed threads
-- **failed_threads**: List of failed thread IDs
-- **status**: Current thread processing status
-
 #### Progress State
 - **total_operations**: Total number of operations (documents × total queries)
 - **completed_operations**: Number of completed operations
@@ -202,21 +183,15 @@ Tracks the current state of the extraction process:
    - Status tracked in `state.file_uploads.validation_status`
 
 2. **Processing Order**:
-   - Documents can be processed in parallel
-   - Multiple threads within a document can be processed simultaneously
-   - Queries within a single thread must be processed sequentially to maintain conversation context
+   - Documents are processed sequentially
+   - Threads for each document can be processed independently/in parallel
+   - Only queries within a thread must be processed sequentially to maintain conversation context
 
 3. **Progress Tracking**:
    - Total operations = number of documents × total number of queries across all threads
    - Each query processed for each document counts as one operation
    - Current document, thread, and query are tracked for UI feedback
    - Progress shown as completed operations / total operations
-
-4. **Pause/Resume Behavior**:
-   - Pausing sets `is_paused` to true
-   - Processing completes current query before stopping
-   - State structure preserves exact position for resuming
-   - Can resume from any partially completed state
 
 ## State Transitions
 
@@ -251,3 +226,18 @@ Tracks the current state of the extraction process:
     "format": "free_form"
 }
 ```
+
+## Future Enhancements
+
+### Pause Functionality
+In future versions, pause functionality will be implemented to allow users to:
+1. Pause extraction at any point
+2. Edit job configuration during pause
+3. Resume extraction with updated configuration
+4. Track which operations need to be reprocessed after configuration changes
+
+This will require:
+- Addition of pause-related state fields
+- Logic for tracking modified configuration
+- Mechanism for determining which operations to reprocess
+- UI elements for pause/resume control
