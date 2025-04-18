@@ -11,6 +11,7 @@ The LLM Interface is a core service that manages communication with OpenAI's lan
 - Managing context windows and token limits
 - Implementing robust error handling and retries
 - Rate limiting and backoff strategies
+- Validating OpenAI configuration parameters
 
 ## Class Structure
 
@@ -20,6 +21,13 @@ The `LLMInterface` class is defined in `backend/app/services/llm_interface.py` a
 
 ```python
 def __init__(self, api_key: str, job_manager):
+    """
+    Initialize the LLMInterface with API key and job manager.
+    
+    Args:
+        api_key: OpenAI API key
+        job_manager: JobManager instance for accessing job data
+    """
     self.api_key = api_key
     self.job_manager = job_manager
     self.url = "https://api.openai.com/v1/chat/completions"
@@ -39,6 +47,19 @@ The LLM Interface is initialized with:
 - Tokenizer for context window management
 - Retry and rate limiting settings
 
+## Type Definitions
+
+The interface uses TypedDict for type safety:
+
+```python
+class Message(TypedDict):
+    role: str
+    content: str
+
+class OpenAIResponse(TypedDict):
+    choices: List[Dict[str, Dict[str, str]]]
+```
+
 ## Key Methods
 
 ### process_messages()
@@ -46,7 +67,20 @@ The LLM Interface is initialized with:
 Processes a list of messages through the OpenAI API and returns the parsed response.
 
 ```python
-def process_messages(self, messages: List[Dict], format_type: str = "free_form") -> Any:
+def process_messages(self, messages: List[Message], format_type: str = "free_form") -> Any:
+    """
+    Process a list of messages through the OpenAI API.
+    
+    Args:
+        messages: List of message dictionaries with role and content
+        format_type: Type of response format expected
+        
+    Returns:
+        Processed response in the appropriate format
+        
+    Raises:
+        ValueError: If messages exceed context window or response parsing fails
+    """
     if not self._validate_context_window(messages):
         raise ValueError("Messages exceed context window limit")
 
@@ -100,7 +134,19 @@ This method:
 Makes the API request with retry logic and rate limiting.
 
 ```python
-def _make_request_with_retry(self, data: Dict) -> str:
+def _make_request_with_retry(self, data: Dict[str, Any]) -> str:
+    """
+    Make API request with retry logic and rate limiting.
+    
+    Args:
+        data: Request payload
+        
+    Returns:
+        str: API response content
+        
+    Raises:
+        requests.exceptions.RequestException: If all retries fail
+    """
     retry_count = 0
     last_error = None
 
@@ -130,7 +176,16 @@ This method:
 The interface supports multiple response formats through the `_get_response_format()` method:
 
 ```python
-def _get_response_format(self, format_type: str) -> Optional[Dict]:
+def _get_response_format(self, format_type: str) -> Optional[Dict[str, Any]]:
+    """
+    Get OpenAI response format based on query format type.
+    
+    Args:
+        format_type: Type of response format expected
+        
+    Returns:
+        Optional[Dict] containing response format configuration
+    """
     format_mapping = {
         "free_form": None,
         "integer": {"type": "json_object", "schema": {"type": "integer"}},
@@ -151,13 +206,58 @@ def _get_response_format(self, format_type: str) -> Optional[Dict]:
 The interface manages context windows through token counting:
 
 ```python
-def _count_tokens(self, messages: List[Dict]) -> int:
+def _count_tokens(self, messages: List[Message]) -> int:
+    """
+    Count tokens in a list of messages.
+    
+    Args:
+        messages: List of message dictionaries
+        
+    Returns:
+        int: Total number of tokens
+    """
     return sum(len(self.encoding.encode(msg["content"])) for msg in messages)
 
-def _validate_context_window(self, messages: List[Dict]) -> bool:
+def _validate_context_window(self, messages: List[Message]) -> bool:
+    """
+    Validate that messages fit within context window.
+    
+    Args:
+        messages: List of message dictionaries
+        
+    Returns:
+        bool: True if messages fit within context window
+    """
     config = self._get_openai_config()
     max_tokens = config.get("max_tokens", 128000)
     return self._count_tokens(messages) <= max_tokens
+```
+
+## Configuration Validation
+
+The interface validates OpenAI configuration parameters:
+
+```python
+def _get_openai_config(self) -> Dict[str, Any]:
+    """
+    Get OpenAI configuration from job data.
+    
+    Returns:
+        Dict containing OpenAI configuration parameters
+    """
+    config = self.job_manager.job_data.get("openai_config", {
+        "model": "gpt-4o",
+        "temperature": 0.0,
+        "max_tokens": None
+    })
+    
+    # Validate configuration
+    if not isinstance(config.get("temperature"), (int, float)) or not 0 <= config["temperature"] <= 2:
+        config["temperature"] = 0.0
+    if not isinstance(config.get("max_tokens"), (int, type(None))):
+        config["max_tokens"] = None
+        
+    return config
 ```
 
 ## Error Handling
@@ -168,6 +268,7 @@ The LLM Interface uses multiple layers of error handling:
 2. **API request retries** with exponential backoff
 3. **Response parsing validation** with specific error messages
 4. **Context window validation** to prevent oversized requests
+5. **Configuration validation** to ensure valid parameters
 
 ## Integration with Other Services
 
@@ -198,7 +299,7 @@ Configuration is managed through the job data structure:
         "model": "gpt-4o",
         "assistant_id": "string",
         "max_tokens": "integer",
-        "temperature": "number",
+        "temperature": "number (0-2)",
         "file_purpose": "string"
     }
 }
@@ -211,6 +312,7 @@ Configuration is managed through the job data structure:
 - **Token Management**: Validates context window sizes
 - **Response Parsing**: Uses efficient parser implementations
 - **Error Handling**: Graceful degradation on failures
+- **Configuration Validation**: Ensures valid API parameters
 
 ## Example Flow
 

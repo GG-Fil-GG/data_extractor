@@ -48,13 +48,13 @@ def validate_documents(self):
     total_size = 0
     total_pdf_pages = 0
     
-    for document in self.job_manager.job_data["Documents"]:
+    for document in self.job_manager.job_data["documents"]:
         # Check file size for all files
         file_size = os.path.getsize(document["path"])
         total_size += file_size
         
         # Only count pages for PDF files
-        if document["Ext"].lower() == "pdf":
+        if document["format"].lower() == "pdf":
             try:
                 page_count = self.get_pdf_page_count(document)
                 total_pdf_pages += page_count
@@ -92,21 +92,19 @@ def process_documents(self):
         
     except ValueError as ve:
         logging.error(f"Document validation failed: {ve}")
-        self.job_manager.update_status("validation_failed")
+        self.job_manager.update_status("upload_failed")
         return
     
-    for document in self.job_manager.job_data["Documents"]:
+    for document in self.job_manager.job_data["documents"]:
         try:
             # Initialize OpenAI file info
             document["openai_file"] = {
                 "file_id": None,
-                "purpose": "user_data",
+                "purpose": "assistants",
                 "status": "pending",
                 "error": None,
                 "upload_time": None,
-                "retry_count": 0,
-                "file_size": os.path.getsize(document["path"]),
-                "page_count": self.get_pdf_page_count(document) if document["Ext"].lower() == "pdf" else None
+                "retry_count": 0
             }
             
             # Upload file to OpenAI
@@ -152,7 +150,7 @@ def upload_file_to_openai(self, document):
             with open(document["path"], "rb") as file:
                 response = self.openai_client.files.create(
                     file=file,
-                    purpose="user_data"
+                    purpose="assistants"
                 )
             
             # Update document with OpenAI file info
@@ -188,7 +186,7 @@ Manages the cleanup of uploaded files from OpenAI after processing is complete.
 
 ```python
 def cleanup_files(self):
-    for document in self.job_manager.job_data["Documents"]:
+    for document in self.job_manager.job_data["documents"]:
         if document["openai_file"]["file_id"]:
             try:
                 self.openai_client.files.delete(file_id=document["openai_file"]["file_id"])

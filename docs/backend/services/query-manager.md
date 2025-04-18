@@ -13,7 +13,6 @@ The `QueryManager` class is defined in `backend/app/services/query_manager.py` a
 ```python
 def __init__(self, job_manager):
     self.job_manager = job_manager
-    self.threads: Dict[str, Dict] = {}  # Store thread states
     self.context_window = 128000  # GPT-4o context window
     self.max_history_messages = 10  # Maximum number of messages to keep in history
     self.encoding = tiktoken.get_encoding("cl100k_base")  # Tokenizer for GPT-4o
@@ -22,36 +21,31 @@ def __init__(self, job_manager):
 The Query Manager is initialized with:
 - A reference to the Job Manager for job data and status updates
 - Configuration for thread management and context windows
-- Tokenizer for accurate message size tracking
+- Tokenizer for message processing
 
 ## Key Methods
 
 ### create_thread()
 
-Creates a new conversation thread and initializes it with the system message from job data.
+Creates a new conversation thread in the job data.
 
 ```python
-def create_thread(self, thread_id: str) -> Dict:
+def create_thread(self, title: str) -> Dict:
     thread = {
-        "id": thread_id,
-        "created_at": datetime.utcnow().isoformat(),
+        "id": str(uuid.uuid4()),
+        "title": title,
+        "status": "initialized",
         "messages": [],
-        "token_count": 0,
-        "status": "pending",
-        "last_response_id": None,
-        "error": None
+        "queries": []
     }
-    
-    # Add system_message as initial developer message
-    system_message = self.job_manager.job_data.get("system_message")
-    if system_message:
-        self.add_message(thread_id, "developer", system_message)
+    self.job_manager.job_data["threads"].append(thread)
+    self.job_manager.job_data["state"]["threads"]["total_threads"] += 1
 ```
 
 This method:
 1. Creates a new thread with initial state
-2. Adds the system message as the first developer message
-3. Tracks thread creation time and status
+2. Adds the thread to the job data
+3. Updates thread count in job state
 
 ### add_message()
 
@@ -62,31 +56,26 @@ def add_message(self, thread_id: str, role: str, content: str) -> Dict:
     message = {
         "role": role,
         "content": content,
-        "timestamp": datetime.utcnow().isoformat(),
-        "token_count": len(self.encoding.encode(content))
+        "timestamp": datetime.utcnow().isoformat()
     }
     
     thread["messages"].append(message)
-    thread["token_count"] += message["token_count"]
-    
-    # Ensure we don't exceed context window
     self._manage_context_window(thread_id)
 ```
 
 This method:
-1. Creates a message with role, content, and metadata
-2. Updates thread token count
+1. Creates a message with role, content, and timestamp
+2. Adds the message to the thread's history
 3. Manages context window limits
-4. Preserves system message when trimming history
 
 ### process_query()
 
 Processes a query within an existing thread context.
 
 ```python
-def process_query(self, thread_id: str, query_text: str) -> Dict:
+def process_query(self, thread_id: str, query_id: str) -> Dict:
     # Add user query
-    self.add_message(thread_id, "user", query_text)
+    self.add_message(thread_id, "user", query["text"])
     
     # Update thread status
     self.update_thread_status(thread_id, "processing")
@@ -103,8 +92,9 @@ def process_query(self, thread_id: str, query_text: str) -> Dict:
         
         return {
             "thread_id": thread_id,
+            "query_id": query_id,
             "response": response,
-            "status": "complete"
+            "format": query["format"]
         }
 ```
 
@@ -122,27 +112,27 @@ The Query Manager maintains conversation threads with the following features:
 1. **Message History**:
    - Tracks all messages in a thread
    - Maintains message order and timing
-   - Preserves system message as initial context
+   - Enforces maximum message count
 
 2. **Context Window Management**:
-   - Enforces GPT-4o context window limits (128k tokens)
+   - Enforces maximum message count (10 messages)
    - Automatically trims message history when needed
-   - Preserves system message during trimming
+   - Maintains conversation flow
 
 3. **Status Tracking**:
    - Monitors thread processing status
-   - Tracks successful and failed queries
-   - Updates overall job progress
+   - Updates thread state in job data
+   - Tracks overall thread progress
 
 ## Integration with Other Services
 
 The Query Manager integrates with:
 
 - **Job Manager**: 
-  - Accesses job data and system message
+  - Accesses job data and thread information
   - Updates job status and progress
-  - Maintains query state
-  - Reads queries from the threads array in job_data
+  - Maintains thread state in job data
+  - Manages thread lifecycle
 
 - **LLMInterface**:
   - Provides message history for processing
@@ -151,42 +141,39 @@ The Query Manager integrates with:
 
 ## Thread Structure
 
-Each thread maintains the following information:
+Each thread maintains the following information in the job data:
 
 ```json
 {
     "id": "thread-uuid",
-    "created_at": "2024-03-20T12:00:00Z",
+    "title": "Thread Title",
+    "status": "initialized",
     "messages": [
-        {
-            "role": "developer",
-            "content": "system_message",
-            "timestamp": "2024-03-20T12:00:00Z",
-            "token_count": 100
-        },
         {
             "role": "user",
             "content": "query_text",
-            "timestamp": "2024-03-20T12:01:00Z",
-            "token_count": 50
+            "timestamp": "2024-03-20T12:01:00Z"
         },
         {
             "role": "assistant",
             "content": "response_text",
-            "timestamp": "2024-03-20T12:02:00Z",
-            "token_count": 200
+            "timestamp": "2024-03-20T12:02:00Z"
         }
     ],
-    "token_count": 350,
-    "status": "complete",
-    "last_response_id": "response-uuid",
-    "error": null
+    "queries": [
+        {
+            "id": "query-uuid",
+            "title": "Query Title",
+            "text": "Query text",
+            "format": "format_type"
+        }
+    ]
 }
 ```
 
 ## Query Structure
 
-Queries are defined in the job_data structure as part of the threads array:
+Queries are defined in the job data structure as part of the threads array:
 
 ```json
 {
@@ -209,9 +196,9 @@ Queries are defined in the job_data structure as part of the threads array:
 
 Where:
 - `id`: Unique identifier for the query
-- `title`: Display title for the query (max length: 255 characters)
-- `text`: The actual query text (max length: 32,768 characters)
-- `format`: Response format specification (e.g., free_form, integer, etc.)
+- `title`: Display title for the query
+- `text`: The actual query text
+- `format`: Response format specification
 
 ## Error Handling
 
@@ -236,10 +223,10 @@ This decorator:
 
 ## Performance Considerations
 
-- Context window management ensures efficient token usage
+- Context window management ensures efficient message history
 - Message history trimming prevents excessive memory usage
-- Token counting helps track and optimize context usage
 - Thread status tracking enables efficient progress monitoring
+- Integration with job data structure ensures consistent state management
 
 ## Future Enhancements
 
@@ -249,6 +236,9 @@ Potential enhancements to the Query Manager could include:
 - Functions for transforming queries into optimal prompts
 - Support for query templates and presets
 - Query categorization and organization
+- Enhanced context window management with token counting
+- Support for streaming responses
+- Query result caching
 
 ## Notes
 

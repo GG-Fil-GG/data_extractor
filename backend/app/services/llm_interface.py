@@ -2,10 +2,17 @@ import requests
 import logging
 import tiktoken
 from functools import wraps
-from typing import Dict, List, Optional, Union, Any
+from typing import Dict, List, Optional, Union, Any, TypedDict
 import time
 from datetime import datetime
 from backend.app.services import parsers
+
+class Message(TypedDict):
+    role: str
+    content: str
+
+class OpenAIResponse(TypedDict):
+    choices: List[Dict[str, Dict[str, str]]]
 
 def handle_errors(func):
     @wraps(func)
@@ -19,6 +26,13 @@ def handle_errors(func):
 
 class LLMInterface:
     def __init__(self, api_key: str, job_manager):
+        """
+        Initialize the LLMInterface with API key and job manager.
+        
+        Args:
+            api_key: OpenAI API key
+            job_manager: JobManager instance for accessing job data
+        """
         self.api_key = api_key
         self.job_manager = job_manager
         self.url = "https://api.openai.com/v1/chat/completions"
@@ -31,16 +45,37 @@ class LLMInterface:
         self.retry_delay = 5  # seconds
         self.rate_limit_delay = 1  # seconds between requests
 
-    def _get_openai_config(self) -> Dict:
-        """Get OpenAI configuration from job data."""
-        return self.job_manager.job_data.get("openai_config", {
+    def _get_openai_config(self) -> Dict[str, Any]:
+        """
+        Get OpenAI configuration from job data.
+        
+        Returns:
+            Dict containing OpenAI configuration parameters
+        """
+        config = self.job_manager.job_data.get("openai_config", {
             "model": "gpt-4o",
             "temperature": 0.0,
             "max_tokens": None
         })
+        
+        # Validate configuration
+        if not isinstance(config.get("temperature"), (int, float)) or not 0 <= config["temperature"] <= 2:
+            config["temperature"] = 0.0
+        if not isinstance(config.get("max_tokens"), (int, type(None))):
+            config["max_tokens"] = None
+            
+        return config
 
-    def _get_response_format(self, format_type: str) -> Optional[Dict]:
-        """Get OpenAI response format based on query format type."""
+    def _get_response_format(self, format_type: str) -> Optional[Dict[str, Any]]:
+        """
+        Get OpenAI response format based on query format type.
+        
+        Args:
+            format_type: Type of response format expected
+            
+        Returns:
+            Optional[Dict] containing response format configuration
+        """
         format_mapping = {
             "free_form": None,
             "integer": {"type": "json_object", "schema": {"type": "integer"}},
@@ -84,18 +119,34 @@ class LLMInterface:
         }
         return format_mapping.get(format_type)
 
-    def _count_tokens(self, messages: List[Dict]) -> int:
-        """Count tokens in a list of messages."""
+    def _count_tokens(self, messages: List[Message]) -> int:
+        """
+        Count tokens in a list of messages.
+        
+        Args:
+            messages: List of message dictionaries
+            
+        Returns:
+            int: Total number of tokens
+        """
         return sum(len(self.encoding.encode(msg["content"])) for msg in messages)
 
-    def _validate_context_window(self, messages: List[Dict]) -> bool:
-        """Validate that messages fit within context window."""
+    def _validate_context_window(self, messages: List[Message]) -> bool:
+        """
+        Validate that messages fit within context window.
+        
+        Args:
+            messages: List of message dictionaries
+            
+        Returns:
+            bool: True if messages fit within context window
+        """
         config = self._get_openai_config()
         max_tokens = config.get("max_tokens", 128000)
         return self._count_tokens(messages) <= max_tokens
 
     @handle_errors
-    def process_messages(self, messages: List[Dict], format_type: str = "free_form") -> Any:
+    def process_messages(self, messages: List[Message], format_type: str = "free_form") -> Any:
         """
         Process a list of messages through the OpenAI API.
         
@@ -105,6 +156,9 @@ class LLMInterface:
             
         Returns:
             Processed response in the appropriate format
+            
+        Raises:
+            ValueError: If messages exceed context window or response parsing fails
         """
         if not self._validate_context_window(messages):
             raise ValueError("Messages exceed context window limit")
@@ -145,7 +199,7 @@ class LLMInterface:
         
         return raw_response
 
-    def _make_request_with_retry(self, data: Dict) -> str:
+    def _make_request_with_retry(self, data: Dict[str, Any]) -> str:
         """
         Make API request with retry logic and rate limiting.
         
@@ -154,6 +208,9 @@ class LLMInterface:
             
         Returns:
             str: API response content
+            
+        Raises:
+            requests.exceptions.RequestException: If all retries fail
         """
         retry_count = 0
         last_error = None
