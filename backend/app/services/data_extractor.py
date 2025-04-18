@@ -1,5 +1,7 @@
 import logging
 from functools import wraps
+from typing import Dict, List, Optional, Any
+from datetime import datetime
 from app.services.document_handler import DocumentHandler
 from app.services.query_manager import QueryManager
 from app.services.job_manager import JobManager
@@ -44,15 +46,16 @@ class DataExtractor:
         llm_interface (LLMInterface): Interface for LLM interactions.
     """
 
-    def __init__(self, job_manager, document_handler, query_manager, llm_interface):
+    def __init__(self, job_manager: JobManager, document_handler: DocumentHandler, 
+                 query_manager: QueryManager, llm_interface: LLMInterface):
         """
         Initialize the DataExtractor with required service components.
         
         Args:
-            job_manager (JobManager): Instance of JobManager for job handling.
-            document_handler (DocumentHandler): Instance of DocumentHandler for document processing.
-            query_manager (QueryManager): Instance of QueryManager for query handling.
-            llm_interface (LLMInterface): Instance of LLMInterface for LLM interactions.
+            job_manager: Instance of JobManager for job handling.
+            document_handler: Instance of DocumentHandler for document processing.
+            query_manager: Instance of QueryManager for query handling.
+            llm_interface: Instance of LLMInterface for LLM interactions.
         """
         self.job_manager = job_manager
         self.document_handler = document_handler
@@ -60,105 +63,117 @@ class DataExtractor:
         self.llm_interface = llm_interface
 
     @handle_errors
-    def initialize_job(self):
+    def initialize_job(self) -> None:
         """
         Initialize a new data extraction job.
         
         Creates necessary temporary directories and sets initial job status.
-        Updates the job status to "Initialized" upon completion.
+        Updates the job status to "initialized" upon completion.
         """
         self.job_manager.initialize_temp_dir()
-        self.job_manager.update_status("Initialized")
+        self.job_manager.update_status("initialized")
 
     @handle_errors
-    def process_documents(self):
+    def process_documents(self) -> None:
         """
         Process all documents associated with the current job.
         
         Delegates document processing to the DocumentHandler service.
-        This may include text extraction, preprocessing, and any necessary
-        document-specific operations.
+        Updates job status to "uploading_files" during processing.
         """
+        self.job_manager.update_status("uploading_files")
         self.document_handler.process_documents()
+        
+        # Update state after document processing
+        state = self.job_manager.job_data["state"]["file_uploads"]
+        if state["failed_files"]:
+            self.job_manager.update_status("upload_failed")
+        else:
+            self.job_manager.update_status("upload_complete")
 
     @handle_errors
-    def process_queries_and_collect_responses(self):
+    def create_threads(self) -> None:
         """
-        Process all queries against each document and collect responses.
+        Create threads for processing queries.
         
-        For each document-query pair:
-        1. Loads the document text
-        2. Executes the query using the LLM interface
-        3. Parses and stores the response
-        
-        The responses are stored in the job_data structure with the following format:
-        {
-            "Responses": {
-                "document_alias": {
-                    "query_alias": response_content
-                }
-            }
-        }
-        
-        Updates job status to "Queries Processed, Responses Collected" upon completion.
-        
-        Raises:
-            ValueError: If there are issues with query processing or response parsing.
-            Exception: For any other unexpected errors during processing.
+        Creates a thread for each document-query combination.
+        Updates thread state in job data.
         """
-        for document in self.job_manager.job_data["Documents"]:
-            doc_text = self.document_handler.load_text(document["Path"])
-            document_alias = document["Alias"]
-            if document_alias not in self.job_manager.job_data["Responses"]:
-                self.job_manager.job_data["Responses"][document_alias] = {}
-            for query in self.job_manager.job_data["Queries"]:
-                query_alias = query["Alias"]
-                query_text = query["Text"]
-                query_format = query["Format"]
-                parser_entry = parsers.get(query_format)
-                parser = parser_entry["parser"]
-                json_required = parser_entry["json_required"]
-                format_guidance_message = parser_entry["format_guidance"]
-
-                response_format = None
-                if json_required:
-                    response_format = {"type": "json_object"}
-
-                try:
-                    response = self.llm_interface.ask(query_text, doc_text, parser, format_guidance_message, response_format)
-                    if response is None:
-                        response = "Information not available"
-                    self.job_manager.job_data["Responses"][document_alias][query_alias] = response
-                except ValueError as ve:
-                    logging.error(f"ValueError in processing query '{query_alias}' for document '{document_alias}': {ve}")
-                    self.job_manager.job_data["Responses"][document_alias][query_alias] = "Information not available"
-                except Exception as e:
-                    logging.error(f"Error in processing query '{query_alias}' for document '{document_alias}': {e}")
-                    self.job_manager.job_data["Responses"][document_alias][query_alias] = "Information not available"
-        self.job_manager.update_status("Queries Processed, Responses Collected")
+        for document in self.job_manager.job_data["documents"]:
+            for query in self.job_manager.job_data["queries"]:
+                thread_title = f"{document['name']} - {query['title']}"
+                thread = self.query_manager.create_thread(thread_title)
+                
+                # Add query to thread
+                thread["queries"].append(query)
+                
+                # Update thread state
+                self.job_manager.job_data["state"]["threads"]["total_threads"] += 1
 
     @handle_errors
-    def run(self):
+    def process_threads(self) -> None:
+        """
+        Process all threads and collect responses.
+        
+        For each thread:
+        1. Processes the query using the LLM interface
+        2. Updates thread status
+        3. Collects responses
+        
+        Updates job status to "processing_threads" during processing.
+        """
+        self.job_manager.update_status("processing_threads")
+        
+        for thread in self.job_manager.job_data["threads"]:
+            try:
+                # Process each query in the thread
+                for query in thread["queries"]:
+                    result = self.query_manager.process_query(thread["id"], query["id"])
+                    
+                    # Add response to thread
+                    thread["messages"].append({
+                        "role": "assistant",
+                        "content": result["response"],
+                        "timestamp": datetime.utcnow().isoformat()
+                    })
+                    
+                # Update thread status
+                self.query_manager.update_thread_status(thread["id"], "complete")
+                
+            except Exception as e:
+                logging.error(f"Error processing thread {thread['id']}: {e}")
+                self.query_manager.update_thread_status(thread["id"], "failed")
+                self.job_manager.job_data["state"]["threads"]["failed_threads"].append(thread["id"])
+        
+        # Update overall thread state
+        state = self.job_manager.job_data["state"]["threads"]
+        if state["failed_threads"]:
+            self.job_manager.update_status("threads_failed")
+        else:
+            self.job_manager.update_status("threads_complete")
+
+    @handle_errors
+    def run(self) -> Dict[str, Any]:
         """
         Execute the complete data extraction pipeline.
         
         This method orchestrates the entire extraction process by:
         1. Initializing the job
         2. Processing all documents
-        3. Running queries and collecting responses
+        3. Creating threads for queries
+        4. Processing threads and collecting responses
         
         Returns:
-            dict: The complete job data including all documents, queries, and responses.
-                Format:
-                {
-                    "Documents": [...],
-                    "Queries": [...],
-                    "Responses": {...},
-                    "Status": "..."
-                }
+            Dict containing the complete job data including all documents, threads, and responses.
         """
         self.initialize_job()
         self.process_documents()
-        self.process_queries_and_collect_responses()
-        logging.info("Responses collected.")
-        return self.job_manager.get_job_data()
+        
+        if self.job_manager.job_data["status"] == "upload_complete":
+            self.create_threads()
+            self.process_threads()
+            
+            if self.job_manager.job_data["status"] == "threads_complete":
+                self.job_manager.finalize_extraction()
+        
+        return self.job_manager.job_data
